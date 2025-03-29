@@ -13,10 +13,10 @@
 
 #### Desenvolvedores:
 
-* [Bressan](coloque o link do github)
-* [Luis](coloque o link do github)
-* [Rangel](coloque o link do github)
-* [Toledo](coloque o link do github)
+* [Bressan](https://github.com/Bressan48)
+* [Luis](https://github.com/luiso473)
+* [Rangel](https://github.com/jvrangel11)
+* [Toledo](https://github.com/Toledo29)
 
 
 #### Scrum Master:
