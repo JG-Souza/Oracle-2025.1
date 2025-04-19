@@ -1,3 +1,45 @@
-body {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.heroSection {
+    background-image: url(/public/assets/backgroundMitologia1.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid red;
+    padding: 170px 150px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.headline {
+    text-align: center;
+    #headlineTitulo1 {
+        font-size: 36px;
+    }
+    #headlineTitulo2 {
+        font-size: 64px;
+    }
+    #headlineTitulo3 {
+        font-size: 73px;
+    }
+    #headlineTitulo4 {
+        font-size: 21px;
+    }
+}
+.destaques{
+    font-size: 21px;
+}
+.carrosselDeDestaques {
+    background-image: url(/public/assets/placeholder.png);
+    width: 624px;
+    height: 424px;
+    border: 1px solid white;
 }
