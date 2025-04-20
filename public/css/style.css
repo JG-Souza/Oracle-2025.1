@@ -36,6 +36,9 @@
 }
 .destaques{
     font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .carrosselDeDestaques {
     background-image: url(/public/assets/placeholder.png);
@@ -43,3 +46,77 @@
     height: 424px;
     border: 1px solid white;
 }
+
+.conteudo {
+    background-image: url(/public/assets/backgroundMitologia2.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(255, 251, 0);
+    padding: 60px 150px;
+    text-align: left;
+}
+
+.ultimosPosts {
+    display: flex;
+    flex-direction:column;  
+    text-align: left; 
+    gap: 10px; 
+    width:fit-content;
+
+    .tituloUltimosPosts {
+        font-size: 25px;
+    }
+}
+
+.posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.postGrande 
+{
+    #pgImg {
+        background-image: url(/public/assets/placeholder.png);
+        width: 680px;
+        height: 480px;
+        border: 1px solid white;
+    }
+    
+    #pgTitulo {
+        padding: 10px 0px;
+        font-size: 30px;
+    }
+}
+
+.postsPequenos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    font-size: 25px;
+    
+    .pp1, .pp2, .pp3, .pp4 {
+        width: 540px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
+        background-image: url(/public/assets/placeholder.png);
+        width: 160px;
+        height: 120px;
+        border: 1px solid white;
+    }
+
+    #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
+        width: fill;
+    }
+}
+
+
+
+
+
