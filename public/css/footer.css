@@ -3,7 +3,7 @@
     --cor-primaria: #224220;
     --cor-secundaria: #fff;
     --cor-terciaria: #000;
-    --cor-quaternaria: #f0f0f0;
+    --cor-quaternaria: #152518;
     --cor-quinta: #e0e0e0;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .footer{
-    background-color: #224220;
+    background-color: #152518;
     color: white
     text-align: center;
     padding: 0;
@@ -42,7 +42,7 @@
     gap: 1rem;
     display: flex;
     flex-direction: column;
-    width: 23.81rem;
+    width: 19.31rem;
 }
 
 .footer .container .missao-visao-e-valores a{
@@ -65,7 +65,7 @@
 
 .footer .container .missao-visao-e-valores a:hover{
     color: #fff;
-    background-color: #407a3b;
+    background-color: #243f29;
     transition: 0.5s;
 }
 
@@ -83,11 +83,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .footer .container .redes-sociais h3{
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-style: normal;
     text-decoration: none;
     font-weight: 350;
@@ -99,6 +101,15 @@
     align-items: center;
     margin: 0 10px;
 }
+
+.footer .container .redes-sociais .icons a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.3rem;
+    margin: 0 0.4rem;
+    transition: 0.5s;
+}
+
 
 .footer .container .redes-sociais .direitos{
     display: flex;
