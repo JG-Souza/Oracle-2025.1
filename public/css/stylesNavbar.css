@@ -9,7 +9,43 @@ html{
 }
 
 header{
-    backdrop-filter: blur(10px);
+    font-size: 110%;
+    background-color: #224220;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    color: #D8DBD4;
+    font-weight: medium;
+    backdrop-filter: blur(10px); /*Efeito de blur da Navbar*/
 }
 
+.navbar-logo{
+    display: flex;
+    
+}
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+
+.navbar-links a{
+    text-decoration: none;
+    color: #D8DBD4;
+}
+
+/*main de exemplo*/
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: #A84B3A;
+}
 
