@@ -1,0 +1,15 @@
+html{
+    font-size: calc(70% + 0.8vmin);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    backdrop-filter: blur(10px);
+}
+
+
