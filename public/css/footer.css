@@ -1,0 +1,119 @@
+
+:root{
+    --cor-primaria: #224220;
+    --cor-secundaria: #fff;
+    --cor-terciaria: #000;
+    --cor-quaternaria: #f0f0f0;
+    --cor-quinta: #e0e0e0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: regular;
+}
+
+.footer{
+    background-color: #224220;
+    color: white
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+}
+
+
+.footer .container{
+    padding:  1.0rem 4.0rem;
+    margin: 0;
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .container .missao-visao-e-valores{
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 23.81rem;
+}
+
+.footer .container .missao-visao-e-valores a{
+    font-size: 1.5rem;
+    font-style: normal;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+.footer .container .missao-visao-e-valores h3{
+    font-weight: 350;
+}
+
+.footer .container .missao-visao-e-valores p{
+    font-size: 0.8rem;
+    margin: 0.1rem;
+    padding: 0;
+
+}
+
+.footer .container .missao-visao-e-valores a:hover{
+    color: #fff;
+    background-color: #407a3b;
+    transition: 0.5s;
+}
+
+.footer .container .logo img{
+    width: 12.5rem;
+    height: 12.5rem;
+}
+.footer .container .logo h1{
+    font-size: 2rem;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.footer .container .redes-sociais{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer .container .redes-sociais h3{
+    font-size: 1.5rem;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 350;
+}
+
+.footer .container .redes-sociais .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.footer .container .redes-sociais .direitos{
+    display: flex;
+    align-items: center;
+}
+
+.footer .container .redes-sociais .direitos p{
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+.footer .container .redes-sociais .direitos img{
+    height: 1rem;
+}
+
+
