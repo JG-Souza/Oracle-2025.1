@@ -13,12 +13,12 @@
     box-sizing: border-box;
     color: white;
     font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: regular;
+    font-style: normal;
 }
 
 .footer{
     background-color: #152518;
-    color: white
+    color: white;
     text-align: center;
     padding: 0;
     margin: 0;
