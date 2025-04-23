@@ -22,6 +22,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+    overflow-y: auto;
 }
 
 
@@ -38,7 +39,9 @@ body{
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    height: auto;
+    margin-top: 900px;
+    margin-bottom: 50px;
 }
 
 
@@ -114,16 +117,17 @@ body{
     padding: 2rem;
 }
 
-.background .container .post .coracao .imagem img{
+.icaro{
     width: 30rem;
     height: 30rem;
     object-fit: cover;
 }
 
-.background .container .post .coracao .titulo h1{
+.titulo{
     font-size: 2.5rem;
     font-weight: 500;
     font-family: "Junge",  'cursive';
+    line-height: 60px;
 }
 
 .background .container .post .conteudo-do-post{
@@ -153,8 +157,70 @@ body{
     display: flex;
     font-size: 1rem;
     font-weight: 200;
+    margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 1200px){
+    
+    .icaro{
+        width: 360px;
+        height: 360px;
+    }
+
+    .titulo{
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    .icaro{
+        width: 300px;
+        height: 300px;
+    }
+
+    .titulo{
+        font-size: 28px;
+    }
+
+}
+
+@media only screen and (max-width: 700px){ /* Versão Para celular */
+
+    .background{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .background .container{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+
+    .background .container .cabecalho{
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .background .container .cabecalho .usuario h3{
+        font-size: 1.5rem;
+    }
+
+    .background .container .cabecalho .origem button{
+        font-size: 12;
+    }
+
+    .background .container .post{
+        padding: 0 1rem;
+    }
+
+    .background .container .post h5{
+        font-size: 1.5rem;
+    }
+
+}
 
 
 
