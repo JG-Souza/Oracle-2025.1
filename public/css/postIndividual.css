@@ -38,7 +38,7 @@ body{
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 
@@ -102,7 +102,6 @@ body{
     width: 100%;
     min-height: 80%;
     padding: 0 2rem;
-    overflow-y: auto;
     gap: 5rem;
  
 }
