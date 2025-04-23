@@ -40,8 +40,8 @@ body{
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     height: auto;
-    margin-top: 900px;
-    margin-bottom: 50px;
+    margin-top: 600px;
+    margin-bottom: 10px;
 }
 
 
@@ -53,6 +53,8 @@ body{
     padding: 0 2rem;
     border-bottom: 0.1rem solid black;
     background-color: white;
+    padding-bottom: 20px;
+    
 
 }
 
@@ -194,8 +196,8 @@ body{
     }
     
     .background .container{
-        margin-top: 20px;
-        margin-bottom: 50px;
+        margin-top: 140px;
+        margin-bottom: 10px;
     }
 
 
@@ -219,6 +221,25 @@ body{
     .background .container .post h5{
         font-size: 1.5rem;
     }
+
+    .background .container .post .conteudo-do-post span{
+        font-size: 1.2rem;
+    }
+
+    .coracao{
+        flex-direction: column;
+        column-gap: 10px;
+    }
+
+    .coracao img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .coracao .titulo{
+        font-size: 1.5rem;
+    }
+
 
 }
 
