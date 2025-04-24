@@ -5,15 +5,16 @@
     color: white;
 }
 
+/* Hero Section*/
 .heroSection {
     background-image: url(/public/assets/backgroundMitologia1.jpg);
     background-size: cover;
     background-position: center;
     border: 2px solid red;
     text-align: left;
+    height: fit-content;
 
     display: flex;
-    
     justify-content: space-between;
     align-items: center;
     
@@ -21,8 +22,8 @@
   }
 
 .headline {
+    max-height: auto;
     font-family: 'Junge', serif;
-    width: auto;
     text-align: center;
     #headlineTitulo1 {
         font-size: 2.5vw;
@@ -39,88 +40,95 @@
 }
 .destaques{
     font-family: 'Junge', serif;
-    max-width: auto;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     display: flex;
     flex-direction: column;
     gap: 1vh;
     
 }
 .carrosselDeDestaques {
-    max-width: auto;
     background-image: url(/public/assets/placeholder.png);
     width: 42vw;
     height: 40vh;
     border: 1px solid white;
 }
 
-/*
+/* Conteído e Últimos Posts */
 .conteudo {
-    background-image: url(/public/assets/backgroundMitologia2.jpg);
+    background-image: url(/public/assets/backgroundMitologia2Escuro.jpg);
     background-size: cover;
     background-position: center;
     border: 2px solid rgb(255, 251, 0);
+    box-shadow: inset 0vw 2vw 1vw rgba(0, 0, 0, 0.2);
+
     text-align: left;
+    padding: 4% 5%;
 }
 
 .ultimosPosts {
     display: flex;
-    flex-direction:column;  
+    flex-direction: column;  
     text-align: left; 
-    width:fit-content;
-
+    width: fit-content;
+    gap: 1vh;
     .tituloUltimosPosts {
-        font-size: 1.5em;
+        font-size: 2vw;
     }
 }
 
 .posts {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5vw;
 }
 
 .postGrande 
 {
+    font-family: "Jost", sans-serif;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
     #pgImg {
         background-image: url(/public/assets/placeholder.png);
-        width: 45vw;
-        height: 61vh;
+        width: 50vw;
+        height: 45vh;
         border: 1px solid white;
     }
     
     #pgTitulo {
-        font-size: 1.8em;
+        font-size: 2vw;
     }
 }
 
 .postsPequenos {
+    font-family: "Jost", sans-serif;
     display: flex;
     flex-direction: column;
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.5vw;
     max-width: 100%;
+    gap: 2vh;
     
     .pp1, .pp2, .pp3, .pp4 {
-        width: 35vw;
         display: flex;
         flex-direction: row;
+        gap: 0.5vw;
     }
 
     #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
         background-image: url(/public/assets/placeholder.png);
-        width: 10vw;
-        height: 15vh;
+        width: 12vw;
+        height: 12vh;
         border: 1px solid white;
     }
 
     #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
-        width: fill;
+        width: 75%
     }
 }
-*/
+
 
 
 
