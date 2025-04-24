@@ -22,7 +22,6 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    overflow-y: auto;
 }
 
 
@@ -39,9 +38,9 @@ body{
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    height: auto;
-    margin-top: 600px;
+    height: 90%;
     margin-bottom: 10px;
+    overflow-y: auto;
 }
 
 
@@ -92,7 +91,6 @@ body{
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     font-family: "Junge",  'cursive';
     font-weight: 100; 
     letter-spacing: 0.05rem; 
@@ -130,6 +128,7 @@ body{
     font-weight: 500;
     font-family: "Junge",  'cursive';
     line-height: 60px;
+
 }
 
 .background .container .post .conteudo-do-post{
@@ -146,19 +145,18 @@ body{
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.background .container .conteudo-do-post span{
+.background .container .conteudo-do-post .topicos span{
     font-size: 1.2rem;
     font-weight: 400;
+    align-items: justify;
     text-align: justify;
-    justify-content: center;
     line-height: 1.8rem;
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.background .container .conteudo-do-post .fonte{
+.background .container .conteudo-do-post .topicos #fonte{
     display: flex;
-    font-size: 1rem;
-    font-weight: 200;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
@@ -211,12 +209,17 @@ body{
     }
 
     .background .container .cabecalho .origem button{
-        font-size: 12;
+        font-size: 15px;
     }
 
-    .background .container .post{
-        padding: 0 1rem;
+    .cabecalho .usuario img{
+        width: 3rem;
+        height: 3rem;
     }
+
+    .cabecalho .usuario .nome-do-usuario{
+        font-size: 15px;}
+
 
     .background .container .post h5{
         font-size: 1.5rem;
