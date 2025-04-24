@@ -1,6 +1,9 @@
 html{
     font-size: calc(70% + 0.8vmin);
 }
+body{
+    font-family: 'Jost',sans-serif;
+}
 
 *{
     margin: 0;
@@ -24,19 +27,22 @@ main{
     justify-content: space-between;
     align-items: center;
     padding: 6%;
-    gap: 12%;
+    gap: 6%;
     background-color: #F1FDF1;
     opacity: 60%;
 }
 .login-card-conteudo{
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 3%;
-
+    gap: 2rem;
 }
 .campo{
     display: flex;
     flex-direction: column;
+}
+.input-texto{
+    width: 200%;
 }
 .botao{
     display: flex;

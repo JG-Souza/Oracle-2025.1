@@ -1,6 +1,10 @@
 html{
     font-size: calc(70% + 0.8vmin);
 }
+body{
+    font-family: 'Jost',sans-serif;
+    background-image: url(/public/assets/fundo2.jpg);
+}
 
 *{
     margin: 0;
@@ -49,8 +53,5 @@ main{
     display: flex;
     flex-direction: column;
     background-color: #A84B3A;
-}
-body{
-    background-image: url(/public/assets/fundo2.jpg);
 }
 
