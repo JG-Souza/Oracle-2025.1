@@ -115,6 +115,8 @@ body{
     align-items: center;
     gap: 3rem;
     padding: 2rem;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .icaro{
@@ -260,9 +262,39 @@ body{
         height: 1.5rem;
     }
 
+    .icaro{
+        width: 100%;
+        height: 100%;
+    }
     
 
 }
 
+@media only screen and (max-width: 500px){
+
+    .origem #botao{
+        font-size: auto;
+    }
+
+
+    .background .container .cabecalho .usuario{
+        margin-right: 10px;
+    }
+
+    .background .container{
+        padding-left: 0;
+        padding-right: 0;
+    };
+
+
+    .background .container .cabecalho{
+        border-bottom: 0.01rem solid black;
+    }
+
+}
+
+@media only screen and (max-width: 350px){
+
+}
 
 
