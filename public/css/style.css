@@ -10,7 +10,6 @@
     background-image: url(/public/assets/backgroundMitologia1.jpg);
     background-size: cover;
     background-position: center;
-    border: 2px solid red;
     text-align: left;
     height: fit-content;
 
@@ -38,27 +37,26 @@
         font-size: 1.5vw;
     }
 }
+
 .destaques{
     font-family: 'Junge', serif;
     font-size: 1.5vw;
     display: flex;
     flex-direction: column;
     gap: 1vh;
-    
 }
+
 .carrosselDeDestaques {
     background-image: url(/public/assets/placeholder.png);
     width: 42vw;
     height: 40vh;
-    border: 1px solid white;
 }
 
-/* Conteído e Últimos Posts */
+/* Conteúdo e Últimos Posts */
 .conteudo {
     background-image: url(/public/assets/backgroundMitologia2Escuro.jpg);
     background-size: cover;
     background-position: center;
-    border: 2px solid rgb(255, 251, 0);
     box-shadow: inset 0vw 2vw 1vw rgba(0, 0, 0, 0.2);
 
     text-align: left;
@@ -94,7 +92,6 @@
         background-image: url(/public/assets/placeholder.png);
         width: 50vw;
         height: 45vh;
-        border: 1px solid white;
     }
     
     #pgTitulo {
@@ -121,7 +118,6 @@
         background-image: url(/public/assets/placeholder.png);
         width: 12vw;
         height: 12vh;
-        border: 1px solid white;
     }
 
     #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
@@ -129,7 +125,100 @@
     }
 }
 
+/* VERSÃO PARA CELULAR */
+@media (max-width: 768px) {  
 
+    /* Hero Section */
+    .heroSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
+        padding: 20% 15%;
+        gap: 10vh;
+    }
+
+    .headline {
+        #headlineTitulo1 {
+            font-size: 7vw;
+        }
+        #headlineTitulo2 {
+            font-size: 12.5vw;
+        }
+        #headlineTitulo3 {
+            font-size: 13.5vw;
+        }
+        #headlineTitulo4 {
+            font-size: 4vw;
+        }
+    }
+
+    .destaques{
+        font-size: 4vw;   
+        gap: 0.5vh;
+    }
+
+    .carrosselDeDestaques {
+        width: 85vw;
+        height: 25vh;
+    }
+    
+    /* Conteúdo e Últimos Posts */
+    .conteudo {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10% 15%;
+        box-shadow: inset 0vw 4vw 2vw rgba(0, 0, 0, 0.2);
+    }
+    
+    .ultimosPosts {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .tituloUltimosPosts {
+            font-size: 4vw;
+        }
+    }
+
+    .posts {
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .postGrande {
+        text-align: left;
+        #pgImg {
+            width: 85vw;
+            height: 25vh;
+        }
+        
+        #pgTitulo {
+            font-size: 3.5vw;
+        }
+    }
+
+    .postsPequenos{
+        font-size: 3vw;
+        .pp1, .pp2, .pp3, .pp4 {
+            display: flex;
+            flex-direction: row;
+            gap: 2vw;
+        }
+    
+        #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
+            width: 50%;
+            height: 15vh;
+        }
+    
+        #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
+            width: 50%
+        }
+    }
+
+}
 
 
