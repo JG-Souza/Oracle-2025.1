@@ -38,7 +38,9 @@ body{
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    height: 90%;
+    margin-bottom: 10px;
+    overflow-y: auto;
 }
 
 
@@ -50,6 +52,8 @@ body{
     padding: 0 2rem;
     border-bottom: 0.1rem solid black;
     background-color: white;
+    padding-bottom: 20px;
+    
 
 }
 
@@ -87,7 +91,6 @@ body{
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     font-family: "Junge",  'cursive';
     font-weight: 100; 
     letter-spacing: 0.05rem; 
@@ -102,7 +105,6 @@ body{
     width: 100%;
     min-height: 80%;
     padding: 0 2rem;
-    overflow-y: auto;
     gap: 5rem;
  
 }
@@ -113,18 +115,22 @@ body{
     align-items: center;
     gap: 3rem;
     padding: 2rem;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.background .container .post .coracao .imagem img{
+.icaro{
     width: 30rem;
     height: 30rem;
     object-fit: cover;
 }
 
-.background .container .post .coracao .titulo h1{
+.titulo{
     font-size: 2.5rem;
     font-weight: 500;
     font-family: "Junge",  'cursive';
+    line-height: 60px;
+
 }
 
 .background .container .post .conteudo-do-post{
@@ -141,21 +147,150 @@ body{
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.background .container .conteudo-do-post span{
+.background .container .conteudo-do-post .topicos span{
+    display: flex;
     font-size: 1.2rem;
     font-weight: 400;
+    align-items: justify;
     text-align: justify;
-    justify-content: center;
     line-height: 1.8rem;
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.background .container .conteudo-do-post .fonte{
+.background .container .conteudo-do-post .topicos #fonte{
     display: flex;
-    font-size: 1rem;
-    font-weight: 200;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 1200px){
+    
+    .icaro{
+        width: 360px;
+        height: 360px;
+    }
 
+    .titulo{
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    .icaro{
+        width: 300px;
+        height: 300px;
+    }
+
+    .titulo{
+        font-size: 28px;
+    }
+
+}
+
+@media only screen and (max-width: 720px){ /* Versão Para celular */
+
+    .background{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .background .container{
+        margin-top: 140px;
+        margin-bottom: 10px;
+    }
+
+
+    .background .container .cabecalho{
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .background .container .cabecalho .usuario img{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .background .container .cabecalho .usuario h3{
+        font-size: 15px;
+    }
+
+    .origem #botao{
+        font-size: 15px;
+    }
+
+  
+
+    .background .container .post h5{
+        font-size: 1.5rem;
+    }
+
+    .background .container .post .conteudo-do-post span{
+        font-size: 1.2rem;
+    }
+
+    .coracao{
+        flex-direction: column;
+        column-gap: 10px;
+    }
+
+    .coracao img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .coracao .titulo{
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 550px){
+
+    .origem #botao{
+        font-size: 12px;
+    }
+
+    .background .container .cabecalho .usuario h3{
+        font-size: 12px;
+    }
+
+    .background .container .cabecalho .usuario img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .icaro{
+        width: 100%;
+        height: 100%;
+    }
+    
+
+}
+
+@media only screen and (max-width: 500px){
+
+    .origem #botao{
+        font-size: auto;
+    }
+
+
+    .background .container .cabecalho .usuario{
+        margin-right: 10px;
+    }
+
+    .background .container{
+        padding-left: 0;
+        padding-right: 0;
+    };
+
+
+    .background .container .cabecalho{
+        border-bottom: 0.01rem solid black;
+    }
+
+}
 
 
