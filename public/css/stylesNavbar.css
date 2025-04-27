@@ -43,6 +43,10 @@ header{
     header{
         flex-direction: column;
         padding: 1vh;
+        height: 16vh;
+    }
+    body{
+        margin-top: 16vh;
     }
 }
 
@@ -57,7 +61,7 @@ header{
 
 /*main de exemplo*/
 main{
-    margin-top: 12vh; /*permite Navbar ficar fixa no topo e evita overlay*/
+    margin-top: 12vh;/*permite Navbar ficar fixa no topo e evita overlay*/
     display: flex;
     flex-direction: column;
     background-color: #A84B3A;

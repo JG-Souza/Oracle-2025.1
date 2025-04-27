@@ -26,28 +26,59 @@ main{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 6%;
-    gap: 6%;
+    padding: 5%;
+    gap: 10%;
     background-color: #F1FDF1;
     opacity: 60%;
 }
+.login-card-logo{
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    object-fit: contain;
+}
 .login-card-conteudo{
-    font-size: 2rem;
+    width: 40%;
+    height: 100%;
+    font-size: 1.5rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 2rem;
 }
-.campo{
+.campo-text-input{
     display: flex;
+    height: 20%;
     flex-direction: column;
 }
 .input-texto{
-    width: 200%;
-    
+    height: 100%;
+    width: 100%;
+    background-color: #D8DBD4;
+    border-radius: 16px;
+    border: none;
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
 }
-.botao{
+.campo-botao{
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.botao{
+    font-size: 1rem;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #224220;
+    color: #F1FDF1;
+    display: inline-block;
+    border: none;
+    border-radius: 16px;
+}
+
 
