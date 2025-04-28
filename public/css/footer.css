@@ -50,6 +50,7 @@
   font-style: normal;
   text-decoration: none;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .footer .container .missao-visao-e-valores h3{
@@ -67,11 +68,6 @@
   color: #fff;
   background-color: #243f29;
   transition: 0.5s;
-  #missao,
-  #visao,
-  #valores{
-    display: flex;
-  }
 }
 
 .footer .container .logo img{
