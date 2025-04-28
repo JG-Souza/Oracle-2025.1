@@ -27,3 +27,23 @@ function mostrarValores(idTexto){
         texto.style.display = "none";
     }
 }
+
+$('.missaohover').on('mouseenter', function () {
+
+    $('#missao').stop(true, true).slideDown(300); // Exibe o texto suavemente
+}).on('mouseleave', function () {
+
+    $('#missao').stop(true, true).slideUp(300); // Oculta o texto suavemente
+});
+
+$('.visaohover').on('mouseenter', function () {
+    $('#visao').stop(true, true).slideDown(300);
+}).on('mouseleave', function () {
+    $('#visao').stop(true, true).slideUp(300);
+});
+
+$('.valoreshover').on('mouseenter', function () {
+    $('#valores').stop(true, true).slideDown(300);
+}).on('mouseleave', function () {
+    $('#valores').stop(true, true).slideUp(300);
+});

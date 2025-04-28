@@ -64,11 +64,7 @@
 
 }
 
-.footer .container .missao-visao-e-valores a:hover{
-  color: #fff;
-  background-color: #243f29;
-  transition: 0.5s;
-}
+
 
 .footer .container .logo img{
   width: 12.5rem;
@@ -139,4 +135,23 @@
   font-weight: 350;
   color: #fff;
   border-radius: 1rem;
+}
+
+.footer .container .missao-visao-e-valores a:hover{
+  color: #fff;
+  background-color: #243f29;
+  transition: 1s;
+}
+
+.footer .container .missao-visao-e-valores a:hover + #missao,
+.footer .container .missao-visao-e-valores a:hover + #visao,
+.footer .container .missao-visao-e-valores a:hover + #valores {
+  display: block;
+  .logo img{
+    display: none;
+  }
+}
+
+.missao-visao-e-valores span:hover{
+  display: block;
 }
