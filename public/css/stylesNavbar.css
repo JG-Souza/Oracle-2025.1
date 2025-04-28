@@ -28,10 +28,19 @@ header{
     font-weight: medium;
     backdrop-filter: blur(10px);
 }
+.navbar-botao{
+    display: none;
+}
 
+.navbar-cima{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .navbar-logo{
     display: flex;
-    
+    height: 10vh;
 }
 .navbar-links{
     display: flex;
@@ -42,11 +51,28 @@ header{
 @media screen and (max-width: 700px) {
     header{
         flex-direction: column;
+        gap: 10%;
+        justify-content: center;
         padding: 1vh;
         height: 16vh;
     }
     body{
         margin-top: 16vh;
+    }
+    .navbar-cima{
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .navbar-logo{
+        height: fit-content;
+    }
+    .navbar-botao{
+        display: block;
+    }
+    #letreiro{
+        width: 100px;
+        height: 43px;
     }
 }
 
@@ -57,6 +83,15 @@ header{
 .navbar-links a{
     text-decoration: none;
     color: #D8DBD4;
+}
+/*Config simbolo de Menu*/
+.material-symbols-outlined {
+    height: 100%;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 /*main de exemplo*/
