@@ -48,6 +48,8 @@
 
 .carrosselDeDestaques {
     background-image: url(/public/assets/placeholder.png);
+    box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
+    display: table;
     width: 42vw;
     height: 40vh;
 }
@@ -90,6 +92,7 @@
     gap: 1vh;
     #pgImg {
         background-image: url(/public/assets/placeholder.png);
+        box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
         width: 50vw;
         height: 45vh;
     }
@@ -116,6 +119,7 @@
 
     #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
         background-image: url(/public/assets/placeholder.png);
+        box-shadow: inset 0px 0px 25px rgba(0,0,20,1);
         width: 12vw;
         height: 12vh;
     }
