@@ -47,6 +47,7 @@ main{
     gap: 2rem;
 }
 .campo-text-input{
+    font-size: 100%;
     display: flex;
     height: 20%;
     flex-direction: column;
@@ -87,7 +88,7 @@ main{
         justify-content: center;
         align-items: center;
         height: min-content;
-        width: 40%;
+        width: 50%;
         padding: 5%;
         flex-direction: column;
         gap: 1%;
@@ -104,11 +105,13 @@ main{
         width: 80%;
         height: 60%;
     }
+    .input-texto{
+        font-size: 55%;
+    }
     .campo-botao{
         height: 15%;
     }
     .botao{
-        width: 30%;
+        width: 35%;
     }
 }
-
