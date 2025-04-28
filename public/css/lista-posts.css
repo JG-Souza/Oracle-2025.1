@@ -5,15 +5,15 @@
   }
   
   body {
-    background: url('images/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
+    background: url('/Oracle-Trainee-2025.1/public/assets/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
     font-family: Arial, sans-serif;
-    color: white;
   }
   
   .search-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-block: 20px;
   }
   
   .search-container input {
@@ -22,6 +22,7 @@
     border-radius: 20px 0 0 20px;
     border: none;
     outline: none;
+    background: #224220;
   }
   
   .search-button {
@@ -35,23 +36,29 @@
   
   .content {
     display: flex;
-    background: white;
+    background: #D8DBD4;
     color: black;
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 30px auto;
-    padding: 20px;
+    padding-inline: 95px;
+    padding-block: 20px;
     border: 2px solid #000;
     border-radius: 8px;
+    flex-direction: column;
   }
   
   .sidebar {
-    width: 200px;
+
+    display:flex;
+    flex-direction: row;
+    gap: 120px;
   }
   
-  .sidebar h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
   
   .creature-list {
@@ -77,6 +84,7 @@
   }
   
   .main-area {
+    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -84,17 +92,26 @@
     gap: 20px;
   }
   
+  .highlight {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .highlight text{
+    display: flex;
+    flex-direction: column;
+  }
   .highlight img {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: 500px;
+    max-height: 350px;
     object-fit: contain;
     border: 5px #224220;
     border-radius: 8px;
   }
   
   .highlight h2 {
-    text-align: center;
+    text-align: left;
     margin: 10px 0;
   }
   
