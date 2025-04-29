@@ -64,11 +64,20 @@
 
 }
 
-
+.footer .container .logo{
+  width: 12.5rem;
+  height: 12.5rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .footer .container .logo img{
   width: 12.5rem;
   height: 12.5rem;
+  transition: opacity 0.5s ease-in-out;
 }
 .footer .container .logo h1{
   font-size: 2rem;
@@ -124,18 +133,7 @@
   height: 1rem;
 }
 
-.footer .container .missao-visao-e-valores #missao,
-.footer .container .missao-visao-e-valores #visao,
-.footer .container .missao-visao-e-valores #valores{
-  display: none;
-  font-size: 1.0rem;
-  font-style: normal;
-  text-decoration: none;
-  text-align: justify;
-  font-weight: 350;
-  color: #fff;
-  border-radius: 1rem;
-}
+
 
 .footer .container .missao-visao-e-valores a:hover{
   color: #fff;
@@ -143,15 +141,27 @@
   transition: 1s;
 }
 
-.footer .container .missao-visao-e-valores a:hover + #missao,
-.footer .container .missao-visao-e-valores a:hover + #visao,
-.footer .container .missao-visao-e-valores a:hover + #valores {
-  display: block;
-  .logo img{
-    display: none;
-  }
+.logo span{
+  visibility: hidden;
+  opacity: 0;
+  font-size: 0.9rem;
+  font-style: normal;
+  text-decoration: none;
+  text-align: justify;
+  font-weight: 350;
+  margin-top: 1rem;
+
 }
 
-.missao-visao-e-valores span:hover{
-  display: block;
+.footer .container .logo:hover img{
+  opacity: 0.5;
 }
+
+.logo img,
+.logo span{
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+}
+
