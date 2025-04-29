@@ -6,7 +6,7 @@
   
   body {
     background: url('/Oracle-Trainee-2025.1/public/assets/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
-    font-family: Arial, sans-serif;
+    font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .search-container {
@@ -59,6 +59,7 @@
     font-size: 32px;
     margin-bottom: 20px;
     gap: 15px;
+    font-family: "Junge", 'cursive';
   }
   
   .creature-list {
@@ -66,17 +67,30 @@
   }
   
   .creature-list li {
+    width: 150px; /* ou o tamanho que você quiser, igual ao espaço da imagem */
+    height: 180px; /* altura fixa para o conteúdo */
     display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 14px;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* esconde o que passar da caixa */
+    position: relative;
   }
   
+  .creature-list li span {
+    padding: 5px;
+    word-break: break-word; /* quebra palavras grandes */
+    overflow: hidden; /* corta o excesso */
+    text-overflow: ellipsis; /* adiciona "..." se passar */
+    display: block;
+    max-height: 100%; /* para não crescer além do item */
+  }
+  
+  
   .creature-list img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     margin-right: 10px;
     border-radius: 5px;
@@ -87,9 +101,8 @@
     width: 100%;
     flex: 1;
     display: flex;
-    flex-direction: column;
     padding-left: 20px;
-    gap: 20px;
+    align-items: center;
   }
   
   .highlight {
@@ -97,27 +110,42 @@
     flex-direction: row;
   }
 
-  .highlight text{
+  .highlight .text{
     display: flex;
     flex-direction: column;
   }
   .highlight img {
     width: auto;
     height: auto;
-    max-height: 350px;
+    max-height: 450px;
     object-fit: contain;
     border: 5px #224220;
     border-radius: 8px;
   }
   
-  .highlight h2 {
-    text-align: left;
+  .creature-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    font-family: "Junge", 'cursive';
     margin: 10px 0;
+    margin-left: 15px;
+    text-align: left;
   }
   
+  .creature-button:hover {
+    color: #224220; /* muda a cor no hover pra mostrar que é clicável */
+    text-decoration: underline;
+  }
+  
+  
   .highlight p {
-    text-align: center;
+    text-align: left;
     line-height: 1.5;
+    margin-left: 15px;
+    font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .pagination {
