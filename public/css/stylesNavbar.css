@@ -46,6 +46,7 @@ header{
     display: flex;
     flex-direction: row;
     gap: 3.5rem;
+    transition:  1s ease;
 }
 
 @media screen and (max-width: 700px) {
@@ -68,11 +69,34 @@ header{
         height: fit-content;
     }
     .navbar-botao{
-        display: block;
+        display: flex;
+        height: fit-content;
+        width: auto;
     }
+    .navbar-links{
+        display: none;
+        pointer-events: none;
+    }
+    .navbar-links.active{
+        display: flex;
+        pointer-events: all;
+    }
+
     #letreiro{
         width: 100px;
         height: 43px;
+    }
+    /*.menu{
+        display: flex;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }*/
+    .menu{
+        display: flex;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
     }
 }
 
@@ -86,7 +110,6 @@ header{
 }
 /*Config simbolo de Menu*/
 .material-symbols-outlined {
-    height: 100%;
   font-variation-settings:
   'FILL' 0,
   'wght' 400,

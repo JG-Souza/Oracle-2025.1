@@ -30,6 +30,7 @@ main{
     gap: 10%;
     background-color: #F1FDF1;
     opacity: 60%;
+    border-radius: 12px;
 }
 .login-card-logo{
     align-items: center;
