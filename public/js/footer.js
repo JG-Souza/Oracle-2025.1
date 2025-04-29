@@ -28,22 +28,41 @@ function mostrarValores(idTexto){
     }
 }
 
-$('.missaohover').on('mouseenter', function () {
-
-    $('#missao').stop(true, true).slideDown(300); // Exibe o texto suavemente
-}).on('mouseleave', function () {
-
-    $('#missao').stop(true, true).slideUp(300); // Oculta o texto suavemente
-});
-
-$('.visaohover').on('mouseenter', function () {
-    $('#visao').stop(true, true).slideDown(300);
-}).on('mouseleave', function () {
-    $('#visao').stop(true, true).slideUp(300);
-});
-
-$('.valoreshover').on('mouseenter', function () {
-    $('#valores').stop(true, true).slideDown(300);
-}).on('mouseleave', function () {
-    $('#valores').stop(true, true).slideUp(300);
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.missao-visao-e-valores a');
+    const logoImg = document.querySelector('.logo img');
+    const spans = document.querySelectorAll('.logo span');
+  
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+    
+        logoImg.style.opacity = '0';
+        logoImg.style.visibility = 'hidden';
+  
+        spans.forEach(span => {
+          span.style.opacity = '0';
+          span.style.visibility = 'hidden';
+        });
+  
+        
+        const id = link.id.replace('-link', '');
+        const mostraTexto = document.getElementById(id);
+        if (mostraTexto) {
+            mostraTexto.style.opacity = '1';
+            mostraTexto.style.visibility = 'visible';
+        }
+      });
+  
+      link.addEventListener('mouseleave', () => {
+        
+        logoImg.style.opacity = '1';
+        logoImg.style.visibility = 'visible';
+  
+        
+        spans.forEach(span => {
+          span.style.opacity = '0';
+          span.style.visibility = 'hidden';
+        });
+      });
+    });
+  });
