@@ -165,3 +165,49 @@
   position: absolute;
 }
 
+@media only screen and (max-width: 1000px){
+  .direitos img{
+    scale: 0.8;
+  }
+
+  .logo img{
+    scale: 0.8;
+  }
+
+}
+
+@media only screen and (max-width: 800px){
+  .footer .container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .container .missao-visao-e-valores{
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .footer .container .redes-sociais{
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .footer .container .logo{
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 460px){
+
+  .direitos{
+    flex-direction: column-reverse;
+    align-items: center;
+
+  }
+
+  .direitos p{
+    scale: 0.8;
+  }
+  
+}
