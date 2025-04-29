@@ -67,33 +67,31 @@
   }
   
   .creature-list li {
-    width: 150px; /* ou o tamanho que você quiser, igual ao espaço da imagem */
-    height: 180px; /* altura fixa para o conteúdo */
+    width: 150px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* esconde o que passar da caixa */
+    overflow: hidden;
     position: relative;
   }
   
   .creature-list li span {
     padding: 5px;
-    word-break: break-word; /* quebra palavras grandes */
-    overflow: hidden; /* corta o excesso */
-    text-overflow: ellipsis; /* adiciona "..." se passar */
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: block;
-    max-height: 100%; /* para não crescer além do item */
+    max-height: 100%;
   }
-  
   
   .creature-list img {
     width: 120px;
     height: 120px;
     object-fit: cover;
-    margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 3px;
     display: block;
   }
   
@@ -136,10 +134,9 @@
   }
   
   .creature-button:hover {
-    color: #224220; /* muda a cor no hover pra mostrar que é clicável */
+    color: #224220;
     text-decoration: underline;
   }
-  
   
   .highlight p {
     text-align: left;
@@ -169,3 +166,64 @@
     border: 1px solid #224220;
   }
   
+  @media (max-width: 720px) {
+    .sidebar {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .main-area {
+      padding-left: 0;
+      justify-content: center;
+      order: -1;
+    }
+  
+    .highlight {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .highlight .text {
+      align-items: center;
+    }
+  
+    .creature-button {
+      text-align: center;
+      margin-left: 0;
+    }
+  
+    .highlight p {
+      margin-left: 0;
+      padding-inline: 10px;
+    }
+
+    .highlight img{
+      width: auto;
+      height: auto;
+      max-width: 250px;
+      max-height: 250px;
+    }
+  
+    .creature-list {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      padding: 25px;
+      max-width: 100%;
+      scrollbar-width: thin;
+    }
+  
+    .creature-list li {
+      min-width: 70px;
+      flex-shrink: 0;
+      height: auto;
+      border-radius: 2px;
+    }
+  
+    .creature-list img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+  }

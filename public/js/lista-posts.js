@@ -43,37 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgElement = item.querySelector('img');
       const nomeSpan = item.querySelector('.creature-name');
   
-      // Guarda o nome no data-nome corretamente
       item.dataset.nome = nomeSpan.textContent.trim();
   
-      // ---------- CLIQUE ----------
       item.addEventListener('click', () => {
         const nomeClicado = item.dataset.nome;
         const criaturaClicada = criaturas.find(c => c.nome === nomeClicado);
       
         if (criaturaClicada) {
-          // Salva a criatura atual em destaque
           const criaturaDestaqueAtual = {
             nome: destaqueNome.textContent.trim(),
             imagem: destaqueImg.src,
             descricao: destaqueTexto.textContent.trim()
           };
       
-          // Atualiza a área de destaque
           atualizarDestaque(criaturaClicada);
       
-          // Troca no item clicado pela criatura que estava em destaque
           imgElement.src = criaturaDestaqueAtual.imagem;
           imgElement.alt = criaturaDestaqueAtual.nome;
       
-          // ATUALIZA o nome visível e o dataset corretamente
           nomeSpan.textContent = criaturaDestaqueAtual.nome;
           item.dataset.nome = criaturaDestaqueAtual.nome;
         }
       });
       
   
-      // ---------- HOVER ----------
       item.addEventListener('mouseover', () => {
         const criatura = criaturas.find(c => c.nome === item.dataset.nome);
         if (criatura) {
@@ -83,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
   
-      // ---------- SAÍDA DO MOUSE ----------
       item.addEventListener('mouseout', () => {
         imgElement.style.display = 'block';
         if (item.dataset.originalText) {
@@ -95,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // ---------- BUSCA ----------
     searchInput.addEventListener('input', () => {
       const termo = searchInput.value.trim().toLowerCase();
       creatureItems.forEach(item => {
