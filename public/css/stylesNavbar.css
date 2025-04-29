@@ -86,12 +86,6 @@ header{
         width: 100px;
         height: 43px;
     }
-    /*.menu{
-        display: flex;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }*/
     .menu{
         display: flex;
         background-color: transparent;
