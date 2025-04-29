@@ -91,7 +91,7 @@
     width: 120px;
     height: 120px;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 0px;
     display: block;
   }
   
@@ -118,7 +118,7 @@
     max-height: 450px;
     object-fit: contain;
     border: 5px #224220;
-    border-radius: 8px;
+    border-radius: 0px;
   }
   
   .creature-button {
