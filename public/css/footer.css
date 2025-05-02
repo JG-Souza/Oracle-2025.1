@@ -141,27 +141,15 @@
   transition: 1s;
 }
 
-.logo span{
-  visibility: hidden;
-  opacity: 0;
-  font-size: 0.9rem;
-  font-style: normal;
-  text-decoration: none;
-  text-align: justify;
-  font-weight: 350;
-  margin-top: 1rem;
-
+.footer .container .missao-visao-e-valores a:hover + #missao,
+.footer .container .missao-visao-e-valores a:hover + #visao,
+.footer .container .missao-visao-e-valores a:hover + #valores {
+  display: block;
+  .logo img{
+    display: none;
+  }
 }
 
-.footer .container .logo:hover img{
-  opacity: 0.5;
+.missao-visao-e-valores span:hover{
+  display: block;
 }
-
-.logo img,
-.logo span{
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-}
-
