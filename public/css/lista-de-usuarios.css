@@ -1,0 +1,106 @@
+:root{
+    --cor-primaria: #224220;
+    --cor-secundaria: #fff;
+    --cor-terciaria: #000;
+    --cor-quaternaria: #152518;
+    --cor-quinta: #e0e0e0;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    color: white;
+    gap: 2rem;
+    padding-top: 2rem;
+    overflow-y: auto;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.tabela-usuarios{
+    padding: 0 2rem;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.cabecalho-tabela{
+    background-color: var(--cor-primaria);
+    height: 3%;
+}
+
+.usuario td{
+    background-color: rgba(23, 27, 22, 0.8);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    height: 3%;
+}
+
+.usuario:hover{
+    background-color: var(--cor-quaternaria);
+    cursor: default;
+}
+
+.cabecalho button{
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-pagina{
+    padding: 0.3rem 0.3rem;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.numero-pagina{
+    padding: 0%;
+    margin-bottom: 200px;
+    background: none;
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
