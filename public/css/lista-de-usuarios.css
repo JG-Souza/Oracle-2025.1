@@ -83,6 +83,7 @@ body{
     background-color:#305c2d;
 }
 
+
 .btn-pagina{
     padding: 0.3rem 0.3rem;
     background: none;
@@ -91,6 +92,8 @@ body{
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .numero-pagina{
@@ -103,6 +106,8 @@ body{
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
 }
 
 .btn-visualizar,
@@ -133,6 +138,7 @@ body{
     left: 0;
     z-index: 9999;
     backdrop-filter: blur(2px);
+    display: none;
 }
 
 .modal-container{
