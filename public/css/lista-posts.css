@@ -5,7 +5,7 @@
   }
   
   body {
-    background: url('/public/assets/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
+    background: url('/Oracle-Trainee-2025.1/public/assets/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
     font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
@@ -14,6 +14,7 @@
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
+    width: 87%;
   }
 
   .search-container {
@@ -52,10 +53,10 @@
     padding-inline: 95px;
     padding-block: 20px;
     flex-direction: column;
+    align-items: center;
   }
   
   .sidebar {
-
     display:flex;
     flex-direction: row;
     gap: 120px;
@@ -81,19 +82,18 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden;
+    text-overflow: ellipsis;
     position: relative;
     color: #000;
-    background: #F1FDF1;
   }
   
   .creature-list li span {
     padding: 5px;
     word-break: break-word;
-    overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     max-height: 100%;
+    color: #F1FDF1;
   }
   
   .creature-list img {
@@ -123,7 +123,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
   }
+
   .highlight img {
     width: auto;
     height: auto;
@@ -157,26 +159,34 @@
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  .paginacao {
+    padding-top: 20px;
   }
-  
-  .pagination button {
+
+  .btn-pagina {
+    padding: 0.3rem 0.3rem;
     background: none;
-    border: 1px solid #224220;
-    padding: 5px 10px;
-    margin: 0 3px;
-    cursor: pointer;
-    border-radius: 2px;
     color: #F1FDF1;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
-  
-  .pagination .active {
-    background: #224220;
-    color: white;
-    border: 1px solid #224220;
+
+  .numero-pagina {
+    padding: 0%;
+    margin-bottom: 200px;
+    background: none;
+    color: #F1FDF1;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
   }
   
   @media (max-width: 720px) {
