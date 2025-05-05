@@ -133,10 +133,10 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
+    position:  fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 2;
     backdrop-filter: blur(2px);
     display: none;
 }
@@ -144,18 +144,18 @@ body{
 .modal-container{
     background-color: var(--cor-quaternaria);
     width: 50%;
-    height: 50%;
     border-radius: 10px;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 .modal-header{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
@@ -166,15 +166,6 @@ body{
     padding-left: 29px;
 }
 
-.modal-header button{
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
 
 .form-usuario{
     display: flex;
