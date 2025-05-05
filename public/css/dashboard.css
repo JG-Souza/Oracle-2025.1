@@ -60,3 +60,21 @@ body {
 #logout:hover {
     background-color: #31692a;
 }
+
+/* Porte para CELULAR*/
+@media (max-width: 768px) {
+    .imagem-admin {
+        width: 15vw;
+        height: 15vw;
+    }
+    .nome-admin {
+        font-size: 3vw;
+    }
+    #b1, #b2, #b3 {
+        font-size: 3vw;
+        height: 5vh;
+    }
+    #logout {
+        font-size: 3vw;
+    }
+}
