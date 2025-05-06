@@ -2,27 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const criaturas = [
       {
         nome: "FÊNIX",
-        imagem: "/public/assets/Gemini_Generated_Image_q9pb7sq9pb7sq9pb.jpg",
+        imagem: "/Oracle-Trainee-2025.1/public/assets/Gemini_Generated_Image_q9pb7sq9pb7sq9pb.jpg",
         descricao: "A Fênix é uma criatura mítica que renasce das cinzas, simbolizando a imortalidade e renovação."
       },
       {
         nome: "MEDUSA",
-        imagem: "/public/assets/Gemini_Generated_Image_xtn1juxtn1juxtn1.jpg",
+        imagem: "/Oracle-Trainee-2025.1/public/assets/Gemini_Generated_Image_xtn1juxtn1juxtn1.jpg",
         descricao: "Medusa era uma górgona da mitologia grega com serpentes no lugar dos cabelos e olhar que petrificava."
       },
       {
         nome: "CURUPIRA",
-        imagem: "/public/assets/WhatsApp Image 2025-03-25 at 15.23.49 copy.jpeg",
+        imagem: "/Oracle-Trainee-2025.1/public/assets/WhatsApp Image 2025-03-25 at 15.23.49 copy.jpeg",
         descricao: "O Curupira é uma criatura do folclore brasileiro, conhecido por seus pés virados para trás e proteção das florestas."
       },
       {
         nome: "QUIMERA",
-        imagem: "/public/assets/Gemini_Generated_Image_tj2jwtj2jwtj2jwt.jpg",
+        imagem: "/Oracle-Trainee-2025.1/public/assets/Gemini_Generated_Image_tj2jwtj2jwtj2jwt.jpg",
         descricao: "Quimera é um monstro mitológico com partes de leão, cabra e serpente, símbolo de perigo e caos."
       },
       {
         nome: "MINOTAURO",
-        imagem: "/public/assets/Gemini_Generated_Image_phpd13phpd13phpd.jpg",
+        imagem: "/Oracle-Trainee-2025.1/public/assets/Gemini_Generated_Image_phpd13phpd13phpd.jpg",
         descricao: "O Minotauro era um ser com corpo de homem e cabeça de touro, habitante do labirinto de Creta."
       }
     ];
@@ -72,7 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (criatura) {
           imgElement.style.display = 'none';
           item.dataset.originalText = nomeSpan.textContent;
-          nomeSpan.textContent = criatura.descricao;
+      
+          // Mostrar apenas prévia
+          let preview = criatura.descricao;
+        if (preview.length > 60) {
+          const corte = preview.slice(0, 60);
+          const ultimoEspaco = corte.lastIndexOf(' ');
+          preview = corte.slice(0, ultimoEspaco) + '...';
+        }
+        nomeSpan.textContent = preview;
         }
       });
   
