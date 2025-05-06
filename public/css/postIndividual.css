@@ -66,13 +66,13 @@ body{
 
 
 .background .container .cabecalho .usuario img{
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     object-fit: cover;
 }
 
 .background .container .cabecalho .usuario h3{
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
     font-family: 'Junge',  'cursive';
 }
@@ -188,7 +188,7 @@ body{
 
 }
 
-@media only screen and (max-width: 720px){ /* Versão Para celular */
+@media only screen and (max-width: 768px){ /* Versão Para celular */
 
     .background{
         width: 100%;
@@ -290,6 +290,15 @@ body{
     .background .container .cabecalho{
         border-bottom: 0.01rem solid black;
     }
+
+    .background .container{
+        width: 95%;
+    }
+
+    .background .container .cabecalho{
+        padding: 0.5rem 0.5rem;
+    }
+    
 
 }
 
