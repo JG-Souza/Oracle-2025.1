@@ -88,15 +88,15 @@ main{
     .login-card{
         justify-content: center;
         align-items: center;
-        height: min-content;
-        width: 50%;
+        height: 50%;
+        width: 60%;
         padding: 5%;
         flex-direction: column;
-        gap: 1%;
+        gap: 10%;
     }
     .login-card-logo{
         padding: 0;
-        width: 60%;
+        width: 80%;
         height: auto;
     }
     .login-card-conteudo{
