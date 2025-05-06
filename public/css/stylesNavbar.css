@@ -30,8 +30,17 @@ header{
 }
 .navbar-botao{
     display: none;
+    cursor: pointer;
 }
-
+.barra{
+    display: block;
+    width: 100%;
+    height: 20%;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #D8DBD4;
+}
 .navbar-cima{
     display: flex;
     flex-direction: row;
@@ -55,10 +64,16 @@ header{
         gap: 10%;
         justify-content: center;
         padding: 1vh;
-        height: 16vh;
+        height: 12vh;
+    }
+    header.active{
+        height: 25vh;
     }
     body{
-        margin-top: 16vh;
+        margin-top: 12vh;
+    }
+    body.active{
+        margin-top: 25vh;
     }
     .navbar-cima{
         width: 100%;
@@ -69,28 +84,25 @@ header{
         height: fit-content;
     }
     .navbar-botao{
-        display: flex;
-        height: fit-content;
-        width: auto;
+        display: block;
+        width: 8%;
+        height: 50%;
     }
+
     .navbar-links{
         display: none;
         pointer-events: none;
     }
     .navbar-links.active{
+        gap: 1.5rem;
         display: flex;
         pointer-events: all;
+        flex-direction: column;
     }
 
     #letreiro{
         width: 100px;
         height: 43px;
-    }
-    .menu{
-        display: flex;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
     }
 }
 
