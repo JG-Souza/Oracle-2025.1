@@ -67,11 +67,11 @@
   
   
   .content h2 {
-    background-color: rgba(34, 66, 32, 0.6); /* verde escuro translúcido */
+    background-color: rgba(34, 66, 32, 0.6); 
     padding: 6px 12px;
     border-radius: 5px;
     color: #F1FDF1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra mais leve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     display: inline-block;
     font-size: 32px;
     font-family: "Junge", 'cursive';
