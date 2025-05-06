@@ -3,78 +3,72 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-.barra-de-navegacao {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 100vh;
-    background-color:#224220;
-}
-
-.imagem-admin {
-    max-width: 100%;
-    width: 10vw;
-    height: 10vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3vh;
-    border-radius: 50%;
-    background-image: url("/public/assets/icon.png");
+    background-image: url("/public/assets/background.png");
     background-size: cover;
     background-position: center;
 }
 
-.nome-admin {
-    font-size: 1.5vw;
-    color: white;
-    width: 100%;
+.secao {
+    height: 100vh;
+    display: flex;
+    flex-direction:row;
     text-align: center;
     justify-content: center;
-    margin-bottom: 3vh;
+    align-items: center;
+    gap: 3vw;
 }
 
-#b1, #b2, #b3 {
+.pagina-de-posts, .pagina-de-usuarios, .logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    width: 12vw;
+    height: 12vw;
     color: white;
-    background-color: #224220;
+    background-color: #31692a;
     border: none;
-    font-size: 1.2vw;
-    height: 7vh;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+
+    #icone-posts {
+        filter: brightness(70%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    #icone-usuarios {
+        filter: brightness(150%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    #icone-logout {
+        filter: brightness(150%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    
 }
 
-#b1:hover, #b2:hover, #b3:hover {
+.pagina-de-posts:hover, .pagina-de-usuarios:hover, .logout:hover {
+    transform: scale(1.1);
     background-color: #31692a;
 }
 
-#logout {
-    margin-top: auto;
-    margin-bottom: 3vh;
-    color: white;
-    background-color: #224220;
-    border: none;
-    font-size: 1.2vw;
-    height: 7vh;
-}
-
-#logout:hover {
-    background-color: #31692a;
+.pagina-de-posts:active, .pagina-de-usuarios:active, .logout:active {
+    transform: scale(0.95);
+    background-color: #264a22;
 }
 
 /* Porte para CELULAR*/
 @media (max-width: 768px) {
-    .imagem-admin {
-        width: 15vw;
-        height: 15vw;
+    .secao {
+        flex-direction: column;
     }
-    .nome-admin {
-        font-size: 3vw;
-    }
-    #b1, #b2, #b3 {
-        font-size: 3vw;
-        height: 5vh;
-    }
-    #logout {
-        font-size: 3vw;
+    .pagina-de-posts, .pagina-de-usuarios, .logout {
+        font-size: 5vw;
+        width: 35vw;
+        height: 35vw;
     }
 }
