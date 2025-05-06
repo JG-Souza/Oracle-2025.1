@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
           imgElement.style.display = 'none';
           item.dataset.originalText = nomeSpan.textContent;
       
-          // Mostrar apenas prévia
           let preview = criatura.descricao;
         if (preview.length > 60) {
           const corte = preview.slice(0, 60);
