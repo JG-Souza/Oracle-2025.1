@@ -53,11 +53,13 @@
     position: relative;
     margin: auto;
     overflow: hidden;
+    background-image: url(/public/assets/placeholder.png);
     box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
     width: 35vw;
     height: 40vh;
-
+    
     /*Slides do Carrossel*/
+    /*
     .slides {
         display: flex;
         max-width: 100%;
@@ -71,8 +73,9 @@
         min-width: 100%;
         display: none;
     }
-
+    */
     /*Botoes do Carrossel*/
+    /*
     .anterior, .proximo {
         position: absolute;
         top: 50%;
@@ -88,7 +91,7 @@
     {
         margin-left: 33.7vw;
     }
-    
+    */
 }
 
 /* Conteúdo e Últimos Posts */
