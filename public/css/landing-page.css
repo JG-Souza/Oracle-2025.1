@@ -50,7 +50,7 @@
     background-image: url(/public/assets/placeholder.png);
     box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
     display: table;
-    width: 42vw;
+    width: 35vw;
     height: 40vh;
 }
 
@@ -93,8 +93,8 @@
     #pgImg {
         background-image: url(/public/assets/placeholder.png);
         box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
-        width: 50vw;
-        height: 45vh;
+        width: 40vw;
+        height: 50vh;
     }
     
     #pgTitulo {
@@ -120,12 +120,12 @@
     #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
         background-image: url(/public/assets/placeholder.png);
         box-shadow: inset 0px 0px 25px rgba(0,0,20,1);
-        width: 12vw;
-        height: 12vh;
+        width: 20%;
+        height: 13vh;
     }
 
     #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
-        width: 75%
+        width: 80%
     }
 }
 
@@ -224,5 +224,4 @@
     }
 
 }
-
 
