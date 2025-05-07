@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital...&family=Junge&display=optional" rel="stylesheet">
 </head>
 <body>
-    <section class="heroSection">
+    <section class="hero-section">
+        <!-- TEXTO DA HEADLINE-->
         <div class="headline">
             <h2 id="headlineTitulo1">O ORACLE REVELA</h2>
             <h2 id="headlineTitulo2">TUDO SOBRE</h2>
@@ -19,21 +20,57 @@
         </div>
         <div class="destaques">
             <h3>DESTAQUES</h3>
+            <!-- SLIDES / CARROSSEL -->
             <div class="carrosselDeDestaques">
-                <!-- <button class="anterior">A</button>
                 <div class="slides">
-                    <img src="/public/assets/imgslide1.png" class="slide-ativo"/>
-                    <img src="/public/assets/imgslide2.png" class="slide"/>
-                    <img src="/public/assets/imgslide3.png" class="slide"/>
-                    <img src="/public/assets/imgslide4.png" class="slide"/>
-                    <img src="/public/assets/imgslide5.png" class="slide"/>
+                    <!-- Botoes Radio -->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <input type="radio" name="radio-btn" id="radio5">
+                    <!---->
+                    <!-- Slides -->
+                    <div class="ativo"> 
+                        <img src="/public/assets/imgslide1.png" alt="">
+                    </div> 
+                    <div class="slide">
+                        <img src="/public/assets/imgslide2.png" alt="">
+                    </div>
+                    <div class="slide"> 
+                        <img src="/public/assets/imgslide3.png" alt="">
+                    </div>
+                    <div class="slide"> 
+                        <img src="/public/assets/imgslide4.png" alt="">
+                    </div>
+                    <div class="slide"> 
+                        <img src="/public/assets/imgslide5.png" alt="">
+                    </div>
+                    <!---->
+                    <!-- Botão de Navegação -->
+                    <div class="navegacao-auto">
+                        <div class="btn-auto1"></div>
+                        <div class="btn-auto2"></div>
+                        <div class="btn-auto3"></div>
+                        <div class="btn-auto4"></div>
+                        <div class="btn-auto5"></div>
+                    </div>
+                    <!---->
                 </div>
-                <button class="proximo">P</button> -->
+                <!-- Fim da div Slides -->
+                <!-- Label dos botoes -->
+                <div class="navegacao-manual">
+                    <label for="radio1" class="btn-manual"></label>
+                    <label for="radio2" class="btn-manual"></label>
+                    <label for="radio3" class="btn-manual"></label>
+                    <label for="radio4" class="btn-manual"></label>
+                    <label for="radio5" class="btn-manual"></label>
+                </div>
             </div>
         </div>
     </section>
-    
-    
+
+    <!--CONTEÚDO-->
     <main class="conteudo">
         <section class="ultimosPosts">
             <h3 class="tituloUltimosPosts">ÚLTIMOS POSTS</h3>
@@ -63,5 +100,8 @@
             </section>
         </section>
     </main>
+
+    <!-- SCRIPT -->
+    <script src="/public/js/landing-page.js"></script>
 </body>
 </html>

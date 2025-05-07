@@ -6,7 +6,7 @@
 }
 
 /* Hero Section*/
-.heroSection {
+.hero-section {
     background-image: url(/public/assets/backgroundMitologia1.jpg);
     background-size: cover;
     background-position: center;
@@ -56,50 +56,110 @@
 }
 
 /*CARROSSEL*/
+/* personalizacao dos slides */
 .carrosselDeDestaques {
-    position: relative;
-    margin: auto;
+    margin: 0 auto;
     overflow: hidden;
-    background-image: url(/public/assets/placeholder.png);
-    box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
     width: 35vw;
     height: 40vh;
-    
-    /*Slides do Carrossel*/
-    /*
-    .slides {
-        display: flex;
-        max-width: 100%;
-        max-height: 100%;
-        transition: transform 0.5s ease-in-out;
-    }
-    .slide-ativo {
-        display: block;
-    }
-    .slide {
-        min-width: 100%;
-        display: none;
-    }
-    */
-    /*Botoes do Carrossel*/
-    /*
-    .anterior, .proximo {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0,0,0,0.4);
-        color: white;
-        border: none;
-        font-size: 2vw;
-        cursor: pointer;
-        z-index: 1;
-    }
-    .proximo
-    {
-        margin-left: 33.7vw;
-    }
-    */
+    box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
 }
+.slides {
+    width: 400%;
+    height: 40vh;
+    display: flex;
+}
+.slides input {
+    display: none;
+}
+.slide, .ativo {
+    width: 25%;
+    position: relative;
+}
+.slide img {
+    width: 35vw;
+}
+
+/* navegacao manual */
+.navegacao-manual {
+    position: absolute;
+    width: 35vw;
+    margin-top: -2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-manual {
+    border: 0.10vw solid white;
+    padding: 0.35vw;
+    border-radius: 2vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn-manual:not(:last-child) {
+    margin-right: 1vw;
+}
+.btn-manual:hover {
+    background-color: white;
+}
+
+/* navegacao auto */
+.navegacao-auto div {
+    border: 0.10vw solid white;
+    padding: 0.35vw;
+    border-radius: 2vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.navegacao-auto {
+    position: absolute;
+    width: 35vw;
+    margin-top: 18.62vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navegacao-auto div:not(:last-child) {
+    margin-right: 1vw;
+}
+
+/* interacao dos inputs */
+#radio1:checked ~ .ativo{
+    transition: 0.5s;
+    margin-left: 0;
+}
+#radio2:checked ~ .ativo{
+    transition: 0.5s;
+    margin-left: -25%;
+}
+#radio3:checked ~ .ativo{
+    transition: 0.5s;
+    margin-left: -50%;
+}
+#radio4:checked ~ .ativo{
+    transition: 0.5s;
+    margin-left: -75%;
+}
+#radio5:checked ~ .ativo{
+    transition: 0.5s;
+    margin-left: -100%;
+}
+#radio1:checked ~ .navegacao-auto .btn-auto1{
+    background-color: white;
+}
+#radio2:checked ~ .navegacao-auto .btn-auto2{
+    background-color: white;
+}
+#radio3:checked ~ .navegacao-auto .btn-auto3{
+    background-color: white;
+}
+#radio4:checked ~ .navegacao-auto .btn-auto4{
+    background-color: white;
+}
+#radio5:checked ~ .navegacao-auto .btn-auto5{
+    background-color: white;
+}
+
 
 /* Conteúdo e Últimos Posts */
 .conteudo {
@@ -180,7 +240,7 @@
 @media (max-width: 768px) {  
 
     /* Hero Section */
-    .heroSection {
+    .hero-section {
         display: flex;
         justify-content: center;
         align-items: center;
