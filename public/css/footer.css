@@ -207,9 +207,10 @@
     width: 100%;
     padding: 0.5rem;
   }
+
 }
 
-@media only screen and (max-width: 510px){
+@media only screen and (max-width: 540px){
   .footer .container{
     flex-direction: column;
     align-items: center;
