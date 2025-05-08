@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital...&family=Junge&display=optional" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="hero-section">
@@ -21,51 +23,22 @@
         <div class="destaques">
             <h3>DESTAQUES</h3>
             <!-- SLIDES / CARROSSEL -->
-            <div class="carrosselDeDestaques">
-                <div class="slides">
-                    <!-- Botoes Radio -->
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-                    <input type="radio" name="radio-btn" id="radio5">
-                    <!---->
-                    <!-- Slides -->
-                    <div class="ativo"> 
-                        <img src="/public/assets/imgslide1.png" alt="">
-                    </div> 
-                    <div class="slide">
-                        <img src="/public/assets/imgslide2.png" alt="">
-                    </div>
-                    <div class="slide"> 
-                        <img src="/public/assets/imgslide3.png" alt="">
-                    </div>
-                    <div class="slide"> 
-                        <img src="/public/assets/imgslide4.png" alt="">
-                    </div>
-                    <div class="slide"> 
-                        <img src="/public/assets/imgslide5.png" alt="">
-                    </div>
-                    <!---->
-                    <!-- Botão de Navegação -->
-                    <div class="navegacao-auto">
-                        <div class="btn-auto1"></div>
-                        <div class="btn-auto2"></div>
-                        <div class="btn-auto3"></div>
-                        <div class="btn-auto4"></div>
-                        <div class="btn-auto5"></div>
+            <div class="carrossel-de-destaques">
+                <!-- Botoes de Seta -->
+                <button class="back" onclick="backSlide()"> &#x276E; </button>
+                <div class="meio-do-carrossel">
+                    <h3 class="texto-carrossel">TÍTULO CABEÇALHO DO POST</h3>
+                    <!-- Label dos botoes -->
+                    <div class="radio-auto">
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
                     </div>
                     <!---->
                 </div>
-                <!-- Fim da div Slides -->
-                <!-- Label dos botoes -->
-                <div class="navegacao-manual">
-                    <label for="radio1" class="btn-manual"></label>
-                    <label for="radio2" class="btn-manual"></label>
-                    <label for="radio3" class="btn-manual"></label>
-                    <label for="radio4" class="btn-manual"></label>
-                    <label for="radio5" class="btn-manual"></label>
-                </div>
+                <button class="next" onclick="nextSlide()"> &#x276F; </button>
             </div>
         </div>
     </section>

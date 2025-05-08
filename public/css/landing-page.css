@@ -22,33 +22,39 @@
 
 .headline {
     max-height: auto;
-    font-family: 'Junge', serif;
+    font-family: 'Cinzel';
     text-align: center;
-    transition: transform 0.3s ease;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    transition: transform 0.7s ease;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #fff, #c0b283);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 9px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
     #headlineTitulo1 {
-        font-size: 2.5vw;
+        font-size: 3vw;
     }
     #headlineTitulo2 {
-        font-size: 4.5vw;
-    }
-    #headlineTitulo3 {
         font-size: 5vw;
     }
+    #headlineTitulo3 {
+        font-size: 5.5vw;
+    }
     #headlineTitulo4 {
-        font-size: 1.5vw;
+        font-size: 1.6vw;
     }
 }
 
 .headline:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 /*Titulo de Destaques*/
 .destaques{
-    font-family: 'Junge', serif;
-    font-size: 1.5vw;
+    font-family: 'Cinzel';
+    font-size: 1.2vw;
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -57,107 +63,63 @@
 
 /*CARROSSEL*/
 /* personalizacao dos slides */
-.carrosselDeDestaques {
+.carrossel-de-destaques {
     margin: 0 auto;
     overflow: hidden;
     width: 35vw;
     height: 40vh;
-    box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
-}
-.slides {
-    width: 400%;
-    height: 40vh;
+    box-shadow: inset 0px 0px 150px rgba(0,0,20,1);
+    background-image: url(/public/assets/imgslide1.png);
+    background-position: center;
+    background-size: cover;
     display: flex;
-}
-.slides input {
-    display: none;
-}
-.slide, .ativo {
-    width: 25%;
-    position: relative;
-}
-.slide img {
-    width: 35vw;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    transition: 0.7s ease-in-out;
 }
 
-/* navegacao manual */
-.navegacao-manual {
-    position: absolute;
-    width: 35vw;
-    margin-top: -2vw;
+.back, .next {
+    background-color: transparent;
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    width: 5vw;
+    height: 100%;
+    border: none;
+    backdrop-filter: blur(1px);
+    transition: 0.5s;
+}
+.back:hover, .next:hover {
+    font-size: 5vw;
+    transition: 0.5s;
+}
+
+.meio-do-carrossel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+/* labels de radio (bolinhas) */
+.radio-auto {
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    gap: 1vw;
+    padding-bottom: 1vw;
 }
-.btn-manual {
+.radio-label {
     border: 0.10vw solid white;
-    padding: 0.35vw;
-    border-radius: 2vw;
+    padding: 0.4vw;
+    border-radius: 10vw;
     cursor: pointer;
-    transition: 0.5s;
-}
-.btn-manual:not(:last-child) {
-    margin-right: 1vw;
-}
-.btn-manual:hover {
-    background-color: white;
-}
-
-/* navegacao auto */
-.navegacao-auto div {
-    border: 0.10vw solid white;
-    padding: 0.35vw;
-    border-radius: 2vw;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.navegacao-auto {
-    position: absolute;
-    width: 35vw;
-    margin-top: 18.62vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navegacao-auto div:not(:last-child) {
-    margin-right: 1vw;
-}
-
-/* interacao dos inputs */
-#radio1:checked ~ .ativo{
-    transition: 0.5s;
-    margin-left: 0;
-}
-#radio2:checked ~ .ativo{
-    transition: 0.5s;
-    margin-left: -25%;
-}
-#radio3:checked ~ .ativo{
-    transition: 0.5s;
-    margin-left: -50%;
-}
-#radio4:checked ~ .ativo{
-    transition: 0.5s;
-    margin-left: -75%;
-}
-#radio5:checked ~ .ativo{
-    transition: 0.5s;
-    margin-left: -100%;
-}
-#radio1:checked ~ .navegacao-auto .btn-auto1{
-    background-color: white;
-}
-#radio2:checked ~ .navegacao-auto .btn-auto2{
-    background-color: white;
-}
-#radio3:checked ~ .navegacao-auto .btn-auto3{
-    background-color: white;
-}
-#radio4:checked ~ .navegacao-auto .btn-auto4{
-    background-color: white;
-}
-#radio5:checked ~ .navegacao-auto .btn-auto5{
-    background-color: white;
+    transition: 0.7s;
 }
 
 
@@ -167,12 +129,12 @@
     background-size: cover;
     background-position: center;
     box-shadow: inset 0vw 2vw 1vw rgba(0, 0, 0, 0.2);
-
     text-align: left;
     padding: 4% 5%;
 }
 
 .ultimosPosts {
+    font-family: 'Cinzel';
     display: flex;
     flex-direction: column;  
     text-align: left; 
@@ -245,9 +207,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
         padding: 20% 15%;
-        gap: 10vh;
+        gap: 7vh;
     }
 
     .headline {
@@ -255,7 +216,7 @@
             font-size: 7vw;
         }
         #headlineTitulo2 {
-            font-size: 12.5vw;
+            font-size: 12vw;
         }
         #headlineTitulo3 {
             font-size: 13.5vw;
@@ -270,11 +231,27 @@
         gap: 0.5vh;
     }
 
-    .carrosselDeDestaques {
+    /* CARROSSEL */
+    .carrossel-de-destaques {
         width: 85vw;
         height: 25vh;
     }
-    
+    .back, .next {
+        font-size: 7vw;  
+        width: 10vw;      
+    }
+    .back:hover, .next:hover {
+        font-size: 9vw;       
+    }
+    .radio-auto {
+        margin-bottom: 1.5vw;
+    }
+    .radio-label {
+        border: 0.10vw solid white;
+        padding: 1vw;
+    }
+
+
     /* Conteúdo e Últimos Posts */
     .conteudo {
         justify-content: center;
@@ -291,7 +268,7 @@
         text-align: center;
 
         .tituloUltimosPosts {
-            font-size: 4vw;
+            font-size: 4.5vw;
         }
     }
 

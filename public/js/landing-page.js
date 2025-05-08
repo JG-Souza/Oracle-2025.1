@@ -1,15 +1,30 @@
-let cont = 1;
+let imgArray = ["/public/assets/imgslide1.png","/public/assets/imgslide2.png","/public/assets/imgslide3.png","/public/assets/imgslide4.png","/public/assets/imgslide5.png"]
+let labelArray = Array.from(document.getElementsByClassName("radio-label"));
 
-document.getElementById("radio1").checked = true;
+let cont = 0;
+labelArray[0].style.backgroundColor = "white";
 
-setInterval ( function() {
-    nextImage();
-}, 3000)
-
-function nextImage(){
-    cont++;
-    if (cont > 5) {
-        cont = 1;
+function nextSlide() {
+    if (cont >= 4)
+    {
+        cont = -1;
     }
-    document.getElementById("radio"+cont).checked = true;
+    let div = document.querySelector(".carrossel-de-destaques");
+    div.style.backgroundImage = `url('${imgArray[cont+1]}')`;
+    labelArray.forEach(label => label.style.backgroundColor = "transparent");
+    labelArray[cont+1].style.backgroundColor = "white";
+    cont++;
 }
+
+function backSlide() {
+    if (cont <= 0)
+    {
+        cont = 5;
+    }
+    let div = document.querySelector(".carrossel-de-destaques");
+    div.style.backgroundImage = `url('${imgArray[cont-1]}')`;
+    labelArray.forEach(label => label.style.backgroundColor = "transparent");
+    labelArray[cont-1].style.backgroundColor = "white";
+    cont--;
+}
+
