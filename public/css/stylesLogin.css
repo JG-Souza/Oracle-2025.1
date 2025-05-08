@@ -104,6 +104,9 @@ i{
     .campo-text-input{
         height: 15%;
     }
+    i{
+        font-size: 100%;
+    }
     .botao{
         width: 50%;
     }
@@ -135,6 +138,9 @@ i{
     }
     .input-texto{
         font-size: 80%;
+    }
+    i{
+        font-size: 120%;
     }
     .campo-botao{
         height: 15%;
