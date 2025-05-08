@@ -82,6 +82,10 @@
   .creature-list {
     list-style: none;
   }
+
+  .creature-list .botao-ler-mais {
+    display: none;
+  }
   
   .creature-list li {
     width: 150px;
@@ -203,6 +207,19 @@
   .botao-ler-mais:hover {
     background-color: #1a331a;
   }
+
+  .main-area {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .top-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
   
   @media (max-width: 480px) {
     body {
@@ -256,6 +273,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 24px;
+      gap: 5px;
     }
   
     .highlight img, .creature-list img {
@@ -265,6 +283,10 @@
       border-radius: 8px;
       margin-bottom: 10px;
     }
+
+    .top-card {
+      flex-direction: column;
+    }
   
     .highlight p {
       font-size: 0.95rem;
@@ -273,7 +295,7 @@
       padding: 0 10px;
     }
   
-    .botao-ler-mais {
+    .botao-ler-mais, .creature-list .botao-ler-mais {
       width: 90%;
       max-width: 280px;
       padding: 10px;
@@ -300,10 +322,10 @@
       justify-content: center;
       gap: 32px;
       width: 100%;
-      order: +1;
       flex-direction: column;
       align-items: center;
     }
+    
     
     .creature-button {
       font-size: 1.1rem;
