@@ -30,7 +30,7 @@
 
 
 .footer .container{
-  padding:  1.0rem 5.0rem;
+  padding:  1.0rem 5.0rem 0.5rem;
   margin: 0;
   display:  flex;
   justify-content: space-between;
