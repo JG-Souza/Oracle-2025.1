@@ -103,6 +103,9 @@
     align-items: center;
     gap: 1.5vw;
 }
+.texto-carrossel {
+    text-shadow: 0px 0px 4px rgba(0,0,20,1);;
+}
 
 /* labels de radio (bolinhas) */
 .radio-auto {

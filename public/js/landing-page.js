@@ -4,7 +4,10 @@ let labelArray = Array.from(document.getElementsByClassName("radio-label"));
 let cont = 0;
 labelArray[0].style.backgroundColor = "white";
 
+timerCarrossel();
+
 function nextSlide() {
+    clearInterval(intervalo);
     if (cont >= 4)
     {
         cont = -1;
@@ -14,9 +17,11 @@ function nextSlide() {
     labelArray.forEach(label => label.style.backgroundColor = "transparent");
     labelArray[cont+1].style.backgroundColor = "white";
     cont++;
+    timerCarrossel();
 }
 
 function backSlide() {
+    clearInterval(intervalo);
     if (cont <= 0)
     {
         cont = 5;
@@ -26,5 +31,11 @@ function backSlide() {
     labelArray.forEach(label => label.style.backgroundColor = "transparent");
     labelArray[cont-1].style.backgroundColor = "white";
     cont--;
+    timerCarrossel();
 }
 
+function timerCarrossel (){
+    intervalo = setInterval ( ()=> {
+        nextSlide();
+    }, 4000)
+}
