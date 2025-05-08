@@ -64,6 +64,19 @@ main{
     align-items: center;
     justify-content: center;
 }
+.senha-input{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+i{
+    cursor:pointer;
+    font-size: 120%;
+    position: absolute;
+    right:5%;
+    
+}
 .campo-botao{
     height: 10%;
     display: flex;
