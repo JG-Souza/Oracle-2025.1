@@ -84,7 +84,18 @@ main{
     border-radius: 16px;
 }
 
-@media screen and (max-width: 1030px) {
+ @media screen and (max-width: 1030px) { 
+    .input-texto{
+        font-size: 50%;
+    }
+    .campo-text-input{
+        height: 15%;
+    }
+    .botao{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 700px) {
     .login-card{
         justify-content: center;
         align-items: center;
@@ -105,6 +116,9 @@ main{
         font-size: 130%;
         width: 80%;
         height: 60%;
+    }
+    .campo-text-input{
+        height: 20%;
     }
     .input-texto{
         font-size: 80%;
