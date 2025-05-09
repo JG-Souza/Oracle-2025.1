@@ -30,12 +30,12 @@
   }
   
   .search-container input {
-    width: 300px;
+    width: 350px;
+    height: 40px;
     padding: 8px 15px;
-    border-radius: 2px;
     border: none;
     outline: none;
-    background: #D8DBD4;
+    background: #fff;
     border-radius: 20px;
   }
   
@@ -71,7 +71,7 @@
     background-color: rgba(34, 66, 32, 0.6); 
     padding: 6px 12px;
     border-radius: 5px;
-    color: #F1FDF1;
+    color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     display: inline-block;
     font-size: 32px;
@@ -123,18 +123,20 @@
   .highlight {
     display: flex;
     flex-direction: column;
-    background: #F1FDF1;
+    background: #ffff;
     gap: 20px;
     padding-bottom: 20px;
     padding-inline: 10px;
+    height: 100%;
   }
 
   .highlight .text{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: self-end;
+    justify-content: space-between;
     overflow: hidden;
-    gap: 10px;
+    height: 100%;
   }
 
   .highlight img {
@@ -176,7 +178,7 @@
   .btn-pagina {
     padding: 0.3rem 0.3rem;
     background: none;
-    color: #F1FDF1;
+    color: #ffff;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
@@ -189,7 +191,7 @@
     padding: 0%;
     margin-bottom: 200px;
     background: none;
-    color: #F1FDF1;
+    color: #ffff;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
@@ -199,19 +201,21 @@
     margin-right: 0.2rem;
   }
   
+ 
+
   .botao-ler-mais {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #224220;
-    color: #F1FDF1;
-    border: none;
-    border-radius: 2px;
-    font-size: 1rem;
-    font-family: "Jost", sans-serif;
+    background: radial-gradient(closest-side, #D6693A 0%, #A84B3A 100%);
+    color: white;
+    border: 0.01rem solid black;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
+    font-family: "Junge",  'cursive';
+    font-weight: 100; 
+    letter-spacing: 0.05rem; 
+}
+
   .botao-ler-mais:hover {
     background-color: #1a331a;
   }
@@ -237,7 +241,7 @@
     gap: inherit;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 1200px) {
     body {
       font-size: 16px;
     }

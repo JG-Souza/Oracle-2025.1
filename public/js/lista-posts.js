@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         atualizarDestaque(criatura);
 
-        destaqueBotao.style.display = 'none';
         destaqueArea.style.paddingBottom = '30px';  
       }
     });
@@ -78,8 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nomeSpan.textContent = originalNome;
 
         atualizarDestaque(destaqueOriginal);
-
-        destaqueBotao.style.display = 'inline-block';
 
         delete item.dataset.originalImg;
         delete item.dataset.originalNome;
