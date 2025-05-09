@@ -101,6 +101,7 @@
     position: relative;
     color: #ffff;
     gap: 10px;
+    padding-bottom: 15px;
   }
   
   .creature-list li span {
@@ -213,7 +214,8 @@
     cursor: pointer;
     font-family: "Junge",  'cursive';
     font-weight: 100; 
-    letter-spacing: 0.05rem; 
+    letter-spacing: 0.05rem;
+    margin-right: 10px;
 }
 
   .botao-ler-mais:hover {
@@ -239,6 +241,11 @@
     justify-content: space-around;
     margin-top: 20px;
     gap: inherit;
+  }
+
+  .blur-hover {
+  background-color: rgba(34, 66, 32, 0.6); 
+  transition: filter 0.3s ease;
   }
 
   @media (max-width: 1200px) {

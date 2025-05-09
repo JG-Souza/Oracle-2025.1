@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         atualizarDestaque(criatura);
 
-        destaqueArea.style.paddingBottom = '30px';  
+        item.classList.add('blur-hover');
       }
     });
 
@@ -81,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         delete item.dataset.originalImg;
         delete item.dataset.originalNome;
       }
+
+      item.classList.remove('blur-hover');
+
     });
   });
 
