@@ -234,10 +234,15 @@
     align-items: center;
     justify-content: space-around;
     margin-top: 20px;
+    gap: inherit;
   }
+
   @media (max-width: 480px) {
     body {
       font-size: 16px;
+    }
+    .top-card-sidebar {
+      flex-direction: column;
     }
   
     .top-container {
@@ -272,14 +277,14 @@
       font-size: 1.6rem;
       text-align: center;
       margin-bottom: 16px;
-      background-color: #224220;
+      background-color: rgba(34, 66, 32, 0.6); 
       color: #F1FDF1;
       padding: 10px 20px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
-    .highlight, .creature-list li {
+    .highlight {
       order: -1;
       width: 80%;
       padding: 16px;
@@ -290,6 +295,22 @@
       gap: 5px;
     }
   
+    .creature-list li {
+      order: -1;
+      width: 80%;
+      padding: 16px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 24px;
+      gap: 5px;
+      color: #000;
+    }
+
+    .creature-list li span {
+      color: #000;
+    }
+
     .highlight img, .creature-list img {
       width: 100%;
       height: 300px;
