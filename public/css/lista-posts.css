@@ -81,6 +81,9 @@
   
   .creature-list {
     list-style: none;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
   }
 
   .creature-list .botao-ler-mais {
@@ -88,15 +91,16 @@
   }
   
   .creature-list li {
-    width: 150px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     text-overflow: ellipsis;
     position: relative;
-    color: #000;
+    color: #ffff;
+    gap: 10px;
   }
   
   .creature-list li span {
@@ -105,7 +109,7 @@
     text-overflow: ellipsis;
     display: block;
     max-height: 100%;
-    color: #000;
+    color: #ffff;
   }
   
   .creature-list img {
@@ -120,6 +124,9 @@
     display: flex;
     flex-direction: column;
     background: #F1FDF1;
+    gap: 20px;
+    padding-bottom: 20px;
+    padding-inline: 10px;
   }
 
   .highlight .text{
@@ -127,6 +134,7 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    gap: 10px;
   }
 
   .highlight img {
@@ -220,7 +228,13 @@
     justify-content: space-around;
     margin-top: 20px;
   }
-  
+
+  .top-card-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
   @media (max-width: 480px) {
     body {
       font-size: 16px;
