@@ -1,0 +1,29 @@
+html{
+    font-size: calc(70% + 0.8vmin);
+}
+
+body{
+    font-family: 'Junge',sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.tabela-posts{
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+.tabela-head{
+    border: 1px black solid;
+}
