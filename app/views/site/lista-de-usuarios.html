@@ -39,9 +39,9 @@
                     <td class="nome-usuario">Joao</td>
                     <td class="email-usuario">jvictorangel45@gmail.com</td>
                     <td class="acoes-usuario">
-                        <button class="btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="fa-solid fa-eye"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn-excluir"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
                 <tr class="usuario">
@@ -49,9 +49,9 @@
                     <td class="nome-usuario">Joao</td>
                     <td class="email-usuario">jvictorangel45@gmail.com</td>
                     <td class="acoes-usuario">
-                        <button class="btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="fa-solid fa-eye"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn-excluir"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
                 <tr class="usuario">
@@ -59,9 +59,9 @@
                     <td class="nome-usuario">Joao</td>
                     <td class="email-usuario">jvictorangel45@gmail.com</td>
                     <td class="acoes-usuario">
-                        <button class="btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="fa-solid fa-eye"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn-excluir"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
                 <tr class="usuario">
@@ -69,9 +69,9 @@
                     <td class="nome-usuario">Joao</td>
                     <td class="email-usuario">jvictorangel45@gmail.com</td>
                     <td class="acoes-usuario">
-                        <button class="btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="fa-solid fa-eye"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn-excluir"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
                 <tr class="usuario">
@@ -79,9 +79,9 @@
                     <td class="nome-usuario">Joao</td>
                     <td class="email-usuario">jvictorangel45@gmail.com</td>
                     <td class="acoes-usuario">
-                        <button class="btn-visualizar"><i class="fa-solid fa-eye"></i></button>
+                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="fa-solid fa-eye"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="btn-excluir"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
             </thead>
@@ -120,23 +120,56 @@
         </div>
     </div>
 
+    <div class="modal" id="modal-visualizar-usuario">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Visualizar Usuário</h2>
+            </div>
+            <form action="" method="POST" class="form-usuario">
+
+                <div class="modal-info">
+                    <label for="id">ID:</label>
+                    <input type="text" id="nome" name="nome"  value="X" readonly>
+                </div>
+
+                <div class="modal-info">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="João" readonly>
+                </div>
+                <div class="modal-info">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="jvictorangel45@gmail.com" readonly>
+                </div>
+                <div class="modal-info">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" value="123456" readonly>
+                </div>
+                <div class="botoes-modal">
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email')">Fechar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <div class="modal" id="modal-editar-usuario">
         <div class="modal-container">
             <div class="modal-header">
                 <h2>Editar Usuário</h2>
             </div>
-            <form action="" method="POST" class="form-usuario">
+            <form action="" method="" class="form-usuario">
                 <div class="modal-info">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome" value="Nome do usuário">
                 </div>
                 <div class="modal-info">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" value="Email@usuario.com" required>
                 </div>
                 <div class="modal-info">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <input type="password" id="senha" name="senha" value="Senha do usuário"
+                    >
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
@@ -146,6 +179,19 @@
         </div>
     </div>
 
+        <div class="modal" id="modal-excluir-usuario">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Deseja excluir o Usuário?</h2>
+            </div>
+                <img src="/public/assets/Lixeirinha.png" alt="Lixeira" class="lixeira">
+                <div class="botoes-modal">
+                    <button type="submit" class="btn-criar">Excluir</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-usuario', 'nome', 'email')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
     
 </body>
 <script src="../../../public/js/lista-de-usuarios.js"></script>

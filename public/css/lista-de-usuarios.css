@@ -244,6 +244,18 @@ body{
 }
 
 
+#modal-visualizar-usuario .modal-container{
+    width: 20px;
+}
+
+#modal-excluir-usuario .botoes-modal{
+    padding: 0 10%;
+}
+
+.lixeira{
+    width: 200px;
+    height: 200px;
+}
 
 @media screen and (max-width: 830px) {
     .tabela-usuarios{
