@@ -53,38 +53,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
     item.dataset.nome = nomeSpan.textContent.trim();
 
-    item.addEventListener('mouseover', () => {
-      const criatura = criaturas.find(c => c.nome === item.dataset.nome);
-      if (criatura) {
-        item.dataset.originalImg = imgElement.src;
-        item.dataset.originalNome = nomeSpan.textContent;
+    function isTouchDevice() {
+      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
 
-        imgElement.src = destaqueImg.src;
-        nomeSpan.textContent = destaqueNome.textContent;
+    function adicionarEventosHover() {
+      creatureItems.forEach(item => {
+      if (item.dataset.hoverAtivado === 'true') return;
+        const imgElement = item.querySelector('img');
+        const nomeSpan = item.querySelector('.creature-name');
 
-        atualizarDestaque(criatura);
+        item.dataset.nome = nomeSpan.textContent.trim();
 
-        item.classList.add('blur-hover');
-      }
-    });
+      function mouseOverHandler() {
+        const criatura = criaturas.find(c => c.nome === item.dataset.nome);
+        if (criatura) {
+          item.dataset.originalImg = imgElement.src;
+          item.dataset.originalNome = nomeSpan.textContent;
 
-    item.addEventListener('mouseout', () => {
-      const originalNome = item.dataset.originalNome;
-      const originalImg = item.dataset.originalImg;
+          imgElement.src = destaqueImg.src;
+          nomeSpan.textContent = destaqueNome.textContent;
 
-      if (originalNome && originalImg) {
-        imgElement.src = originalImg;
-        nomeSpan.textContent = originalNome;
-
-        atualizarDestaque(destaqueOriginal);
-
-        delete item.dataset.originalImg;
-        delete item.dataset.originalNome;
+          atualizarDestaque(criatura);
+          item.classList.add('blur-hover');
+        }
       }
 
-      item.classList.remove('blur-hover');
+      function mouseOutHandler() {
+        const originalNome = item.dataset.originalNome;
+        const originalImg = item.dataset.originalImg;
 
+        if (originalNome && originalImg) {
+          imgElement.src = originalImg;
+          nomeSpan.textContent = originalNome;
+
+          atualizarDestaque(destaqueOriginal);
+
+          delete item.dataset.originalImg;
+          delete item.dataset.originalNome;
+        }
+
+        item.classList.remove('blur-hover');
+      }
+
+      item.__mouseOverHandler = mouseOverHandler;
+      item.__mouseOutHandler = mouseOutHandler;
+
+      item.addEventListener('mouseover', mouseOverHandler);
+      item.addEventListener('mouseout', mouseOutHandler);
+
+      item.dataset.hoverAtivado = 'true';
     });
+  }
+
+  function removerEventosHover() {
+    creatureItems.forEach(item => {
+      if (item.dataset.hoverAtivado !== 'true') return;
+
+        item.removeEventListener('mouseover', item.__mouseOverHandler);
+        item.removeEventListener('mouseout', item.__mouseOutHandler);
+
+        delete item.__mouseOverHandler;
+        delete item.__mouseOutHandler;
+        item.dataset.hoverAtivado = 'false';
+    });
+  }
+
+  function atualizarModoDeInteracao() {
+    if (isTouchDevice() || window.innerWidth <= 768) {
+      removerEventosHover();
+    } else {
+      adicionarEventosHover();
+    }
+  }
+
+  window.addEventListener('resize', atualizarModoDeInteracao);
+  atualizarModoDeInteracao();
+
   });
 
   searchInput.addEventListener('input', () => {
