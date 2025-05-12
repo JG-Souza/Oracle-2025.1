@@ -20,7 +20,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 4vh;
-    background-color: #224220;
+    background-image:url(/public/assets/fundo1.jpg);
     color: #D8DBD4;
 }
 
