@@ -16,14 +16,64 @@ main{
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    background-color: #224220;
+    color: #D8DBD4;
 }
 
 .tabela-posts{
-    width: 80vh;
-    display: flex;
-    flex-direction: column;
+    border: 1px black solid;
+    width: 70vw;
+    height: 60vh;
+    border-collapse: collapse;
+    
+    align-content: start;
+    text-align: center;
+    background-color: #234920;
+    box-shadow: 1vh 1vh 3vh 1vh #173016;
 }
+tbody{
+    height: 100%;
+}
+
+.tabela-body{
+    height: 100%;
+}
+
+.tabela-body tr{
+    height: 10%;
+}
+
+.tabela-posts th,
+.tabela-posts td {
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+
+thead tr{
+    width: 100%;
+}
+
 .tabela-head{
     border: 1px black solid;
+}
+tr:nth-child(4){
+    gap: 5vh;
+}
+.crud{
+    display: flex;
+}
+button{
+    padding: 1% 2% 1% 2%;
+    text-align: center;
+    font-family: 'Junge',sans-serif;
+    font-size: calc(60% + 0.8vmin);
+    border: none;
+    cursor: pointer;
+    background-color: #A84B3A;
+    color: #D8DBD4;
+    border-radius: 16px;
 }
