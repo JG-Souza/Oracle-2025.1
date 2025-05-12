@@ -46,7 +46,6 @@ body{
 .tabela-usuarios{
     padding: 0 2rem;
     width: 80%;
-    height: 80%;
     border-radius: 10px;
 }
 
@@ -64,10 +63,19 @@ body{
     height: 3%;
 }
 
+.usuario td{
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 5rem;
+}
+
+
 .usuario:hover{
     background-color: var(--cor-quaternaria);
     cursor: default;
 }
+
+
 
 .cabecalho button{
     background-color: var(--cor-primaria);
@@ -271,6 +279,28 @@ body{
 
 #modal-excluir-usuario .btn-cancelar:hover{
     background-color: #305c2d;
+}
+
+#olhov, #olhoc, #olhoe{
+    color: gray;
+}
+
+.senha-olho{
+    width: 80%;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 0 1rem 0 0;
+    font-size: 1.5rem;
+    background-color: var(--cor-quinta);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.senha-olho input{
+    background: none;
+    outline: none;
 }
 
 

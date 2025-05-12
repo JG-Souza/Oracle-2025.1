@@ -110,7 +110,10 @@
                 </div>
                 <div class="modal-info">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <div class="senha-olho">
+                        <input type="password" id="senhac" name="senha" value="123456" readonly>
+                        <i class="fa-solid fa-eye" id="olhoc" onclick="mostrarSenha('senhac', 'olhoc')"></i>
+                    </div>
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Criar</button>
@@ -142,7 +145,10 @@
                 </div>
                 <div class="modal-info">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" value="123456" readonly>
+                    <div class="senha-olho">
+                        <input type="password" id="senhav" name="senha" value="123456" readonly>
+                        <i class="fa-solid fa-eye" id="olhov" onclick="mostrarSenha('senhav', 'olhov')"></i>
+                    </div>
                 </div>
                 <div class="botoes-modal">
                     <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email')">Fechar</button>
@@ -168,8 +174,11 @@
                 </div>
                 <div class="modal-info">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" value="Senha do usuário"
-                    >
+                    <div class="senha-olho">
+                        <input type="password" id="senhae" name="senha" value="123456" readonly>
+                        <i class="fa-solid fa-eye" id="olhoe" onclick="mostrarSenha('senhae', 'olhoe')"></i>
+                    </div>
+                    
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
