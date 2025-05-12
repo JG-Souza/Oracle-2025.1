@@ -63,16 +63,18 @@ thead tr{
     width: 100%;
 }
 
-tr:nth-child(4){
-    gap: 5vh;
-}
-
 button{
+    font-size: 1.5rem;
     text-align: center; 
-    font-size: calc(60% + 0.8vmin);
     border: none;
     cursor: pointer;
-    background-color: #A84B3A;
+    background-color: transparent;
     color: #D8DBD4;
-    border-radius: 16px;
+    padding: 0.2rem;
+}   
+
+@media screen and (max-width: 830px) {
+    .tabela-posts{
+        overflow: auto;
+    }
 }
