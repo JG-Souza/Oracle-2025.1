@@ -71,7 +71,12 @@ button{
     background-color: transparent;
     color: #D8DBD4;
     padding: 0.2rem;
-}   
+} 
+
+.paginacao a{
+    padding: 0.2rem;
+    color: #D8DBD4;
+}
 
 @media screen and (max-width: 830px) {
     .tabela-posts{
