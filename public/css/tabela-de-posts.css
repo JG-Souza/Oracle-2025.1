@@ -26,8 +26,8 @@ main{
 
 .tabela-posts{
     border: 1px black solid;
-    width: 70vw;
-    height: 60vh;
+    width: 60vw;
+    height: 70vh;
     border-collapse: collapse;
     opacity: 80%;
     align-content: start;
