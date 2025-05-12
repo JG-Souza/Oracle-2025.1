@@ -24,15 +24,38 @@ main{
     color: #D8DBD4;
 }
 
+.parte-cima{
+    width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.titulo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.botao-criar{
+    font-size: 1rem;
+    text-align: center; 
+    border: none;
+    cursor: pointer;
+    background-color: #224220;
+    color: #D8DBD4;
+    border-radius: 30px;
+    padding: 1rem;
+}
+
 .tabela-posts{
-    border: 1px black solid;
-    width: 60vw;
-    height: 70vh;
+    width: 55vw;
+    height: 55vh;
     border-collapse: collapse;
     opacity: 80%;
     align-content: start;
     text-align: center;
     background-color: #234920;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .tabela-head{
@@ -63,7 +86,10 @@ thead tr{
     width: 100%;
 }
 
-button{
+
+.botao-visualizar,
+.botao-editar,
+.botao-excluir{
     font-size: 1.5rem;
     text-align: center; 
     border: none;
@@ -76,6 +102,10 @@ button{
 .paginacao a{
     padding: 0.2rem;
     color: #D8DBD4;
+}
+
+.modal{
+    display: none;
 }
 
 @media screen and (max-width: 830px) {

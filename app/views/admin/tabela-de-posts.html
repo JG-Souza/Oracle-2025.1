@@ -18,15 +18,17 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
-
-</svg>
-
 </head>
 <body>
     <main>
+        <div class="parte-cima">
+            <div class="titulo">
+                <span>Tabela de Posts</span>
+            </div>
+            <div>
+                <button type="button" class="botao-criar">Criar Publicação</button>
+            </div>
+        </div>
         <table class="tabela-posts">
             <thead class="tabela-head">
                 <tr>
@@ -46,7 +48,7 @@
                     <td>
                         <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
                         <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -57,7 +59,7 @@
                     <td>
                         <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
                         <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +70,7 @@
                     <td>
                         <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
                         <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -79,7 +81,7 @@
                     <td>
                         <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
                         <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +92,7 @@
                     <td>
                         <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
                         <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 
@@ -102,6 +104,15 @@
             <a href="#" class="pagina">2</a>
             <a href="#" class="pagina">3</a>
             <a href="#" class="pag-direita"><i class="bi bi-arrow-right-short"></i></a>
+        </div>
+        <div class="modal" id="modal-criar-publicacao">
+            <div class="modal-cabecalho">
+                <div class="titulo-modal"></div>
+            </div>
+            <div class="botoes-modal">
+                <button class="modal-btn-criar"></button>
+                <button class="modal-btn-cancelar"></button>
+            </div>
         </div>
     </main>
     <script src="/public/js/tabela-de-posts.js"></script>
