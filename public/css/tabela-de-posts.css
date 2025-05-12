@@ -29,22 +29,19 @@ main{
     width: 70vw;
     height: 60vh;
     border-collapse: collapse;
-    
+    opacity: 80%;
     align-content: start;
     text-align: center;
     background-color: #234920;
 }
-tbody{
-    height: 100%;
+
+.tabela-head{
+    background-color: #224220;
 }
 
-.tabela-body{
-    height: 100%;
-}
-
-.tabela-body tr{
-    background-color: rgba(23, 27, 22, 0.8);
-    height: 10%;
+.tabela-posts th{
+    font-weight: 500;
+    border-right: 1px solid black;
 }
 
 .tabela-posts th,
@@ -52,26 +49,26 @@ tbody{
     padding: 0.5rem;
 }
 
-.tabela-posts th{
-    border-right: 1px solid black;
+.tabela-body{
+    font-weight: 300;
+    background-color: rgba(23, 27, 22, 0.8);
+    height: 100%;
 }
+
+.tabela-body tr{
+    height: 10%;
+}
+
 thead tr{
     width: 100%;
 }
 
-.tabela-head{
-    background-color: #224220;
-}
 tr:nth-child(4){
     gap: 5vh;
 }
-.crud{
-    display: flex;
-}
+
 button{
-    padding: 1% 2% 1% 2%;
-    text-align: center;
-    font-family: 'Junge',sans-serif;
+    text-align: center; 
     font-size: calc(60% + 0.8vmin);
     border: none;
     cursor: pointer;
