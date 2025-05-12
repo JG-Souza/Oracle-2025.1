@@ -281,6 +281,11 @@ body{
     background-color: #305c2d;
 }
 
+#modal-visualizar-usuario .botoes-modal{
+    justify-content: center;
+    align-items: center;
+}
+
 #olhov, #olhoc, #olhoe{
     color: gray;
 }
