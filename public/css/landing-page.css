@@ -1,0 +1,314 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Hero Section*/
+.hero-section {
+    background-image: url(/public/assets/backgroundMitologia1.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    height: fit-content;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 20% 10%;
+  }
+
+.headline {
+    max-height: auto;
+    font-family: 'Cinzel';
+    text-align: center;
+    transition: transform 0.7s ease;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #fff, #c0b283);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 9px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    #headlineTitulo1 {
+        font-size: 3vw;
+    }
+    #headlineTitulo2 {
+        font-size: 5vw;
+    }
+    #headlineTitulo3 {
+        font-size: 5.5vw;
+    }
+    #headlineTitulo4 {
+        font-size: 1.6vw;
+    }
+}
+
+.headline:hover
+{
+    transform: scale(1.1);
+}
+
+/*Titulo de Destaques*/
+.destaques{
+    font-family: 'Cinzel';
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    text-align: center;
+}
+
+/*CARROSSEL*/
+/* personalizacao dos slides */
+.carrossel-de-destaques {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 35vw;
+    height: 40vh;
+    box-shadow: inset 0px 0px 150px rgba(0,0,20,1);
+    background-image: url(/public/assets/imgslide1.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    transition: 0.7s ease-in-out;
+}
+
+.back, .next {
+    background-color: transparent;
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    width: 5vw;
+    height: 100%;
+    border: none;
+    backdrop-filter: blur(1px);
+    transition: 0.5s;
+}
+.back:hover, .next:hover {
+    font-size: 5vw;
+    transition: 0.5s;
+}
+
+.meio-do-carrossel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 1.5vw;
+}
+.texto-carrossel {
+    text-shadow: 0px 0px 4px rgba(0,0,20,1);;
+}
+
+/* labels de radio (bolinhas) */
+.radio-auto {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 1vw;
+    padding-bottom: 1vw;
+}
+.radio-label {
+    border: 0.10vw solid white;
+    padding: 0.4vw;
+    border-radius: 10vw;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+
+/* Conteúdo e Últimos Posts */
+.conteudo {
+    background-image: url(/public/assets/backgroundMitologia2Escuro.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0vw 2vw 1vw rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 4% 5%;
+}
+
+.ultimosPosts {
+    font-family: 'Cinzel';
+    display: flex;
+    flex-direction: column;  
+    text-align: left; 
+    width: fit-content;
+    gap: 1vh;
+    .tituloUltimosPosts {
+        font-size: 2vw;
+    }
+}
+
+.posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.postGrande 
+{
+    font-family: "Jost", sans-serif;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    #pgImg {
+        background-image: url(/public/assets/placeholder.png);
+        box-shadow: inset 0px 0px 100px rgba(0,0,20,1);
+        width: 40vw;
+        height: 50vh;
+    }
+    
+    #pgTitulo {
+        font-size: 2vw;
+    }
+}
+
+.postsPequenos {
+    font-family: "Jost", sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.5vw;
+    max-width: 100%;
+    gap: 2vh;
+    
+    .pp1, .pp2, .pp3, .pp4 {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5vw;
+    }
+
+    #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
+        background-image: url(/public/assets/placeholder.png);
+        box-shadow: inset 0px 0px 25px rgba(0,0,20,1);
+        width: 20%;
+        height: 13vh;
+    }
+
+    #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
+        width: 80%
+    }
+}
+
+/* VERSÃO PARA CELULAR */
+@media (max-width: 768px) {  
+
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20% 15%;
+        gap: 7vh;
+    }
+
+    .headline {
+        #headlineTitulo1 {
+            font-size: 7vw;
+        }
+        #headlineTitulo2 {
+            font-size: 12vw;
+        }
+        #headlineTitulo3 {
+            font-size: 13.5vw;
+        }
+        #headlineTitulo4 {
+            font-size: 4vw;
+        }
+    }
+
+    .destaques{
+        font-size: 4vw;   
+        gap: 0.5vh;
+    }
+
+    /* CARROSSEL */
+    .carrossel-de-destaques {
+        width: 85vw;
+        height: 25vh;
+    }
+    .back, .next {
+        font-size: 7vw;  
+        width: 10vw;      
+    }
+    .back:hover, .next:hover {
+        font-size: 9vw;       
+    }
+    .radio-auto {
+        margin-bottom: 1.5vw;
+    }
+    .radio-label {
+        border: 0.10vw solid white;
+        padding: 1vw;
+    }
+
+
+    /* Conteúdo e Últimos Posts */
+    .conteudo {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10% 15%;
+        box-shadow: inset 0vw 4vw 2vw rgba(0, 0, 0, 0.2);
+    }
+    
+    .ultimosPosts {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .tituloUltimosPosts {
+            font-size: 4.5vw;
+        }
+    }
+
+    .posts {
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .postGrande {
+        text-align: left;
+        #pgImg {
+            width: 85vw;
+            height: 25vh;
+        }
+        
+        #pgTitulo {
+            font-size: 3.5vw;
+        }
+    }
+
+    .postsPequenos{
+        font-size: 3vw;
+        .pp1, .pp2, .pp3, .pp4 {
+            display: flex;
+            flex-direction: row;
+            gap: 2vw;
+        }
+    
+        #ppImg1, #ppImg2, #ppImg3, #ppImg4 {
+            width: 50%;
+            height: 15vh;
+        }
+    
+        #ppTitulo1, #ppTitulo2, #ppTitulo3, #ppTitulo4 {
+            width: 50%
+        }
+    }
+
+}
+

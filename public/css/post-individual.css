@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #152518;
+    font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+
+.background .container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    background-color: white;
+    color: black;
+    position: relative;
+    width: 80%;
+    height: 90%;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    height: 90%;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+
+.background .container .cabecalho{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+    border-bottom: 0.1rem solid black;
+    background-color: white;
+    padding-bottom: 20px;
+    
+
+}
+
+.background .container .cabecalho .usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.background .container .cabecalho .usuario img{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}
+
+.background .container .cabecalho .usuario h3{
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Junge',  'cursive';
+}
+
+.background .container .cabecalho .origem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background .container .cabecalho .origem button{
+    background: radial-gradient(closest-side, #D6693A 0%, #A84B3A 100%);
+    color: white;
+    border: 0.01rem solid black;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: "Junge",  'cursive';
+    font-weight: 100; 
+    letter-spacing: 0.05rem; 
+}
+
+.background .container .post{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 80%;
+    padding: 0 2rem;
+    gap: 5rem;
+ 
+}
+
+.background .container .post .coracao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.icaro{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.titulo{
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: "Junge",  'cursive';
+    line-height: 60px;
+
+}
+
+.background .container .post .conteudo-do-post{
+    display: flex;
+    flex-direction: column;
+    gap : 2.5rem;
+}
+
+
+
+.background .container .conteudo-do-post h5{
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.background .container .conteudo-do-post .topicos span{
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 400;
+    align-items: justify;
+    text-align: justify;
+    line-height: 1.8rem;
+    font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.background .container .conteudo-do-post .topicos #fonte{
+    display: flex;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1200px){
+    
+    .icaro{
+        width: 360px;
+        height: 360px;
+    }
+
+    .titulo{
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    .icaro{
+        width: 300px;
+        height: 300px;
+    }
+
+    .titulo{
+        font-size: 28px;
+    }
+
+}
+
+@media only screen and (max-width: 768px){ /* Versão Para celular */
+
+    .background{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .background .container{
+        margin-top: 140px;
+        margin-bottom: 10px;
+    }
+
+
+    .background .container .cabecalho{
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .background .container .cabecalho .usuario img{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .background .container .cabecalho .usuario h3{
+        font-size: 15px;
+    }
+
+    .origem #botao{
+        font-size: 15px;
+    }
+
+  
+
+    .background .container .post h5{
+        font-size: 1.5rem;
+    }
+
+    .background .container .post .conteudo-do-post span{
+        font-size: 1.2rem;
+    }
+
+    .coracao{
+        flex-direction: column;
+        column-gap: 10px;
+    }
+
+    .coracao img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .coracao .titulo{
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 550px){
+
+    .origem #botao{
+        font-size: 12px;
+    }
+
+    .background .container .cabecalho .usuario h3{
+        font-size: 12px;
+    }
+
+    .background .container .cabecalho .usuario img{
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
+    .icaro{
+        width: 100%;
+        height: 100%;
+    }
+    
+
+}
+
+@media only screen and (max-width: 500px){
+
+    .origem #botao{
+        font-size: auto;
+    }
+
+
+    .background .container .cabecalho .usuario{
+        margin-right: 10px;
+    }
+
+    .background .container{
+        padding-left: 0;
+        padding-right: 0;
+    };
+
+
+    .background .container .cabecalho{
+        border-bottom: 0.01rem solid black;
+    }
+
+    .background .container{
+        width: 95%;
+    }
+
+    .background .container .cabecalho{
+        padding: 0.5rem 0.5rem;
+    }
+    
+
+}
+
+

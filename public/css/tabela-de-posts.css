@@ -1,0 +1,269 @@
+html{
+    font-size: calc(70% + 0.8vmin);
+}
+
+body{
+    font-family: 'Junge',sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    background-image:url(/public/assets/fundo1.jpg);
+    color: #D8DBD4;
+}
+
+.parte-cima{
+    width: 55vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.titulo{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.botao-criar{
+    font-size: 1rem;
+    text-align: center; 
+    border: none;
+    cursor: pointer;
+    background-color: #224220;
+    color: #D8DBD4;
+    border-radius: 30px;
+    padding: 1rem;
+}
+
+.tabela-posts{
+    width: 55vw;
+    height: 55vh;
+    border-collapse: collapse;
+    opacity: 80%;
+    align-content: start;
+    text-align: center;
+    background-color: #234920;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.tabela-head{
+    background-color: #224220;
+}
+
+.tabela-posts th{
+    font-weight: 500;
+    border-right: 1px solid black;
+}
+
+.tabela-posts th,
+.tabela-posts td {
+    padding: 0.5rem;
+}
+
+.tabela-body{
+    font-weight: 300;
+    background-color: rgba(23, 27, 22, 0.8);
+    height: 100%;
+}
+
+.tabela-body tr{
+    height: 10%;
+}
+
+thead tr{
+    width: 100%;
+}
+
+
+.botao-visualizar,
+.botao-editar,
+.botao-excluir{
+    font-size: 1.5rem;
+    text-align: center; 
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #D8DBD4;
+    padding: 0.2rem;
+} 
+
+.paginacao a{
+    padding: 0.2rem;
+    color: #D8DBD4;
+}
+
+.fundo-modal{
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    display: none;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:  fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.modal-container{
+    background-color: #152518;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background-color: #224220;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+    padding-left: 29px;
+}
+
+.form-publicacao{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+}
+
+.modal-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.modal-info label{
+    font-size: 1.5rem;
+    color: #D8DBD4;
+    width: 70px;
+}
+
+.modal-info input{
+    width: 80%;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #e0e0e0;
+}
+
+.botoes-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.botoes-modal .btn-criar{
+    background-color: #224220;
+    color: #D8DBD4;
+    font-weight: 300;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-cancelar{
+    background-color: rgb(252, 46, 46);
+    color: #D8DBD4;
+    font-weight: 300;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover{
+    background-color: rgb(253, 68, 68);
+}
+
+.btn-criar:hover{
+    background-color:#305c2d;
+}
+
+
+#modal-excluir-publicacao .modal-container{
+    width: 30%;
+}
+
+#modal-excluir-publicacao .botoes-modal{
+    padding: 0 10%;
+}
+
+#modal-excluir-publicacao .btn-criar{
+    background-color: rgb(252, 46, 46);
+}
+
+#modal-excluir-publicacao .btn-criar:hover{
+    background-color: rgb(253, 68, 68);
+}
+
+#modal-excluir-publicacao .btn-cancelar{
+    background-color: #224220;
+}
+
+#modal-excluir-publicacao .btn-cancelar:hover{
+    background-color: #305c2d;
+}
+
+
+@media screen and (max-width: 630px) {
+    .tabela-posts{
+        overflow: auto;
+    }
+    .parte-cima{
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-between;
+    }
+}
