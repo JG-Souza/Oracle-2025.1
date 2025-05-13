@@ -24,17 +24,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1vw;
-    width: 12vw;
+    width: 15vw;
     height: 12vw;
     color: white;
     background-color: #31692a;
-    border: none;
-    border-radius: 1vw;
+    border: solid 5px #1a3716;
     font-size: 1.5vw;
+    cursor: pointer;
     transition: transform 0.3s ease, background-color 0.2s ease;
 
     #icone-posts {
-        filter: brightness(70%);
+        filter: brightness(150%);
         max-width: 60%;
         max-height: 60%;
     }
