@@ -64,6 +64,8 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+.email-input,
 .senha-input{
     position: relative;
     display: flex;
@@ -97,21 +99,8 @@ i{
     border-radius: 16px;
 }
 
- @media screen and (max-width: 1030px) { 
-    .input-texto{
-        font-size: 50%;
-    }
-    .campo-text-input{
-        height: 15%;
-    }
-    i{
-        font-size: 100%;
-    }
-    .botao{
-        width: 50%;
-    }
-}
-@media screen and (max-width: 700px) {
+ 
+@media screen and (max-width: 1300px) {
     .login-card{
         justify-content: center;
         align-items: center;
