@@ -104,12 +104,166 @@ thead tr{
     color: #D8DBD4;
 }
 
-.modal{
+.fundo-modal{
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
     display: none;
 }
 
-@media screen and (max-width: 830px) {
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:  fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.modal-container{
+    background-color: #152518;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background-color: #224220;
+    border-radius: 10px 10px 0 0;
+    top: 0;
+    padding-left: 29px;
+}
+
+.form-publicacao{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+}
+
+.modal-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.modal-info label{
+    font-size: 1.5rem;
+    color: #D8DBD4;
+    width: 70px;
+}
+
+.modal-info input{
+    width: 80%;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #e0e0e0;
+}
+
+.botoes-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.botoes-modal .btn-criar{
+    background-color: #224220;
+    color: #D8DBD4;
+    font-weight: 300;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-cancelar{
+    background-color: rgb(252, 46, 46);
+    color: #D8DBD4;
+    font-weight: 300;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover{
+    background-color: rgb(253, 68, 68);
+}
+
+.btn-criar:hover{
+    background-color:#305c2d;
+}
+
+
+#modal-excluir-publicacao .modal-container{
+    width: 30%;
+}
+
+#modal-excluir-publicacao .botoes-modal{
+    padding: 0 10%;
+}
+
+#modal-excluir-publicacao .btn-criar{
+    background-color: rgb(252, 46, 46);
+}
+
+#modal-excluir-publicacao .btn-criar:hover{
+    background-color: rgb(253, 68, 68);
+}
+
+#modal-excluir-publicacao .btn-cancelar{
+    background-color: #224220;
+}
+
+#modal-excluir-publicacao .btn-cancelar:hover{
+    background-color: #305c2d;
+}
+
+
+@media screen and (max-width: 630px) {
     .tabela-posts{
         overflow: auto;
+    }
+    .parte-cima{
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-between;
     }
 }

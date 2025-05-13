@@ -26,7 +26,7 @@
                 <span>Tabela de Posts</span>
             </div>
             <div>
-                <button type="button" class="botao-criar">Criar Publicação</button>
+                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao')">Criar Publicação</button>
             </div>
         </div>
         <table class="tabela-posts">
@@ -46,9 +46,9 @@
                     <td>Homero</td>
                     <td>08/05/2025</td>
                     <td>
-                        <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -57,9 +57,9 @@
                     <td>Homero</td>
                     <td>08/05/2025</td>
                     <td>
-                        <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -68,9 +68,9 @@
                     <td>Homero</td>
                     <td>08/05/2025</td>
                     <td>
-                        <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -79,9 +79,9 @@
                     <td>Homero</td>
                     <td>08/05/2025</td>
                     <td>
-                        <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -90,9 +90,9 @@
                     <td>Homero</td>
                     <td>08/05/2025</td>
                     <td>
-                        <button type="button" class="botao-visualizar"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 
@@ -106,12 +106,74 @@
             <a href="#" class="pag-direita"><i class="bi bi-arrow-right-short"></i></a>
         </div>
         <div class="modal" id="modal-criar-publicacao">
-            <div class="modal-cabecalho">
-                <div class="titulo-modal"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Criar Publicação</h2>
+                </div>
+                <form action="" method="POST" class="form-publicacao">
+                    <div class="modal-info">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </div>
+                    <div class="modal-info">
+                        <label for="autor">Autor:</label>
+                        <input type="text" id="autor" name="autor" required>
+                    </div>
+                    <div class="modal-info">
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao" required>
+                    </div>
+                    <div class="botoes-modal">
+                        <button type="submit" class="btn-criar">Criar</button>
+                        <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-publicacao' ,'titulo' ,'autor' ,'descricao')">Cancelar</button>
+                    </div>
+                </form>
             </div>
-            <div class="botoes-modal">
-                <button class="modal-btn-criar"></button>
-                <button class="modal-btn-cancelar"></button>
+        </div>
+        <div class="modal" id="modal-visualizar-publicacao">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Visualizar Publicação</h2>
+                </div>
+                <form action="" method="POST" class="form-publicacao">
+
+                    <div class="modal-info">
+                        <label for="id">Titulo</label>
+                        <input type="text" id="nome" name="nome"  value="X" readonly>
+                    </div>
+
+                    <div class="modal-info">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" value="João" readonly>
+                    </div>
+                    <div class="modal-info">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="jvictorangel45@gmail.com" readonly>
+                    </div>
+                    <div class="modal-info">
+                        <label for="senha">Senha:</label>
+                        <div class="senha-olho">
+                            <input type="password" id="senhav" name="senha" value="123456" readonly>
+                            <i class="fa-solid fa-eye" id="olhov" onclick="mostrarSenha('senhav', 'olhov')"></i>
+                        </div>
+                    </div>
+                    <div class="botoes-modal">
+                        <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email')">Fechar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-excluir-publicacao">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Deseja excluir a Publicação?</h2>
+                </div>
+                    <div class="botoes-modal">
+                        <button type="submit" class="btn-criar">Excluir</button>
+                        <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao' ,'titulo' ,'autor' ,'descricao')">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
