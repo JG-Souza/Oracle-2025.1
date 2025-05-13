@@ -11,3 +11,19 @@ function fecharModal(idModal, idInputNome, idInputEmail) {
     inputNome.value = "";
     inputEmail.value = "";
 }
+
+function mostrarSenha(idInput, idIcone){
+    const icone = document.getElementById(idIcone);
+    const input = document.getElementById(idInput);
+
+    if(input.type === "password"){
+        input.type = "text";
+        icone.classList.replace("fa-eye", "fa-eye-slash");
+    }
+
+    else{
+        input.type = "password";
+        icone.classList.replace("fa-eye-slash", "fa-eye");
+    }
+}
+

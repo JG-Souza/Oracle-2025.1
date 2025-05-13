@@ -32,7 +32,7 @@ body{
     background-position: center;
     background-repeat: repeat;
     color: white;
-    gap: 1.2rem;
+    gap: 5%;
     padding-top: 2rem;
     overflow-y: auto;
 }
@@ -46,7 +46,6 @@ body{
 .tabela-usuarios{
     padding: 0 2rem;
     width: 80%;
-    height: 80%;
     border-radius: 10px;
 }
 
@@ -64,10 +63,19 @@ body{
     height: 3%;
 }
 
+.usuario td{
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 5rem;
+}
+
+
 .usuario:hover{
     background-color: var(--cor-quaternaria);
     cursor: default;
 }
+
+
 
 .cabecalho button{
     background-color: var(--cor-primaria);
@@ -211,6 +219,7 @@ body{
     align-items: center;
     gap: 1rem;
     width: 100%;
+    padding: 0 5%;
 }
 
 .botoes-modal .btn-criar{
@@ -248,10 +257,79 @@ body{
     justify-content: center;
 }
 
+#modal-excluir-usuario .modal-container{
+    width: 30%;
+}
+
+#modal-excluir-usuario .botoes-modal{
+    padding: 0 10%;
+}
+
+.lixeira{
+    width: 300px;
+    height: 300px;
+}
+
+#modal-excluir-usuario .btn-criar{
+    background-color: rgb(252, 46, 46);
+}
+
+#modal-excluir-usuario .btn-criar:hover{
+    background-color: rgb(253, 68, 68);
+}
+
+#modal-excluir-usuario .btn-cancelar{
+    background-color: var(--cor-primaria);
+}
+
+#modal-excluir-usuario .btn-cancelar:hover{
+    background-color: #305c2d;
+}
+
+#modal-visualizar-usuario .botoes-modal{
+    justify-content: center;
+    align-items: center;
+}
+
+#olhov, #olhoc, #olhoe{
+    color: gray;
+}
+
+.senha-olho{
+    width: 80%;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 0 1rem 0 0;
+    font-size: 1.5rem;
+    background-color: var(--cor-quinta);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.senha-olho input{
+    background: none;
+    outline: none;
+}
 
 
 @media screen and (max-width: 830px) {
     .tabela-usuarios{
         overflow: auto;
     }
+}
+
+@media only screen and (max-width:568px) {
+
+  .modal-container {
+    width: 100%;
+    position: absolute;
+  }
+
+  .form-usuario{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
 }
