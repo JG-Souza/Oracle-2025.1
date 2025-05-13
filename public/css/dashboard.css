@@ -1,0 +1,74 @@
+body {
+    background-color: #F1FDF1;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-image: url("/public/assets/background.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.secao {
+    height: 100vh;
+    display: flex;
+    flex-direction:row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+.pagina-de-posts, .pagina-de-usuarios, .logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    width: 15vw;
+    height: 12vw;
+    color: white;
+    background-color: #31692a;
+    border: solid 5px #1a3716;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+
+    #icone-posts {
+        filter: brightness(150%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    #icone-usuarios {
+        filter: brightness(150%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    #icone-logout {
+        filter: brightness(150%);
+        max-width: 60%;
+        max-height: 60%;
+    }
+    
+}
+
+.pagina-de-posts:hover, .pagina-de-usuarios:hover, .logout:hover {
+    transform: scale(1.1);
+    background-color: #31692a;
+}
+
+.pagina-de-posts:active, .pagina-de-usuarios:active, .logout:active {
+    transform: scale(0.95);
+    background-color: #264a22;
+}
+
+/* Porte para CELULAR*/
+@media (max-width: 768px) {
+    .secao {
+        flex-direction: column;
+    }
+    .pagina-de-posts, .pagina-de-usuarios, .logout {
+        font-size: 5vw;
+        width: 35vw;
+        height: 35vw;
+    }
+}
