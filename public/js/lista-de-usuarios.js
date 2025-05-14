@@ -18,12 +18,12 @@ function mostrarSenha(idInput, idIcone){
 
     if(input.type === "password"){
         input.type = "text";
-        icone.classList.replace("fa-eye", "fa-eye-slash");
+        icone.classList.replace("bi-eye", "bi-eye-slash");
     }
 
     else{
         input.type = "password";
-        icone.classList.replace("fa-eye-slash", "fa-eye");
+        icone.classList.replace("bi-eye-slash", "bi-eye");
     }
 }
 

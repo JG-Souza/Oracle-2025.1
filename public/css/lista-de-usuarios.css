@@ -12,8 +12,12 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: calc(70% + 0.8vmin);
+}
+
 body{
-    font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Junge',sans-serif;
 }
 
 .container{
@@ -40,12 +44,12 @@ body{
 .cabecalho{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 65%;
 }
 
 .tabela-usuarios{
     padding: 0 2rem;
-    width: 80%;
+    width: 70%;
     border-radius: 10px;
 }
 
@@ -82,7 +86,7 @@ body{
     color: var(--cor-secundaria);
     border: none;
     padding: 1rem 2rem;
-    border-radius: 10px;
+    border-radius: 30px;
     font-size: 1.2rem;
     cursor: pointer;
 }
@@ -113,7 +117,6 @@ body{
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    text-decoration: none;
     margin-left: 0.2rem;
     margin-right: 0.2rem;
 }
@@ -134,9 +137,10 @@ body{
     cursor: pointer;
 }
 
-.foto-usuario{
-    font-size: 2.5rem;
-    border-radius: 50%;
+.foto-usuario img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
     background-color: var(--cor-quinta);
 }   
 
@@ -271,10 +275,6 @@ body{
     padding: 0 10%;
 }
 
-.lixeira{
-    width: 300px;
-    height: 300px;
-}
 
 #modal-excluir-usuario .btn-criar{
     background-color: rgb(252, 46, 46);
