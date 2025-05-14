@@ -6,6 +6,10 @@
     --cor-quinta: #e0e0e0;
   }
 
+html{
+    font-size: calc(70% + 0.8vmin);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -45,6 +49,7 @@ body{
     display: flex;
     justify-content: space-between;
     width: 65%;
+
 }
 
 .tabela-usuarios{
@@ -319,18 +324,6 @@ body{
     outline: none;
 }
 
-
-@media screen and (max-width: 830px) {
-    .tabela-usuarios{
-        overflow: auto;
-    }
-}
-
-@media only screen and (max-width:568px) {
-    body{
-        overflow: auto;
-    }
-
   .modal-container {
     width: 100%;
     position: absolute;
@@ -345,4 +338,16 @@ body{
     width: 100%;
   }
   
+@media screen and (max-width: 830px) {
+    .container{
+        overflow-x: block;
+    }
+}
+
+@media only screen and (max-width:568px) {
+    
+
+    .tabela-usuarios{
+        scale: 0.8;
+    }
 }
