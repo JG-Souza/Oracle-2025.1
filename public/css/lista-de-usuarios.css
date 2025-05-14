@@ -170,6 +170,7 @@ body{
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 2rem;
+    max-width: 50%;
 }
 
 .modal-header{
@@ -222,6 +223,7 @@ body{
     padding: 1rem;
     font-size: 1.5rem;
     background-color: var(--cor-quinta);
+    margin-left: 1rem;
 }
 
 .botoes-modal{
@@ -313,6 +315,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 1.2rem;
 }
 
 .senha-olho input{
@@ -360,18 +363,27 @@ body{
     }
     .cabecalho{
         position: relative;
-        width: 100%;
         padding: 0 2rem; ;
     }
     
     .cabecalho button{
         scale: 0.8;
     }
+
+    .modal-container{
+        width: 100%;
+        max-width: 830px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 }
 
 @media only screen and (max-width:568px) {
     .tabela-usuarios{
         scale: 0.8;
+    }
+    .cabecalho{
+        width: 100%;
     }
 }
 
