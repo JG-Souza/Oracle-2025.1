@@ -327,6 +327,9 @@ body{
 }
 
 @media only screen and (max-width:568px) {
+    body{
+        overflow: auto;
+    }
 
   .modal-container {
     width: 100%;
@@ -336,6 +339,10 @@ body{
   .form-usuario{
     padding-left: 2%;
     padding-right: 2%;
+  }
+
+  #modal-excluir-usuario .modal-container{
+    width: 100%;
   }
   
 }
