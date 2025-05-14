@@ -28,11 +28,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
     background-image: url(/public/assets/Baclground\ Oracle.jpeg);
@@ -42,7 +39,6 @@ body{
     color: white;
     gap: 5%;
     padding-top: 2rem;
-    overflow-y: auto;
 }
 
 .cabecalho{
@@ -51,7 +47,7 @@ body{
     width: 65%;
 
 }
-
+ 
 .tabela-usuarios{
     padding: 0 2rem;
     width: 70%;
@@ -114,7 +110,7 @@ body{
 }
 
 .numero-pagina{
-    padding: 0%;
+    padding: 0;
     margin-bottom: 200px;
     background: none;
     color: var(--cor-secundaria);
@@ -337,17 +333,50 @@ body{
   #modal-excluir-usuario .modal-container{
     width: 100%;
   }
+
+  @media screen and (max-width: 1200px) {
+    .container{
+        overflow-x: auto;
+        overflow-y: auto;
+        gap: 1rem;
+        padding-top: 7rem;
+    }
+    .cabecalho{
+        position: relative;
+        padding: 0 2rem; ;
+    }
+    
+    .cabecalho button{
+        scale: 0.8;
+    }
+    
+  }
   
 @media screen and (max-width: 830px) {
     .container{
         overflow-x: block;
+        overflow-y: auto;
+    
+    }
+    .cabecalho{
+        position: relative;
+        width: 100%;
+        padding: 0 2rem; ;
+    }
+    
+    .cabecalho button{
+        scale: 0.8;
     }
 }
 
 @media only screen and (max-width:568px) {
-    
-
     .tabela-usuarios{
         scale: 0.8;
+    }
+}
+
+@media only screen and (max-width:370px) {
+    .tabela-usuarios{
+        scale: 0.7;
     }
 }
