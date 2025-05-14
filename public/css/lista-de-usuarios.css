@@ -352,6 +352,11 @@ body{
     .cabecalho button{
         scale: 0.8;
     }
+
+    .form-usuario{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
     
   }
   
