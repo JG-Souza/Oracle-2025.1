@@ -79,6 +79,7 @@
   width: 12.5rem;
   height: 12.5rem;
   transition: opacity 0.5s ease-in-out;
+  margin-top: 1.425rem;
 }
 .footer .container .logo h1{
   font-size: 2rem;
@@ -169,6 +170,10 @@
   transition: opacity 0.5s ease-in-out;
   position: absolute;
   cursor: default;
+}
+
+#valores{
+  padding-top:1.125rem;
 }
 
 .logo span{
