@@ -12,6 +12,11 @@ body{
     box-sizing: border-box;
 }
 
+img{
+    width: 10rem;
+    height: auto;
+}
+
 main{
     width: 100vw;
     height: 100vh;
@@ -121,8 +126,8 @@ thead tr{
 .modal-container{
     background-color: #152518;
     z-index: 3;
-    width: 50%;
-    height: 85%;
+    width: 65%;
+    height: 90%;
     border-radius: 10px;
     display: flex;
     justify-content: start;
@@ -156,9 +161,9 @@ thead tr{
     height: 100%;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 40px;
 }
 
+.modal-info-2,
 .modal-info{
     display: flex;
     justify-content: center;
@@ -167,14 +172,16 @@ thead tr{
     width: 100%;
 }
 
+.modal-info-2 label,
 .modal-info label{
     font-size: 1.5rem;
     color: #D8DBD4;
-    width: 70px;
+    width: 8rem;
 }
 
+.modal-info-2 input,
 .modal-info input{
-    width: 70%;
+    width: 100%;
     height: 2rem;
     border-radius: 5px;
     border: none;
@@ -183,11 +190,11 @@ thead tr{
     background-color: #e0e0e0;
 }
 
-#modal-info-descricao label {
-    width: auto;
+.modal-info-2 label {
+    width: max-content;
 }
-#modal-info-descricao textarea{
-    width: 70%;
+.modal-info-2 textarea{
+    width: 100%;
     height: 6rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -195,15 +202,49 @@ thead tr{
     border: none;
     background-color: #e0e0e0;
 }
+.modal-container-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2rem
+}
 
+.modal-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    gap: 3rem;
+}
+
+#modal-side-left{
+    gap: 4rem;
+}
+#modal-side-right{
+    align-items: end;
+}
 .modal-imagem input{
     display: none;
 }
 .modal-imagem{
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
 }
 .btn-imagem{
+    width: 7rem;
+    height: 4rem;
     background-color: #224220;
     color: #D8DBD4;
     font-weight: 300;
@@ -213,17 +254,27 @@ thead tr{
     font-size: 1.2rem;
     cursor: pointer;
 }
+#modal-imagem-criar{
+    flex-direction: column;
+    align-items: center;
+}
+#btn-input-imagem-criar{
+    width: fit-content;
+    height: auto;
+}
 
 .botoes-modal{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 15rem;
     width: 100%;
+
 }
 
 .botoes-modal .btn-criar{
     background-color: #224220;
+    width: 10rem;
     color: #D8DBD4;
     font-weight: 300;
     border: none;
@@ -235,6 +286,7 @@ thead tr{
 
 .btn-cancelar{
     background-color: rgb(252, 46, 46);
+    width: 10rem;
     color: #D8DBD4;
     font-weight: 300;
     border: none;
@@ -252,7 +304,9 @@ thead tr{
     background-color:#305c2d;
 }
 
-
+#botoes-modal-excluir{
+    gap: 1rem;
+}
 #modal-excluir-publicacao .modal-container{
     width: 30%;
     height: auto;
@@ -288,5 +342,52 @@ thead tr{
         padding-left: 5vw;
         padding-right: 5vw;
         justify-content: space-between;
+    }
+}
+@media screen and (max-width: 1000px){
+    .modal-header{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .modal-container{
+        overflow-y: scroll;
+    }
+    .form-publicacao{
+        padding: 1%;
+    }
+    .modal-container-content{
+        flex-direction: column;
+        padding: 0;
+    }
+    .modal-side{
+        width: 80%;
+    }
+    #modal-side-right{
+        align-items: center;
+    }
+    .modal-info{
+        flex-direction: column;
+        text-align: center;
+    }
+    .modal-info-2{
+        flex-direction: column;
+    }
+    .modal-imagem{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .botoes-modal{
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 2rem;
+    }
+    #modal-excluir-publicacao .modal-container{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1300px){
+    #modal-curiosidades{
+        flex-direction: column;
     }
 }
