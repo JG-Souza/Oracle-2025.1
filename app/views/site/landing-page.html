@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle | Landing Page</title>
+    <link rel="stylesheet" href="/public/css/landing-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital...&family=Junge&display=optional" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="hero-section">
+        <!-- TEXTO DA HEADLINE-->
+        <div class="headline">
+            <h2 id="headlineTitulo1">O ORACLE REVELA</h2>
+            <h2 id="headlineTitulo2">TUDO SOBRE</h2>
+            <h2 id="headlineTitulo3">MITOLOGIA</h2>
+            <h3 id="headlineTitulo4">MITOS, DEUSES, RELÍQUIAS E HISTÓRIAS</h3>
+        </div>
+        <div class="destaques">
+            <h3>DESTAQUES</h3>
+            <!-- SLIDES / CARROSSEL -->
+            <div class="carrossel-de-destaques">
+                <!-- Botoes de Seta -->
+                <button class="back" onclick="backSlide()"> &#x276E; </button>
+                <div class="meio-do-carrossel">
+                    <h3 class="texto-carrossel">TÍTULO CABEÇALHO DO POST</h3>
+                    <!-- Label dos botoes -->
+                    <div class="radio-auto">
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                        <label class="radio-label"></label>
+                    </div>
+                    <!---->
+                </div>
+                <button class="next" onclick="nextSlide()"> &#x276F; </button>
+            </div>
+        </div>
+    </section>
+
+    <!--CONTEÚDO-->
+    <main class="conteudo">
+        <section class="ultimosPosts">
+            <h3 class="tituloUltimosPosts">ÚLTIMOS POSTS</h3>
+            <section class="posts">
+                <div class="postGrande">
+                    <div id="pgImg"></div>
+                    <h4 id="pgTitulo">Título do post grande</h4>
+                </div>
+                <div class="postsPequenos">
+                    <div class="pp1"> 
+                        <div id="ppImg1"></div>
+                        <h4 id="ppTitulo1">Lorem Ipsum Grecia Egito Japão Osíris Zeus Zagreu Lorem Ipsum Lorem Ipsum</h4>
+                    </div>
+                    <div class="pp2">
+                        <div id="ppImg2"></div>
+                        <h4 id="ppTitulo2">Título do post pequeno</h4>
+                    </div>
+                    <div class="pp3">
+                        <div id="ppImg3"></div>
+                        <h4 id="ppTitulo3">Título do post pequeno</h4>
+                    </div>
+                    <div class="pp4">
+                        <div id="ppImg4"></div>
+                        <h4 id="ppTitulo4">Título do post pequeno</h4>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- SCRIPT -->
+    <script src="/public/js/landing-page.js"></script>
+</body>
+</html>
