@@ -119,9 +119,14 @@
                         <label for="autor">Autor:</label>
                         <input type="text" id="autor" name="autor" required>
                     </div>
-                    <div class="modal-info">
+                    <div class="modal-info" id="modal-info-descricao">
                         <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" name="descricao" required>
+                        <textarea name="descricao" id="descricao"></textarea>
+                    </div>
+                    <div class="modal-imagem">
+                        <img src="" class="imagem-publicacao" id="imagem-publicacao">
+                        <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                        <button type="button" class="btn-imagem" id="btn-input-imagem" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
                     </div>
                     <div class="botoes-modal">
                         <button type="submit" class="btn-criar">Criar</button>
@@ -139,28 +144,28 @@
 
                     <div class="modal-info">
                         <label for="id">Titulo</label>
-                        <input type="text" id="nome" name="nome"  value="X" readonly>
+                        <input type="text" id="nome" name="nome"  value="Minotauro" readonly>
                     </div>
-
                     <div class="modal-info">
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="João" readonly>
+                        <input type="text" id="nome" name="nome" value="Homero" readonly>
                     </div>
                     <div class="modal-info">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" value="jvictorangel45@gmail.com" readonly>
+                        <label for="data">Data:</label>
+                        <input type="text" id="data" name="data" value="08/05/2025" readonly>
                     </div>
-                    <div class="modal-info">
-                        <label for="senha">Senha:</label>
-                        <div class="senha-olho">
-                            <input type="password" id="senhav" name="senha" value="123456" readonly>
-                            <i class="fa-solid fa-eye" id="olhov" onclick="mostrarSenha('senhav', 'olhov')"></i>
+                     <div class="modal-info" id="modal-info-descricao">
+                        <label for="descricao">Descrição:</label>
+                        <textarea name="descricao" id="descricao" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                    </div>
+                    <div class="pate-baixo-modal">
+                        <div class="botoes-modal">
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-publicacao' ,'titulo' ,'autor' ,'descricao')">Fechar</button>
+                        </div>
+                        <div class="modal-imagem">
+                            <img src="" class="imagem-publicacao" id="imagem-publicacao">
                         </div>
                     </div>
-                    <div class="botoes-modal">
-                        <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email')">Fechar</button>
-                    </div>
-
                 </form>
             </div>
         </div>
@@ -169,11 +174,10 @@
                 <div class="modal-header">
                     <h2>Deseja excluir a Publicação?</h2>
                 </div>
-                    <div class="botoes-modal">
-                        <button type="submit" class="btn-criar">Excluir</button>
-                        <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao' ,'titulo' ,'autor' ,'descricao')">Cancelar</button>
-                    </div>
-                </form>
+                <div class="botoes-modal">
+                    <button type="submit" class="btn-criar">Excluir</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao' ,'titulo' ,'autor' ,'descricao')">Cancelar</button>
+                </div>
             </div>
         </div>
     </main>

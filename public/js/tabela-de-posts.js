@@ -6,10 +6,18 @@ function abrirModal(idModal) {
 function fecharModal(idModal ,idInputTitulo ,idInputAutor ,idInputDescricaco ) {
     const modal = document.getElementById(idModal);
     modal.style.display = "none";
-    const idInputTitulo = document.getElementById(idInputTitulo);
-    const idInputAutor = document.getElementById(idInputAutor);
-    const idInputDescricaco = document.getElementById(idInputDescricaco);
-    idInputTitulo.value = "";
-    idInputAutor.value = "";
-    idInputDescricaco = "";
+    const Titulo = document.getElementById(idInputTitulo);
+    const Autor = document.getElementById(idInputAutor);
+    const Descricaco = document.getElementById(idInputDescricaco);
+    Titulo.value = "";
+    Autor.value = "";
+    Descricaco.value = "";
+}
+
+const image = document.getElementById('imagem-publicaco');
+const inputImage = document.getElementById('input-imagem');
+
+inputImage.onchange = function (){
+    image.src = URL.createObjectURL(inputImage.files[0]);
+    image.style.display = "block";
 }
