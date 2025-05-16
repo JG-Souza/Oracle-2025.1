@@ -6,9 +6,15 @@ body {
     background-image: url("/public/assets/background.png");
     background-size: cover;
     background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.secao {
+.dashboard-section {
     height: 100vh;
     display: flex;
     flex-direction:row;
@@ -16,6 +22,18 @@ body {
     justify-content: center;
     align-items: center;
     gap: 3vw;
+}
+
+.dashboard-card {
+    height: 50%;
+    width: 60%;
+    position: absolute;
+    z-index: -2;
+    padding: 5%;
+    gap: 10%;
+    background-color: #F1FDF1;
+    opacity: 60%;
+    border-radius: 12px;
 }
 
 .pagina-de-posts, .pagina-de-usuarios, .logout {
@@ -63,12 +81,15 @@ body {
 
 /* Porte para CELULAR*/
 @media (max-width: 768px) {
-    .secao {
+    .dashboard-section {
         flex-direction: column;
     }
     .pagina-de-posts, .pagina-de-usuarios, .logout {
         font-size: 5vw;
         width: 35vw;
         height: 35vw;
+    }
+    .dashboard-card {
+        height: 80%;
     }
 }
