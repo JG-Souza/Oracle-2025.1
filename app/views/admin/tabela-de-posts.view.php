@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle | Tabela de Posts</title>
+
+    <link rel="stylesheet" href="/public/css/tabela-de-posts.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Junge&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <main>
+        <div class="parte-cima">
+            <div class="titulo">
+                <span>Tabela de Posts</span>
+            </div>
+            <div>
+                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao')">Criar Publicação</button>
+            </div>
+        </div>
+        <table class="tabela-posts">
+            <thead class="tabela-head">
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Data</th>
+                    <th>Botões</th>
+                </tr>
+            </thead>
+            <tbody class="tabela-body">
+                <?php foreach($posts as $post): ?>
+                <tr>
+                    <td><?=$post->post_id ?></td>
+                    <td><?=$post->title ?></td>
+                    <td><?=$post->autor ?></td>
+                    <td>08/05/2025</td>
+                    <td>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+        <div class="paginacao">
+            <a href="#" class="pag-esquerda"><i class="bi bi-arrow-left-short"></i></a>
+            <a href="#" class="pagina">1</a>
+            <a href="#" class="pagina">2</a>
+            <a href="#" class="pagina">3</a>
+            <a href="#" class="pag-direita"><i class="bi bi-arrow-right-short"></i></a>
+        </div>
+        <div class="modal" id="modal-criar-publicacao">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Criar Publicação</h2>
+                </div>
+                <form action="" method="POST" class="form-publicacao">
+                    <div class="modal-container-content">
+                        <div class="modal-side" id="modal-side-left">
+                            <div class="modal-info">
+                                <label for="titulo">Título:</label>
+                                <input type="text" id="titulo" name="titulo" required>
+                            </div>
+                            <div class="modal-info">
+                                <label for="autor">Autor:</label>
+                                <input type="text" id="autor" name="autor" required>
+                            </div>
+                            <div class="modal-info">
+                                <label for="origem">Origem:</label>
+                                <input type="text" id="origem" name="origem" required>
+                            </div>
+                            <div class="modal-info-2">
+                                <label for="historia">História:</label>
+                                <textarea name="historia" id="historia"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-side" id="modal-side-right">
+                            <div class="modal-info-2" id="modal-curiosidades">
+                                <label for="curiosidades">Curiosidades:</label>
+                                <textarea name="curiosidades" id="curiosidades"></textarea>
+                            </div>
+                             <div class="modal-info-2">
+                                <label for="licoes">Lições:</label>
+                                <textarea name="licoes" id="licoes"></textarea>
+                            </div>
+                            <div class="modal-imagem" id="modal-imagem-criar">
+                                <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                                <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
+                                <img src="" class="imagem-publicacao" id="imagem-publicacao">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="botoes-modal">
+                            <button type="submit" class="btn-criar">Criar</button>
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-publicacao' ,'titulo' ,'autor' ,'historia')">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-visualizar-publicacao">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Visualizar Publicação</h2>
+                </div>
+                <form action="" method="POST" class="form-publicacao">
+                    <div class="modal-container-content">
+                        <div class="modal-side" id="modal-side-left">
+                            <div class="modal-info">
+                                <label for="titulo">Título:</label>
+                                <input type="text" id="titulo" name="titulo" value="Minotauro" readonly>
+                            </div>
+                            <div class="modal-info">
+                                <label for="autor">Autor:</label>
+                                <input type="text" id="autor" name="autor" value="Homero" readonly>
+                            </div>
+                            <div class="modal-info">
+                                <label for="origem">Origem:</label>
+                                <input type="text" id="origem" name="origem" value="Mitologia Grega" readonly>
+                            </div>
+                            <div class="modal-info">
+                                <label for="data">Data:</label>
+                                <input type="text" id="data" name="data" value="08/05/2025" readonly>
+                            </div>
+                            <div class="modal-info-2">
+                                <label for="historia">História:</label>
+                                <textarea name="historia" id="historia" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-side" id="modal-side-right">
+                            <div class="modal-info-2" id="modal-curiosidades">
+                                <label for="curiosidades">Curiosidades:</label>
+                                <textarea name="curiosidades" id="curiosidades" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                             <div class="modal-info-2">
+                                <label for="licoes">Lições:</label>
+                                <textarea name="licoes" id="licoes" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                            <div class="modal-imagem">
+                                <img src="/public/assets/Gemini_Generated_Image_phpd13phpd13phpd.jpg" class="imagem-publicacao" id="imagem-publicacao">
+                            </div>
+                        </div>
+                    </div>
+                         <div class="botoes-modal">
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-publicacao' ,'titulo' ,'autor' ,'historia')">Fechar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-editar-publicacao">
+             <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Editar Publicação</h2>
+                </div>
+                <form action="" method="POST" class="form-publicacao">
+                    <div class="modal-container-content">
+                        <div class="modal-side" id="modal-side-left">
+                            <div class="modal-info">
+                                <label for="titulo">Título:</label>
+                                <input type="text" id="titulo" name="titulo" value="Minotauro">
+                            </div>
+                            <div class="modal-info">
+                                <label for="autor">Autor:</label>
+                                <input type="text" id="autor" name="autor" value="Homero">
+                            </div>
+                            <div class="modal-info">
+                                <label for="origem">Origem:</label>
+                                <input type="text" id="origem" name="origem" value="Mitologia Grega">
+                            </div>
+                            <div class="modal-info-2">
+                                <label for="historia">História:</label>
+                                <textarea name="historia" id="historia">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-side" id="modal-side-right">
+                            <div class="modal-info-2" id="modal-curiosidades">
+                                <label for="curiosidades">Curiosidades:</label>
+                                <textarea name="curiosidades" id="curiosidades">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                             <div class="modal-info-2">
+                                <label for="licoes">Lições:</label>
+                                <textarea name="licoes" id="licoes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia congue nisl eu blandit. Aenean vitae ornare dolor. Integer nec tempor massa.</textarea>
+                            </div>
+                            <div class="modal-imagem">
+                                <button type="button" class="btn-imagem" id="btn-input-imagem" onclick="document.getElementById('input-imagem').click()">Editar</button>
+                                <img src="/public/assets/Gemini_Generated_Image_phpd13phpd13phpd.jpg" class="imagem-publicacao" id="imagem-publicacao">
+                            </div>
+                        </div>
+                    </div>
+                         <div class="botoes-modal">
+                            <button type="submit" class="btn-criar">Salvar</button>
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-publicacao' ,'titulo' ,'autor' ,'historia')">Fechar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="modal-excluir-publicacao">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Deseja excluir a Publicação?</h2>
+                </div>
+                <div class="botoes-modal" id="botoes-modal-excluir">
+                    <button type="submit" class="btn-criar">Excluir</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao' ,'titulo' ,'autor' ,'historia')">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/public/js/tabela-de-posts.js"></script>
+</body>
+</html>
