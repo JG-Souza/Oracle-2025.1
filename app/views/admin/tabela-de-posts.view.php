@@ -26,7 +26,7 @@
                 <span>Tabela de Posts</span>
             </div>
             <div>
-                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao')">Criar Publicação</button>
+                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao<?=$post->post_id ?>')">Criar Publicação</button>
             </div>
         </div>
         <table class="tabela-posts">
@@ -44,12 +44,12 @@
                 <tr>
                     <td><?=$post->post_id ?></td>
                     <td><?=$post->title ?></td>
-                    <td><?=$post->autor ?></td>
-                    <td>08/05/2025</td>
+                    <td>Autor</td>
+                    <td><?=$post->created_at ?></td>
                     <td>
-                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao')"><i class="bi bi-eye-fill"></i></button>
-                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao')"><i class="bi bi-pencil-square"></i></button>
-                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao')"><i class="bi bi-trash"></i></button>
+                        <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao<?=$post->post_id ?>')" ><i class="bi bi-eye-fill"></i></button>
+                        <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao<?=$post->post_id ?>')"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao<?=$post->post_id ?>')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <?php endforeach ?>

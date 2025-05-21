@@ -12,6 +12,6 @@ class PostsController
     {
         $posts = App::get('database') -> selectAll('posts');
 
-        return view('admin/tabela-de-posts', $posts);
+        return view('admin/tabela-de-posts', compact('posts'));
     }
 }

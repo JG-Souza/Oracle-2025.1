@@ -7,3 +7,4 @@ use App\Core\Router;
 $router->get('', 'ExampleController@index');
 
 $router->get('tabela-de-posts', 'PostsController@index');
+$router->post('tabela-de-posts/create', 'PostsController@store');
