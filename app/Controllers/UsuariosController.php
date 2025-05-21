@@ -10,7 +10,7 @@ class UsuariosController
 
     public function index()
     {
-        $usuarios = App::get('database')->selectAll('usuarios');
+        $usuarios = App::get('database')->selectAll('users');
 
         return view('admin/crud-usuarios');
     }
