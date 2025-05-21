@@ -36,61 +36,19 @@
                     <th>Email</th>
                     <th>Ações</th>
                 </tr>
+                <?php foreach ($usuarios as $usuario): ?>
                 <tr class="usuario">
-                    <td class="id-usuario">1</td>
-                    <td class="foto-usuario"><img src="/public/assets/avatar-generico.avif" alt=""></td>
-                    <td class="nome-usuario">Lorem Ipsum</td>
-                    <td class="email-usuario">jvictorangel45@gmail.com</td>
+                    <td class="id-usuario"><?= $usuario->user_id ?></td>
+                    <td class="foto-usuario"><img src=<?= $usuario->img_path ?> alt=""></td>
+                    <td class="nome-usuario"><?= $usuario->name ?></td>
+                    <td class="email-usuario"><?= $usuario->email ?></td>
                     <td class="acoes-usuario">
                         <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="bi bi-eye-fill"></i></button>
                         <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="bi bi-pencil-square"></i></button>
                         <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
-                <tr class="usuario">
-                    <td class="id-usuario">2</td>
-                    <td class="foto-usuario"><img src="/public/assets/avatar-generico.avif" alt=""></td>
-                    <td class="nome-usuario">Lorem Ipsum</td>
-                    <td class="email-usuario">jvictorangel45@gmail.com</td>
-                    <td class="acoes-usuario">
-                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="bi bi-eye-fill"></i></button>
-                        <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="bi bi-pencil-square"></i></button>
-                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
-                    </td>
-                </tr>
-                <tr class="usuario">
-                    <td class="id-usuario">3</td>
-                    <td class="foto-usuario"><img src="/public/assets/avatar-generico.avif" alt=""></td>
-                    <td class="nome-usuario">Lorem Ipsum</td>
-                    <td class="email-usuario">jvictorangel45@gmail.com</td>
-                    <td class="acoes-usuario">
-                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="bi bi-eye-fill"></i></button>
-                        <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="bi bi-pencil-square"></i></button>
-                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
-                    </td>
-                </tr>
-                <tr class="usuario">
-                    <td class="id-usuario">4</td>
-                    <td class="foto-usuario"><img src="/public/assets/avatar-generico.avif" alt=""></td>
-                    <td class="nome-usuario">Lorem Ipsum</td>
-                    <td class="email-usuario">jvictorangel45@gmail.com</td>
-                    <td class="acoes-usuario">
-                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="bi bi-eye-fill"></i></button>
-                        <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="bi bi-pencil-square"></i></button>
-                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
-                    </td>
-                </tr>
-                <tr class="usuario">
-                    <td class="id-usuario">5</td>
-                    <td class="foto-usuario"><img src="/public/assets/avatar-generico.avif" alt=""></td>
-                    <td class="nome-usuario">Lorem Ipsum</td>
-                    <td class="email-usuario">jvictorangel45@gmail.com</td>
-                    <td class="acoes-usuario">
-                        <button class="btn-visualizar" onclick="abrirModal('modal-visualizar-usuario')"><i class="bi bi-eye-fill"></i></button>
-                        <button class="btn-editar" onclick="abrirModal('modal-editar-usuario')"><i class="bi bi-pencil-square"></i></button>
-                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
-                    </td>
-                </tr>
+                <?php endforeach; ?>
             </thead>
         </table>
         <div class="paginacao">
@@ -106,7 +64,7 @@
             <div class="modal-header">
                 <h2>Adicionar Usuário</h2>
             </div>
-            <form action="" method="POST" class="form-usuario">
+            <form action="/crud-usuarios/create" method="POST" class="form-usuario">
                 <div class="modal-info">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
