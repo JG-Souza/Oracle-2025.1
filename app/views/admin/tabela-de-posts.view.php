@@ -52,6 +52,119 @@
                         <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao<?=$post->post_id ?>')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
+                <div class="modal" id="modal-visualizar-publicacao<?=$post->post_id ?>">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>Visualizar Publicação</h2>
+                    </div>
+                    <form class="form-publicacao">
+                        <div class="modal-container-content">
+                            <div class="modal-side" id="modal-side-left">
+                                <div class="modal-info">
+                                    <label for="titulo">Título:</label>
+                                    <input type="text" value="<?=$post->title ?>" readonly>
+                                </div>
+                                <div class="modal-info">
+                                    <label for="autor">Autor:</label>
+                                    <input type="text" value="Autor" readonly>
+                                </div>
+                                <div class="modal-info">
+                                    <label for="origem">Origem:</label>
+                                    <input type="text" value="<?=$post->origin ?>" readonly>
+                                </div>
+                                <div class="modal-info">
+                                    <label for="data">Data:</label>
+                                    <input type="text" value="<?=$post->created_at ?>" readonly>
+                                </div>
+                                <div class="modal-info-2">
+                                    <label for="historia">História:</label>
+                                    <textarea readonly><?=$post->story ?></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-side" id="modal-side-right">
+                                <div class="modal-info-2" id="modal-curiosidades">
+                                    <label for="curiosidades">Curiosidades:</label>
+                                    <textarea readonly><?=$post->curiosity ?></textarea>
+                                </div>
+                                <div class="modal-info-2">
+                                    <label for="licoes">Lições:</label>
+                                    <textarea readonly><?=$post->lesson ?></textarea>
+                                </div>
+                                <div class="modal-imagem">
+                                    <img src="<?=$post->img_path ?>" class="imagem-publicacao">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botoes-modal">
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-publicacao<?=$post->post_id ?>')">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+
+                <div class="modal" id="modal-editar-publicacao<?=$post->post_id ?>">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>Editar Publicação</h2>
+                    </div>
+                    <form action="/editar-post/<?=$post->post_id ?>" method="POST" class="form-publicacao">
+                        <div class="modal-container-content">
+                            <div class="modal-side" id="modal-side-left">
+                                <div class="modal-info">
+                                    <label for="titulo">Título:</label>
+                                    <input type="text" name="titulo" value="<?=$post->title ?>">
+                                </div>
+                                <div class="modal-info">
+                                    <label for="autor">Autor:</label>
+                                    <input type="text" name="autor" value="Autor">
+                                </div>
+                                <div class="modal-info">
+                                    <label for="origem">Origem:</label>
+                                    <input type="text" name="origem" value="<?=$post->origin ?>">
+                                </div>
+                                <div class="modal-info-2">
+                                    <label for="historia">História:</label>
+                                    <textarea name="historia"><?=$post->story ?></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-side" id="modal-side-right">
+                                <div class="modal-info-2" id="modal-curiosidades">
+                                    <label for="curiosidades">Curiosidades:</label>
+                                    <textarea name="curiosidades"><?=$post->curiosity ?></textarea>
+                                </div>
+                                <div class="modal-info-2">
+                                    <label for="licoes">Lições:</label>
+                                    <textarea name="licoes"><?=$post->lesson ?></textarea>
+                                </div>
+                                <div class="modal-imagem">
+                                    <button type="button" class="btn-imagem" onclick="document.getElementById('input-imagem-<?=$post->post_id ?>').click()">Editar</button>
+                                    <input type="file" name="img_path" id="input-imagem-<?=$post->post_id ?>" style="display:none;">
+                                    <img src="<?=$post->img_path ?>" class="imagem-publicacao">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botoes-modal">
+                            <button type="submit" class="btn-criar">Salvar</button>
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-publicacao<?=$post->post_id ?>')">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+
+                <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>Deseja excluir a publicação?</h2>
+                    </div>
+                    <form action="/excluir-post/<?=$post->post_id ?>" method="POST">
+                        <div class="botoes-modal" id="botoes-modal-excluir">
+                            <button type="submit" class="btn-criar">Excluir</button>
+                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+
                 <?php endforeach ?>
             </tbody>
         </table>
