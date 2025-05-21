@@ -26,7 +26,7 @@
                 <span>Tabela de Posts</span>
             </div>
             <div>
-                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao<?=$post->post_id ?>')">Criar Publicação</button>
+                <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao')">Criar Publicação</button>
             </div>
         </div>
         <table class="tabela-posts">
@@ -67,7 +67,7 @@
                 <div class="modal-header">
                     <h2>Criar Publicação</h2>
                 </div>
-                <form action="" method="POST" class="form-publicacao">
+                <form action="/tabela-de-posts/create" method="POST" class="form-publicacao">
                     <div class="modal-container-content">
                         <div class="modal-side" id="modal-side-left">
                             <div class="modal-info">
@@ -81,6 +81,10 @@
                             <div class="modal-info">
                                 <label for="origem">Origem:</label>
                                 <input type="text" id="origem" name="origem" required>
+                            </div>
+                            <div class="modal-info">
+                                <label for="referencias">Referências:</label>
+                                <input type="text" id="referencias" name="referencias" required>
                             </div>
                             <div class="modal-info-2">
                                 <label for="historia">História:</label>
