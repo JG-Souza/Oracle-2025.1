@@ -154,14 +154,19 @@
                 <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
                 <div class="modal-container">
                     <div class="modal-header">
-                        <h2>Deseja excluir a publicação?</h2>
+                        <h5 class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Confirmação de Exclusão </h5>
                     </div>
-                    <form action="/excluir-post/<?=$post->post_id ?>" method="POST">
-                        <div class="botoes-modal" id="botoes-modal-excluir">
-                            <button type="submit" class="btn-criar">Excluir</button>
-                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')">Cancelar</button>
-                        </div>
-                    </form>
+                    <div class="modal-body">
+                        Tem certeza que deseja deletar a publicação <strong><?= $post->title ?></strong> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secundary" data-bs-dismiss="modal"> Cancelar </button>
+                        <form method="POST" action="/tabela-de-posts/delete">
+                            <input type="hidden" name="id" value="<?= $post->$post_id ?>">
+                            <button type="submit" class="btn btn-danger"> Deletar</button>
+                        </form>
+                    </div>
+                    
                 </div>
                 </div>
 
@@ -213,11 +218,7 @@
                                 <label for="licoes">Lições:</label>
                                 <textarea name="licoes" id="licoes"></textarea>
                             </div>
-                            <div class="modal-imagem" id="modal-imagem-criar">
-                                <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
-                                <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
-                                <img src="" class="imagem-publicacao" id="imagem-publicacao">
-                            </div>
+                            
                         </div>
                     </div>
                         <div class="botoes-modal">

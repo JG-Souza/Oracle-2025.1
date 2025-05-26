@@ -17,13 +17,13 @@ class PostsController
 
     public function store(){
         $parameters = [
-            'title '=> $_POST['titulo'],
+            'title'=> $_POST['titulo'],
             'origin' => $_POST['origem'],
             'story' => $_POST['historia'],
             'curiosity' => $_POST['curiosidades'],
             'lesson' => $_POST['licoes'],
             'reference' => $_POST['referencias'],
-            'img_path' => $_POST['img_path'],
+            'user_id' => 123,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -32,13 +32,13 @@ class PostsController
     }
 
     
-    public function edit($id)
+    public function edit($post_id)
     {
-        $post = App::get('database')->selectById('posts', $id);
+        $post = App::get('database')->selectById('posts', $post_id);
         return view('admin/editar-post', compact('post'));
     }
 
-    public function update($id)
+    public function update($post_id)
     {
         $parameters = [
             'title'         => $_POST['titulo'],
@@ -47,22 +47,23 @@ class PostsController
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
-            'is_in_carousel'=> isset($_POST['is_in_carousel']) ? 1 : 0,
             'img_path'      => $_POST['img_path'],
-            'user_id'       => $_POST['user_id'], // ou $_SESSION['user_id']
+            'user_id'       => $_POST['user_id'], 
         ];
 
-        App::get('database')->update('posts', $id, $parameters);
+        App::get('database')->update('posts', $post_id, $parameters);
 
         header('Location: /tabela-de-posts');
         exit;
     }
 
-    public function destroy($id)
+    public function delete()
     {
-        App::get('database')->delete('posts', $id);
+        $post_id = $_POST['id'];
+
+        App::get('database')->delete('posts', $post_id);
 
         header('Location: /tabela-de-posts');
-        exit;
+
     }
 }
