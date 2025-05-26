@@ -31,12 +31,6 @@ class PostsController
         header('Location: /tabela-de-posts');
     }
 
-    
-    public function edit($post_id)
-    {
-        $post = App::get('database')->selectById('posts', $post_id);
-        return view('admin/editar-post', compact('post'));
-    }
 
     public function update($post_id)
     {
@@ -47,7 +41,6 @@ class PostsController
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
-            'img_path'      => $_POST['img_path'],
             'user_id'       => $_POST['user_id'], 
         ];
 

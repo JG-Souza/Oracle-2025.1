@@ -8,5 +8,5 @@ $router->get('', 'ExampleController@index');
 
 $router->get('tabela-de-posts', 'PostsController@index');
 $router->post('tabela-de-posts/create', 'PostsController@store');
-$router->post('tabela-de-posts/edit', 'PostsController@update');
+$router->post('tabela-de-posts/update', 'PostsController@update');
 $router->post('tabela-de-posts/delete', 'PostsController@delete');

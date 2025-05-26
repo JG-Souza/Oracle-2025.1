@@ -47,6 +47,25 @@ class QueryBuilder
     }
     }
 
+    public function update($table, $post_id, $parameters){
+        $sql = sprintf('UPDATE %s SET $s WHERE id = $s',
+        $table,
+        implode(', ', array_map(function($param){
+            return $param . ' = :' .$param;
+        }, array_keys($parameters))),
+        $post_id
+    );
+    try{
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($parameters);
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
+    }
+
     public function delete($table, $post_id) {
     $sql = sprintf('DELETE FROM %s WHERE post_id = :id', $table);
 

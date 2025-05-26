@@ -136,11 +136,6 @@
                                     <label for="licoes">Lições:</label>
                                     <textarea name="licoes"><?=$post->lesson ?></textarea>
                                 </div>
-                                <div class="modal-imagem">
-                                    <button type="button" class="btn-imagem" onclick="document.getElementById('input-imagem-<?=$post->post_id ?>').click()">Editar</button>
-                                    <input type="file" name="img_path" id="input-imagem-<?=$post->post_id ?>" style="display:none;">
-                                    <img src="<?=$post->img_path ?>" class="imagem-publicacao">
-                                </div>
                             </div>
                         </div>
                         <div class="botoes-modal">
