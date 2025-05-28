@@ -107,7 +107,9 @@
                     <div class="modal-header">
                         <h2>Editar Publicação</h2>
                     </div>
-                    <form action="/editar-post/<?=$post->post_id ?>" method="POST" class="form-publicacao">
+                    <form action="/tabela-de-posts/update" method="POST" class="form-publicacao">
+                        <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
+                        <input type="hidden" name="id" value="<?=$post->post_id ?>">
                         <div class="modal-container-content">
                             <div class="modal-side" id="modal-side-left">
                                 <div class="modal-info">
@@ -135,6 +137,10 @@
                                 <div class="modal-info-2">
                                     <label for="licoes">Lições:</label>
                                     <textarea name="licoes"><?=$post->lesson ?></textarea>
+                                </div>
+                                <div class="modal-info-2">
+                                    <label for="referencias">Referências:</label>
+                                    <textarea name="referencias"><?=$post->reference ?></textarea>
                                 </div>
                             </div>
                         </div>

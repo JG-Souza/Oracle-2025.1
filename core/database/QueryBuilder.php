@@ -48,13 +48,15 @@ class QueryBuilder
     }
 
     public function update($table, $post_id, $parameters){
-        $sql = sprintf('UPDATE %s SET $s WHERE id = $s',
+        $sql = sprintf('UPDATE %s SET %s WHERE post_id = :post_id',
         $table,
         implode(', ', array_map(function($param){
             return $param . ' = :' .$param;
         }, array_keys($parameters))),
         $post_id
     );
+    $parameters['post_id'] = $post_id;
+
     try{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($parameters);

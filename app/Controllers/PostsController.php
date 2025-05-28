@@ -32,7 +32,7 @@ class PostsController
     }
 
 
-    public function update($post_id)
+    public function update()
     {
         $parameters = [
             'title'         => $_POST['titulo'],
@@ -44,6 +44,8 @@ class PostsController
             'user_id'       => $_POST['user_id'], 
         ];
 
+        $post_id = $_POST['id'];
+        
         App::get('database')->update('posts', $post_id, $parameters);
 
         header('Location: /tabela-de-posts');
