@@ -7,4 +7,8 @@ use App\Core\Router;
 $router->get('', 'ExampleController@index');
 
 $router->get('crud-usuarios', 'UsuariosController@index');
+
+// Métodos CRUD
 $router->post('crud-usuarios/create', 'UsuariosController@store');
+$router->post('crud-usuarios/edit', 'UsuariosController@edit');
+$router->post('crud-usuarios/delete', 'UsuariosController@delete');

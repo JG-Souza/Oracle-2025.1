@@ -1,3 +1,19 @@
+function abrirVisualizarModal(button) {
+    document.getElementById('visualizar-id').value = button.getAttribute('data-id');
+    document.getElementById('visualizar-nome').value = button.getAttribute('data-nome');
+    document.getElementById('visualizar-email').value = button.getAttribute('data-email');
+    document.getElementById('senhav').value = button.getAttribute('data-password');
+    abrirModal('modal-visualizar-usuario');
+}
+
+function abrirEditarModal(button) {
+    document.getElementById('editar-id').value = button.getAttribute('data-id');
+    document.getElementById('editar-nome').value = button.getAttribute('data-nome');
+    document.getElementById('editar-email').value = button.getAttribute('data-email');
+    document.getElementById('senhae').value = button.getAttribute('data-password');
+    abrirModal('modal-editar-usuario');
+}
+
 function abrirModal(idModal) {
     const modal = document.getElementById(idModal);
     modal.style.display = "flex";
@@ -26,4 +42,3 @@ function mostrarSenha(idInput, idIcone){
         icone.classList.replace("bi-eye-slash", "bi-eye");
     }
 }
-
