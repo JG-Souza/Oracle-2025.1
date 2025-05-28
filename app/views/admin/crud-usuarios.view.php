@@ -95,8 +95,10 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <input type="file" id="foto" name="foto" accept="image/*">
-                    </div>
+                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                    <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
+                    <img src="" class="img-preview" id="img-preview">
+                </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Criar</button>
                     <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-usuario', 'nome', 'email')">Cancelar</button>
@@ -167,8 +169,10 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <input type="file" id="foto" name="foto" accept="image/*">
-                    </div>
+                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                    <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
+                    <img src="" class="img-preview" id="img-preview">
+                </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
                     <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-usuario', 'nome', 'email')">Cancelar</button>

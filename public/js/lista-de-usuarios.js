@@ -23,9 +23,12 @@ function fecharModal(idModal, idInputNome, idInputEmail) {
     const modal = document.getElementById(idModal);
     modal.style.display = "none";
     const inputNome = document.getElementById(idInputNome);
-    const inputEmail = document.getElementById(idInputEmail)
+    const inputEmail = document.getElementById(idInputEmail);
+    const image = document.getElementById('img-preview');
+    image.style.display = "none";
     inputNome.value = "";
     inputEmail.value = "";
+
 }
 
 function mostrarSenha(idInput, idIcone){
@@ -41,4 +44,12 @@ function mostrarSenha(idInput, idIcone){
         input.type = "password";
         icone.classList.replace("bi-eye-slash", "bi-eye");
     }
+}
+
+const image = document.getElementById('img-preview');
+const inputImg = document.getElementById('input-imagem');
+
+inputImg.onchange = function(){
+    image.src = URL.createObjectURL(inputImg.files[0]);
+    image.style.display = "block";
 }
