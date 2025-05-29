@@ -22,8 +22,8 @@ class PostsController
             'story' => $_POST['historia'],
             'curiosity' => $_POST['curiosidades'],
             'lesson' => $_POST['licoes'],
-            'reference' => $_POST['referencias'],
-            'user_id' => 123,
+            'refference' => $_POST['referencias'],
+            'user_id' => 1,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -40,11 +40,11 @@ class PostsController
             'story'         => $_POST['historia'],
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
-            'reference'     => $_POST['referencias'],
+            'refference'     => $_POST['referencias'],
             'user_id'       => $_POST['user_id'], 
         ];
 
-        $post_id = $_POST['id'];
+        $post_id = $_POST['post_id'];
         
         App::get('database')->update('posts', $post_id, $parameters);
 
@@ -54,7 +54,7 @@ class PostsController
 
     public function delete()
     {
-        $post_id = $_POST['id'];
+        $post_id = $_POST['post_id'];
 
         App::get('database')->delete('posts', $post_id);
 

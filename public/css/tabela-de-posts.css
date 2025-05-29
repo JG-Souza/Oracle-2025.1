@@ -307,28 +307,28 @@ thead tr{
 #botoes-modal-excluir{
     gap: 1rem;
 }
-#modal-excluir-publicacao .modal-container{
+#modal-container-excluir-publicacao {
     width: 30%;
     height: auto;
 }
 
-#modal-excluir-publicacao .botoes-modal{
+#modal-container-excluir-publicacao .botoes-modal{
     padding: 0 10%;
 }
 
-#modal-excluir-publicacao .btn-criar{
+#modal-container-excluir-publicacao .btn-criar{
     background-color: rgb(252, 46, 46);
 }
 
-#modal-excluir-publicacao .btn-criar:hover{
+#modal-container-excluir-publicacao .btn-criar:hover{
     background-color: rgb(253, 68, 68);
 }
 
-#modal-excluir-publicacao .btn-cancelar{
+#modal-container-excluir-publicacao .btn-cancelar{
     background-color: #224220;
 }
 
-#modal-excluir-publicacao .btn-cancelar:hover{
+#modal-container-excluir-publicacao .btn-cancelar:hover{
     background-color: #305c2d;
 }
 

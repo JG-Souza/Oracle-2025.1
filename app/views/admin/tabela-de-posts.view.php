@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="modal-info-2">
                                     <label for="referencias">Referências:</label>
-                                    <textarea name="referencias"><?=$post->reference ?></textarea>
+                                    <textarea name="referencias"><?=$post->refference ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -153,22 +153,24 @@
                 </div>
 
                 <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
-                <div class="modal-container">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Confirmação de Exclusão </h5>
+                    <div class="modal-container" id="modal-container-excluir-publicacao">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Confirmação de Exclusão </h5>
+                        </div>
+                        <div class="modal-body">
+                            Tem certeza que deseja deletar a publicação <strong><?= $post->title ?></strong> 
+                        </div>
+                        <div class="modal-footer">
+                            <div class= "botoes-modal" id="botoes-modal-excluir">   
+                                <button type="button" class="btn-cancelar" data-bs-dismiss="modal" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"> Cancelar </button>
+                                <form method="POST" action="/tabela-de-posts/delete">
+                                    <input type="hidden" name="post_id" value="<?= $post->post_id ?>">
+                                    
+                                    <button type="submit" class="btn-criar"> Deletar </button>
+                                </form>
+                            </div>
+                        </div>  
                     </div>
-                    <div class="modal-body">
-                        Tem certeza que deseja deletar a publicação <strong><?= $post->title ?></strong> 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secundary" data-bs-dismiss="modal"> Cancelar </button>
-                        <form method="POST" action="/tabela-de-posts/delete">
-                            <input type="hidden" name="id" value="<?= $post->$post_id ?>">
-                            <button type="submit" class="btn btn-danger"> Deletar</button>
-                        </form>
-                    </div>
-                    
-                </div>
                 </div>
 
                 <?php endforeach ?>
