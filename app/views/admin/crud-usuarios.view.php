@@ -101,7 +101,7 @@
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Criar</button>
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-usuario', 'nome', 'email')">Cancelar</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-usuario', 'nome', 'email', 'senhac')">Cancelar</button>
                 </div>
             </form>
         </div>
@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div class="botoes-modal">
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email')">Fechar</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email', 'senha')">Fechar</button>
                 </div>
 
             </form>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-usuario', 'nome', 'email')">Cancelar</button>
+                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-usuario', 'nome', 'email', 'senha')">Cancelar</button>
                 </div>
             </form>
         </div>

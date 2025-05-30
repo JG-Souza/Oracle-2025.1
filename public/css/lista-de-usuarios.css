@@ -195,10 +195,10 @@ thead tr{
     align-items: center;
     text-align: justify;
     flex-direction: column;
-    gap: 3rem;
-    width: 100%;
+    gap: 2rem;
+    width: 90%;
     height: 100%;
-    padding: 0;
+    
     
 }
 
@@ -211,18 +211,18 @@ thead tr{
 }
 
 .modal-info label{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--cor-secundaria);
     width: 70px;
 }
 
 .modal-info input{
     width: 80%;
-    height: 2rem;
+    height: 1.5rem;
     border-radius: 5px;
     border: none;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     background-color: var(--cor-quinta);
     margin-left: 1rem;
 }
@@ -241,9 +241,9 @@ thead tr{
     color: var(--cor-secundaria);
     font-weight: 300;
     border: none;
-    padding: 0.7rem 1.7rem;
+    padding: 0.5rem 1.0rem;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     cursor: pointer;
 }
 
@@ -252,9 +252,9 @@ thead tr{
     color: var(--cor-secundaria);
     font-weight: 300;
     border: none;
-    padding: 0.7rem 1.7rem;
+    padding: 0.5rem 1.0rem;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     cursor: pointer;
 }
 
@@ -290,7 +290,7 @@ thead tr{
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.0rem;
     cursor: pointer;
 }
 #modal-imagem-criar{
@@ -351,6 +351,7 @@ thead tr{
 #olhov, #olhoc, #olhoe{
     color: gray;
 }
+
 
 .senha-olho{
     width: 80%;

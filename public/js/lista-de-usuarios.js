@@ -19,15 +19,17 @@ function abrirModal(idModal) {
     modal.style.display = "flex";
 }
 
-function fecharModal(idModal, idInputNome, idInputEmail) {
+function fecharModal(idModal, idInputNome, idInputEmail, idInputSenha) {
     const modal = document.getElementById(idModal);
     modal.style.display = "none";
     const inputNome = document.getElementById(idInputNome);
     const inputEmail = document.getElementById(idInputEmail);
+    const inputSenha = document.getElementById(idInputSenha);
     const image = document.getElementById('img-preview');
     image.style.display = "none";
     inputNome.value = "";
     inputEmail.value = "";
+    inputSenha.value = "";
 
 }
 
