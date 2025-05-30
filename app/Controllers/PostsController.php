@@ -22,8 +22,8 @@ class PostsController
             'story' => $_POST['historia'],
             'curiosity' => $_POST['curiosidades'],
             'lesson' => $_POST['licoes'],
-            'refference' => $_POST['referencias'],
-            'user_id' => 1,
+            'reference' => $_POST['referencias'],
+            'user_id' => 123,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -40,8 +40,8 @@ class PostsController
             'story'         => $_POST['historia'],
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
-            'refference'     => $_POST['referencias'],
-            'user_id'       => $_POST['user_id'], 
+            'reference'     => $_POST['referencias'],
+            'user_id'       => 123, 
         ];
 
         $post_id = $_POST['post_id'];

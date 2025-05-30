@@ -109,7 +109,7 @@
                     </div>
                     <form action="/tabela-de-posts/update" method="POST" class="form-publicacao">
                         <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
-                        <input type="hidden" name="id" value="<?=$post->post_id ?>">
+                        <input type="hidden" name="post_id" value="<?=$post->post_id ?>">
                         <div class="modal-container-content">
                             <div class="modal-side" id="modal-side-left">
                                 <div class="modal-info">
@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="modal-info-2">
                                     <label for="referencias">Referências:</label>
-                                    <textarea name="referencias"><?=$post->refference ?></textarea>
+                                    <textarea name="referencias"><?=$post->reference ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -162,12 +162,12 @@
                         </div>
                         <div class="modal-footer">
                             <div class= "botoes-modal" id="botoes-modal-excluir">   
-                                <button type="button" class="btn-cancelar" data-bs-dismiss="modal" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"> Cancelar </button>
                                 <form method="POST" action="/tabela-de-posts/delete">
                                     <input type="hidden" name="post_id" value="<?= $post->post_id ?>">
                                     
                                     <button type="submit" class="btn-criar"> Deletar </button>
                                 </form>
+                                <button type="button" class="btn-cancelar" data-bs-dismiss="modal" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"> Cancelar </button>
                             </div>
                         </div>  
                     </div>
