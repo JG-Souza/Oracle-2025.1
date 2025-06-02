@@ -11,11 +11,25 @@ body {
 .secao {
     height: 100vh;
     display: flex;
+    flex-direction:column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.titulo {
+    font-size: 2vw;
+}
+
+.conteudo {
+    display: flex;
     flex-direction:row;
     text-align: center;
     justify-content: center;
     align-items: center;
     gap: 3vw;
+    padding-bottom: 4vw;
 }
 
 .pagina-de-posts, .pagina-de-usuarios, .logout {
@@ -63,12 +77,15 @@ body {
 
 /* Porte para CELULAR*/
 @media (max-width: 768px) {
-    .secao {
+    .conteudo {
         flex-direction: column;
+    }
+    .titulo {
+        font-size: 6vw;
     }
     .pagina-de-posts, .pagina-de-usuarios, .logout {
         font-size: 5vw;
-        width: 35vw;
-        height: 35vw;
+        width: 45vw;
+        height: 45vw;
     }
 }
