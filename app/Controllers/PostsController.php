@@ -46,11 +46,11 @@ class PostsController
     public function update()
     {
 
-        $id = $_FILES['post_id'];
+        $id = $_POST['post_id'];
 
-        $posts = App::get('database') -> selectOne('posts');
+        $post = App::get('database') -> selectOne('posts', $id);
 
-        $caminhoImagem = post->img_path;
+        $caminhoImagem = $post->img_path;
 
         if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
 
@@ -63,7 +63,7 @@ class PostsController
             move_uploaded_file($temporario, $caminhoImagem);
 
             if($post && !empty($post->img_path) && file_exists($post->img_path)){
-                unlink($pots->img_path);
+                unlink($post->img_path);
             }
         }
 
@@ -91,7 +91,16 @@ class PostsController
     {
         $post_id = $_POST['post_id'];
 
-        App::get('database')->delete('posts', $post_id);
+        $post = App::get('database')->selectOne('posts', $post_id);
+
+        $caminhoImagem = $post->img_path;
+
+        if(file_exists($caminhoImagem)){
+            unlink($caminhoImagem);
+        }
+
+
+        App::get('database')->selectOne('posts', $post_id);
 
         header('Location: /tabela-de-posts');
 

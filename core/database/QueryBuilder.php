@@ -64,7 +64,7 @@ class QueryBuilder
     }
 
     public function update($table, $post_id, $parameters){
-        $sql = sprintf('UPDATE %s SET %s WHERE post_id = :post_id',
+        $sql = sprintf('UPDATE %s SET %s WHERE post_id = :id',
         $table,
         implode(', ', array_map(function($param){
             return $param . ' = :' . $param;
