@@ -91,7 +91,8 @@
                                     <textarea readonly><?=$post->lesson ?></textarea>
                                 </div>
                                 <div class="modal-imagem">
-                                    <img src="<?=$post->img_path ?>" class="imagem-publicacao">
+                                    <label for="imagem">Imagem:</label>
+                                    <img src="/<?=$post->img_path ?>" alt="imagem post" class="imagem-publicacao">
                                 </div>
                             </div>
                         </div>
@@ -142,6 +143,12 @@
                                     <label for="referencias">Referências:</label>
                                     <textarea name="referencias"><?=$post->reference ?></textarea>
                                 </div>
+                                <div class="modal-imagem">
+                                    <label for="imagem">Imagem:</label>
+                                    <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
+                                    <label for="imagem">Imagem Atual:</label>
+                                    <img src="/<?=$post->img_path ?>" alt="imagem post" class="imagem-publicacao">
+                                </div>
                             </div>
                         </div>
                         <div class="botoes-modal">
@@ -188,7 +195,7 @@
                 <div class="modal-header">
                     <h2>Criar Publicação</h2>
                 </div>
-                <form action="/tabela-de-posts/create" method="POST" class="form-publicacao">
+                <form action="/tabela-de-posts/create" method="POST" enctype="multipart/form-data" class="form-publicacao">
                     <div class="modal-container-content">
                         <div class="modal-side" id="modal-side-left">
                             <div class="modal-info">
@@ -221,7 +228,10 @@
                                 <label for="licoes">Lições:</label>
                                 <textarea name="licoes" id="licoes"></textarea>
                             </div>
-                            
+                            <div class="modal-info-imagem">
+                                <label for="imagem">Imagem:</label>
+                                <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
+                            </div>
                         </div>
                     </div>
                         <div class="botoes-modal">

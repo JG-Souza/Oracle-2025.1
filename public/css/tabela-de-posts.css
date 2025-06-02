@@ -135,6 +135,7 @@ thead tr{
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 2rem;
+    overflow-y: scroll;
 }
 
 .modal-header{
