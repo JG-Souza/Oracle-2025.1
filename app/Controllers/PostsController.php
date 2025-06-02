@@ -7,10 +7,40 @@ use Exception;
 
 class PostsController
 {
-
-    public function index()
+    public function index(): mixed
     {
+        $page = 1;
+
+        if(isset($_GET['paginacaoNumero']) && !empty($_GET['paginacaoNumero'])){
+            $page = intval(value: $_GET['paginacaoNumero']);
+
+            if($page <= 0){
+                return redirect(path:'admin/tabela-de-posts');
+            }
+        }
+        
+        $itensPage = 5;
+
+        $inicio = $itensPage * $page - $itensPage;
+
+        $rows_count = App ::get(key:'database') -> countAll('posts');
+
+        if($inicio > $rows_count){
+            return redirect(path: 'admin/tabela-de-posts');
+        }
+
         $posts = App::get('database') -> selectAll('posts');
+
+        if($rows_count < 1){
+            $rows_count = 1;
+        }
+        
+        $total_pages = ceil(num: $rows_count/$itensPage);
+        
+        if($page > $total_pages){
+            header(header:'Location: /posts?paginacaoNumero=1');
+            exit;
+        }
 
         return view('admin/tabela-de-posts', compact('posts'));
     }
@@ -32,7 +62,7 @@ class PostsController
             'story' => $_POST['historia'],
             'curiosity' => $_POST['curiosidades'],
             'lesson' => $_POST['licoes'],
-            'refference' => $_POST['referencias'],
+            'reference' => $_POST['referencias'],
             'img_path' => $caminhoImagem,
             'user_id' => 1,
         ];
@@ -74,9 +104,9 @@ class PostsController
             'story'         => $_POST['historia'],
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
-            'refference'     => $_POST['referencias'],
+            'reference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => 1, 
+            'user_id'       => 123, 
         ];
 
         $post_id = $_POST['post_id'];

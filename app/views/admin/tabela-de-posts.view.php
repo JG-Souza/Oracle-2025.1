@@ -183,12 +183,20 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <div class="paginacao">
-            <a href="#" class="pag-esquerda"><i class="bi bi-arrow-left-short"></i></a>
-            <a href="#" class="pagina">1</a>
-            <a href="#" class="pagina">2</a>
-            <a href="#" class="pagina">3</a>
-            <a href="#" class="pag-direita"><i class="bi bi-arrow-right-short"></i></a>
+        <div class="paginas<?= $total_pages <= 1 ? " none": "" ?>">
+            <button class="anterior<?= $page <= 1 ? " disabled": "" ?>" onclick="location.href='?paginacaoNumero=<?= $page -1?>'">
+                &lt;
+            </button>
+            
+            <?php for($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
+                <button class="pag1<?= $page_number == $page ? " active" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page_number ?>'">
+                    <?= $page_number ?>
+                </button>
+            <?php endfor; ?>
+
+            <button class="proximo<?= $page >= $total_pages ? " disabled" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?>">
+                &gt;
+            </button>
         </div>
         <div class="modal" id="modal-criar-publicacao">
             <div class="modal-container">
