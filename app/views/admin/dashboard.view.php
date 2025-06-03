@@ -1,8 +1,8 @@
 <?php
     session_start();
-
+    
     if(!isset($_SESSION['id'])){
-        header(header: 'Location: /login');
+        header('Location: /login');
     }
 ?>
 
