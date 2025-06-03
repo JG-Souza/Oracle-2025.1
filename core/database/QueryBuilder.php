@@ -50,13 +50,14 @@ class QueryBuilder
 
     public function selectOne($table, $id)
     {
-        $sql = sprintf('SELECT * FROM %s WHERE id=:id LIMIT 1', $table);
+        $sql = sprintf('SELECT * FROM %s WHERE post_id=:id LIMIT 1', $table);
 
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(['id' => $id]);
 
-            return $stmt->fetchAll(PDO::FETCH_CLASS);
+            $post = $stmt->fetch(PDO::FETCH_OBJ);
+            return $post ? $post : false;
 
         } catch (Exception $e) {
             die($e->getMessage());
@@ -82,15 +83,15 @@ class QueryBuilder
     }
     }
 
-    public function update($table, $post_id, $parameters){
-        $sql = sprintf('UPDATE %s SET %s WHERE post_id = :id',
+    public function update($table, $id, $parameters){
+        $sql = sprintf('UPDATE %s SET %s WHERE id = :id',
         $table,
         implode(', ', array_map(function($param){
             return $param . ' = :' . $param;
         }, array_keys($parameters))),
-        $post_id
+        $id
     );
-    $parameters['post_id'] = $post_id;
+    $parameters['post_id'] = $id;
 
     try{
         $stmt = $this->pdo->prepare($sql);
@@ -103,12 +104,12 @@ class QueryBuilder
     }
     }
 
-    public function delete($table, $post_id) {
-    $sql = sprintf('DELETE FROM %s WHERE post_id = :id', $table);
+    public function delete($table, $id) {
+    $sql = sprintf('DELETE FROM %s WHERE id = :id', $table);
 
     try {
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(['id' => $post_id]);
+        $stmt->execute(['id' => $id]);
     } catch (Exception $e) {
         die($e->getMessage());
     }

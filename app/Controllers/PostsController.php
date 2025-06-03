@@ -77,7 +77,7 @@ class PostsController
     {
 
         $id = $_POST['post_id'];
-
+        
         $post = App::get('database') -> selectOne('posts', $id);
 
         $caminhoImagem = $post->img_path;
@@ -106,12 +106,12 @@ class PostsController
             'lesson'        => $_POST['licoes'],
             'refference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => 123, 
+            'user_id'       => 1, 
         ];
 
-        $post_id = $_POST['post_id'];
+        $id = $_POST['post_id'];
         
-        App::get('database')->update('posts', $post_id, $parameters);
+        App::get('database')->update('posts', $id, $parameters);
 
         header('Location: /tabela-de-posts');
         exit;
@@ -119,9 +119,9 @@ class PostsController
 
     public function delete()
     {
-        $post_id = $_POST['post_id'];
+        $id = $_POST['post_id'];
 
-        $post = App::get('database')->selectOne('posts', $post_id);
+        $post = App::get('database')->selectOne('posts', $id);
 
         $caminhoImagem = $post->img_path;
 
@@ -130,7 +130,7 @@ class PostsController
         }
 
 
-        App::get('database')->selectOne('posts', $post_id);
+        App::get('database')->selectOne('posts', $id);
 
         header('Location: /tabela-de-posts');
 
