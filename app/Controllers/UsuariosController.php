@@ -48,13 +48,30 @@ class UsuariosController
 
     public function edit()
     {
+
+
+        $temporario = $_FILES['foto']['tmp_name'];
+
+        $nomeImagem = sha1(uniqid($_FILES['foto']['name'], true)) . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+
+        $caminhodaImagem = "public/assets/fotos-perfil/" . $nomeImagem;
+
+        move_uploaded_file($temporario, $caminhodaImagem);
+
+        
         $parameters = [
             'name' => $_POST['nome'],
             'email' => $_POST['email'],
             'password' => $_POST['senha'],
+            'img_path' => $caminhodaImagem,
         ];
 
         $id = $_POST['id'];
+        
+        
+        if (empty($temporario)) {
+            $parameters['img_path'] = 'public/assets/avatar-generico.avif';
+        }
 
         App::get('database')->update('users', $id, $parameters);
 

@@ -112,6 +112,7 @@
         <div class="modal-container">
             <div class="modal-header">
                 <h2>Visualizar Usuário</h2>
+                <i class="bi bi-x" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email', 'senha')"></i>
             </div>
             <form action="" method="POST" class="form-usuario">
 
@@ -135,8 +136,8 @@
                         <i class="bi bi-eye" id="olhov" onclick="mostrarSenha('senhav', 'olhov')"></i>
                     </div>
                 </div>
-                <div class="botoes-modal">
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-usuario', 'nome', 'email', 'senha')">Fechar</button>
+                <div class="modal-info" id="foto-usuario">
+                    <img src="" alt="">
                 </div>
 
             </form>
@@ -148,6 +149,7 @@
         <div class="modal-container">
             <div class="modal-header">
                 <h2>Editar Usuário</h2>
+                <i class="bi bi-x" onclick="fecharModal('modal-editar-usuario', 'nome', 'email', 'senha')"></i>
             </div>
             <form action="/crud-usuarios/edit" method="POST" class="form-usuario" enctype="multipart/form-data">
                 
@@ -169,13 +171,12 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
-                    <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
-                    <img src="" class="img-preview" id="img-preview">
+                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem-editar" name="foto">
+                    <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem-editar').click()">Selecionar Imagem</button>
+                    <img src="" class="img-preview" id="img-preview-editar">
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-usuario', 'nome', 'email', 'senha')">Cancelar</button>
                 </div>
             </form>
         </div>

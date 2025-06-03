@@ -55,3 +55,11 @@ inputImg.onchange = function(){
     image.src = URL.createObjectURL(inputImg.files[0]);
     image.style.display = "block";
 }
+
+const imageEditar = document.getElementById('img-preview-editar');
+const inputImgEditar = document.getElementById('input-imagem-editar');
+
+inputImgEditar.onchange = function(){
+    imageEditar.src = URL.createObjectURL(inputImgEditar.files[0]);
+    imageEditar.style.display = "block";
+}

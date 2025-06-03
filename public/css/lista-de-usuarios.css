@@ -185,7 +185,8 @@ thead tr{
     background-color: var(--cor-quaternaria);
     border-radius: 10px 10px 0 0;
     top: 0;
-    padding-left: 29px;
+    padding-left: 9%;
+    padding-right: 9%;
 }
 
 .modal-header i{
