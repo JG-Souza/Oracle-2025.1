@@ -78,7 +78,7 @@
             <div class="modal-header">
                 <h2>Adicionar Usuário</h2>
             </div>
-            <form action="crud-usuarios/create" method="POST" class="form-usuario">
+            <form action="crud-usuarios/create" method="POST" class="form-usuario" enctype="multipart/form-data">
                 <div class="modal-info">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem" name="foto">
                     <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
                     <img src="" class="img-preview" id="img-preview">
                 </div>
@@ -149,7 +149,7 @@
             <div class="modal-header">
                 <h2>Editar Usuário</h2>
             </div>
-            <form action="/crud-usuarios/edit" method="POST" class="form-usuario">
+            <form action="/crud-usuarios/edit" method="POST" class="form-usuario" enctype="multipart/form-data">
                 
                 <input type="hidden" id="editar-id" name="id">
 
@@ -169,9 +169,9 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem">
+                    <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem-editar" name="foto">
                     <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
-                    <img src="" class="img-preview" id="img-preview">
+                    <img src="" class="img-preview" id="img-preview-editar">
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Salvar</button>
