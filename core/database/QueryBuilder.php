@@ -39,11 +39,10 @@ class QueryBuilder
             $stmt->execute([
                 'email' => $email,
                 'password' => $senha
-        ]);
+            ]);
 
-        $user = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-            return $user;
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user ? $user : false;
 
         } catch (Exception $e) {
             die($e->getMessage());

@@ -16,10 +16,14 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    gap: 2vw;
 }
 
 .titulo {
-    font-size: 2vw;
+    font-family: 'Cinzel';
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 3.5vw;
 }
 
 .conteudo {
@@ -33,6 +37,10 @@ body {
 }
 
 .pagina-de-posts, .pagina-de-usuarios, .logout {
+    font-family: 'Cinzel';
+    font-weight: 625;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,18 +57,18 @@ body {
 
     #icone-posts {
         filter: brightness(150%);
-        max-width: 60%;
-        max-height: 60%;
+        max-width: 50%;
+        max-height: 50%;
     }
     #icone-usuarios {
         filter: brightness(150%);
-        max-width: 60%;
-        max-height: 60%;
+        max-width: 50%;
+        max-height: 50%;
     }
     #icone-logout {
         filter: brightness(150%);
-        max-width: 60%;
-        max-height: 60%;
+        max-width: 50%;
+        max-height: 50%;
     }
     
 }
