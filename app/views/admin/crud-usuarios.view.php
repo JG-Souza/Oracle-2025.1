@@ -77,6 +77,7 @@
         <div class="modal-container">
             <div class="modal-header">
                 <h2>Adicionar Usuário</h2>
+                <i class="bi bi-x" onclick="fecharModal('modal-criar-usuario', 'nome', 'email', 'senhac')"></i>
             </div>
             <form action="crud-usuarios/create" method="POST" class="form-usuario" enctype="multipart/form-data">
                 <div class="modal-info">
@@ -101,7 +102,6 @@
                 </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Criar</button>
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-usuario', 'nome', 'email', 'senhac')">Cancelar</button>
                 </div>
             </form>
         </div>

@@ -37,6 +37,10 @@ class UsuariosController
             'img_path' => $caminhodaImagem,
         ];
 
+        if (empty($temporario)) {
+            $parameters['img_path'] = 'public/assets/avatar-generico.avif';
+        }
+
         App::get('database')->insert('users', $parameters);
 
         header('Location: /crud-usuarios');
