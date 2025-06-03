@@ -6,6 +6,24 @@ body {
     background-image: url("/public/assets/background.png");
     background-size: cover;
     background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-card {
+    height: 50%;
+    width: 60%;
+    position: absolute;
+    z-index: -2;
+    padding: 5%;
+    gap: 10%;
+    background-color: #F1FDF1;
+    opacity: 60%;
+    border-radius: 12px;
 }
 
 .secao {
@@ -15,15 +33,17 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: white;
-    gap: 2vw;
+    color: #264a22;
+    gap: 2.5vw;
+    
 }
 
 .titulo {
     font-family: 'Cinzel';
     letter-spacing: 1px;
     font-weight: 600;
-    font-size: 3.5vw;
+    font-size: 3vw;
+    color: #203f1d;
 }
 
 .conteudo {
@@ -33,25 +53,23 @@ body {
     justify-content: center;
     align-items: center;
     gap: 3vw;
-    padding-bottom: 4vw;
 }
 
-.pagina-de-posts, .pagina-de-usuarios, .logout {
-    font-family: 'Cinzel';
-    font-weight: 625;
+.pagina-de-posts, .pagina-de-usuarios {
+    font-family: 'Roboto';
+    font-weight: 400;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-    letter-spacing: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1vw;
-    width: 15vw;
-    height: 12vw;
-    color: white;
-    background-color: #31692a;
-    border: solid 5px #1a3716;
-    font-size: 1.5vw;
+    width: 27vw;
+    height: 15vw;
+    color: #264a22;
+    background-color: transparent;
+    border: solid 3px #31692a;
+    font-size: 2vw;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.2s ease;
 
@@ -65,35 +83,69 @@ body {
         max-width: 50%;
         max-height: 50%;
     }
+    
+}
+
+.logout {
+    font-family: 'Roboto';
+    font-weight: 400;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    width: 12vw;
+    height: 3vw;
+    color: #264a22;
+    background-color: transparent;
+    border: solid 3px #31692a;
+    font-size: 1.5vw;
+    cursor: pointer;
+    padding: 0.2vw;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+
     #icone-logout {
         filter: brightness(150%);
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 100%;
+        max-height: 100%;
     }
-    
 }
 
 .pagina-de-posts:hover, .pagina-de-usuarios:hover, .logout:hover {
     transform: scale(1.1);
-    background-color: #31692a;
+    background-color: #d7d7d7;
 }
 
 .pagina-de-posts:active, .pagina-de-usuarios:active, .logout:active {
     transform: scale(0.95);
-    background-color: #264a22;
+    background-color: #d7d7d7;
 }
 
 /* Porte para CELULAR*/
 @media (max-width: 768px) {
+    .secao {
+        gap: 10vw;
+    }
     .conteudo {
         flex-direction: column;
+        gap: 5vw;
     }
     .titulo {
-        font-size: 6vw;
+        font-size: 8.5vw;
     }
-    .pagina-de-posts, .pagina-de-usuarios, .logout {
-        font-size: 5vw;
+    .pagina-de-posts, .pagina-de-usuarios {
+        font-size: 6vw;
         width: 45vw;
         height: 45vw;
+    }
+    .logout {
+        font-size: 3vw;
+        width: 25vw;
+        height: 10vw;
+    }
+    .dashboard-card {
+        height: 85%;
+        width: 70%;
     }
 }
