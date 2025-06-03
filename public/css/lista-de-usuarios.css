@@ -390,6 +390,10 @@ thead tr{
   #modal-excluir-usuario .modal-container{
     width: 100%;
   }
+
+  #modal-excluir-usuario .form-usuario{
+    width: 100%;
+  }
   
   #foto-usuario{
     width: 100%;
