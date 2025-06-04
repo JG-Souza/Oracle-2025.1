@@ -130,7 +130,7 @@ class PostsController
         }
 
 
-        App::get('database')->selectOne('posts', $id);
+        App::get('database')->delete('posts', $id);
 
         header('Location: /tabela-de-posts');
 
