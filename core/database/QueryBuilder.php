@@ -35,7 +35,7 @@ class QueryBuilder
 
     public function countAll($table)
     {
-        $sql = "SELECT COUNT(*) FROM ($table)";
+        $sql = "SELECT COUNT(*) FROM {$table}";
 
         try{
             $stmt = $this->pdo->prepare($sql);
@@ -83,15 +83,13 @@ class QueryBuilder
     }
 
     public function update($table, $post_id, $parameters){
-        var_dump($parameters);
-die();
 
         $sql = sprintf('UPDATE %s SET %s WHERE post_id = :id',
         $table,
         implode(', ', array_map(function($param){
             return $param . ' = :' . $param;
         }, array_keys($parameters))),
-        $id
+        $post_id
     );
     
     $parameters['id'] = $post_id;

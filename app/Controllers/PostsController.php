@@ -29,7 +29,7 @@ class PostsController
             return redirect(path: 'admin/tabela-de-posts');
         }
 
-        $posts = App::get('database') -> selectAll('posts');
+        $posts = App::get('database') -> selectAll('posts', $inicio, $itensPage, $page);
 
         if($rows_count < 1){
             $rows_count = 1;
@@ -42,7 +42,7 @@ class PostsController
             exit;
         }
 
-        return view('admin/tabela-de-posts', compact('posts'));
+        return view('admin/tabela-de-posts', compact('posts', 'total_pages', 'page'));
     }
 
     public function store(){
