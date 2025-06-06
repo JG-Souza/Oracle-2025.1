@@ -18,10 +18,19 @@ class QueryBuilder
     {
         $sql = "select * from {$table}";
 
+        if ($inicio!==null && $rowsCount!==null) {
+            $sql .= " LIMIT :inicio, :rowsCount";
+        }
+
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute();
 
+            if ($inicio !== null && $rowsCount !== null) {
+                $stmt->bindValue(':inicio', (int) $inicio, PDO::PARAM_INT);
+                $stmt->bindValue(':rowsCount', (int) $rowsCount, PDO::PARAM_INT);
+            }
+
+            $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_CLASS);
 
         } catch (Exception $e) {

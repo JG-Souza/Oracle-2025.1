@@ -12,8 +12,8 @@ class UsuariosController
     {   
         $page = 1;
         
-        if(isset($_GET['paginacao']) && !empty($_GET['paginacao'])) {
-            $page = intval(value:$_GET['paginacao']);
+        if(isset($_GET['page']) && !empty($_GET['page'])) {
+            $page = intval(value:$_GET['page']);
             if($page <= 0) {
                 return redirect('/crud-usuarios');
             }
@@ -29,7 +29,7 @@ class UsuariosController
             return redirect('/crud-usuarios');
         }
 
-        $usuarios = App::get('database')->selectAll('users', $page, $itensPage, $inicio);
+        $usuarios = App::get('database')->selectAll('users', $inicio, $itensPage);
 
         $total_pages = ceil($rowsCount / $itensPage);
 

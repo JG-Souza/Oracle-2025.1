@@ -72,12 +72,12 @@
         </table>
         <!-- paginacao -->
         <div class="paginacao <?= $total_pages <= 1 ? 'disable' : '' ?>">
-            <a href="" class="btn-pagina <?= $page <=1 ? 'disable' : '' ?>" onclick="location.href='?paginacaonumero=<?= $page-1 ?>'"><i class="bi bi-arrow-left-short"></i></a>
+            <a class="btn-pagina <?= $page <=1 ? 'disable' : '' ?>" onclick="location.href='?page=<?= $page-1 ?>'"><i class="bi bi-arrow-left-short"></i></a>
             <?php
             for ($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
                 <a href="?page=<?= $page_number ?>" class="numero-pagina <?= $page == $page_number ? 'active' : '' ?>"><?= $page_number ?></a>
             <?php endfor ?>
-           <a href="" class="btn-pagina <?= $page >= $total_pages ? 'disable' : ''?>" onclick="location.href='?paginacaonumero=<?= $page+1 ?>'"><i class="bi bi-arrow-right-short"></i></a>
+           <a  class="btn-pagina <?= $page >= $total_pages ? 'disable' : ''?>" onclick="location.href='?page=<?= $page+1 ?>'"><i class="bi bi-arrow-right-short"></i></a>
     </div>
 
     <!-- MODAL CRIAR -->

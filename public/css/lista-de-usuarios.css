@@ -122,6 +122,7 @@ thead tr{
 .paginacao a{
     padding: 0.2rem;
     color: #D8DBD4;
+    cursor: pointer;
 }
 
 .btn-visualizar,
@@ -163,7 +164,7 @@ thead tr{
 }
 
 .modal-container{
-    background-color: white;
+    background-color: #D8DBD4;
     width: 50%;
     border-radius: 10px;
     display: flex;
