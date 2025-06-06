@@ -48,6 +48,7 @@ class UsuariosController
 
     public function edit()
     {
+        $fotoAntiga = $_POST['imagem-antiga'];
 
 
         $temporario = $_FILES['foto']['tmp_name'];
@@ -70,7 +71,7 @@ class UsuariosController
         
         
         if (empty($temporario)) {
-            $parameters['img_path'] = 'public/assets/avatar-generico.avif';
+            $parameters['img_path'] = $fotoAntiga;
         }
 
         App::get('database')->update('users', $id, $parameters);

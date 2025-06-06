@@ -163,7 +163,7 @@ thead tr{
 }
 
 .modal-container{
-    background-color: gainsboro;
+    background-color: rgb(229, 255, 196);
     width: 50%;
     border-radius: 10px;
     display: flex;
@@ -312,13 +312,20 @@ thead tr{
     border-radius: 100%;
     display: none;
     margin-bottom: 1rem;
-    border: solid 2px var(--cor-primaria);
     margin:0
 }
 
 #modal-visualizar-usuario .botoes-modal{
     align-items: center;
     justify-content: center;
+}
+
+.img-visualizar{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+    margin:0
 }
 
 #modal-excluir-usuario .modal-container{
@@ -375,6 +382,10 @@ thead tr{
     margin-left: 1.2rem;
 }
 
+#img-preview-editar{
+    display: block;
+}
+
 .senha-olho input{
     background: none;
     outline: none;
@@ -385,6 +396,19 @@ thead tr{
  #senhae{
     margin: 0;
  }
+
+ .usuario-excluir{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #152518;
+}
+
+#usuario-excluir-nome{
+    font-weight: bold;
+}
 
   .modal-container {
     width: 100%;

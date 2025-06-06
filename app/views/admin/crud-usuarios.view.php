@@ -44,7 +44,8 @@
                             data-id="<?= $usuario->id ?>"
                             data-nome="<?= $usuario->name ?>"
                             data-email="<?= $usuario->email ?>"
-                            data-password="<?= $usuario->password ?>">
+                            data-password="<?= $usuario->password ?>"
+                            data-img="<?= $usuario->img_path ?>">
                             <i class="bi bi-eye-fill"></i> 
                         </button>
                         <!-- botao de editar -->
@@ -53,11 +54,16 @@
                             data-id="<?= $usuario->id ?>"
                             data-nome="<?= $usuario->name ?>"
                             data-email="<?= $usuario->email ?>"
-                            data-password="<?= $usuario->password ?>">
+                            data-password="<?= $usuario->password ?>"
+                            data-img="<?= $usuario->img_path ?>">
                             <i class="bi bi-pencil-square"></i>
                         </button>
                         <!-- botao de excluir -->
-                        <button class="btn-excluir" onclick="abrirModal('modal-excluir-usuario')"><i class="bi bi-trash"></i></button>
+                        <button class="btn-excluir"
+                        onclick="abrirExcluirModal(this)"
+                        data-nome="<?= $usuario->name ?>"
+                        data-img="<?= $usuario->img_path ?>">
+                        <i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <?php endforeach ?>
@@ -137,7 +143,7 @@
                     </div>
                 </div>
                 <div class="modal-info" id="foto-usuario">
-                    <img src="" alt="">
+                    <img alt="" id="img-preview-visualizar" class="img-visualizar">
                 </div>
 
             </form>
@@ -154,6 +160,7 @@
             <form action="/crud-usuarios/edit" method="POST" class="form-usuario" enctype="multipart/form-data">
                 
                 <input type="hidden" id="editar-id" name="id">
+                <input type="hidden" id="imagem-antiga" name="imagem-antiga">
 
                 <div class="modal-info">
                     <label for="nome">Nome:</label>
@@ -172,6 +179,7 @@
                 </div>
                 <div class="modal-info" id="foto-usuario">
                     <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem-editar" name="foto">
+    
                     <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem-editar').click()">Selecionar Imagem</button>
                     <img src="" class="img-preview" id="img-preview-editar">
                 </div>
@@ -191,10 +199,17 @@
 
             <div class="modal-header">
                 <h2>Deseja excluir o Usuário?</h2>
+                <i class="bi bi-x" onclick="fecharModal('modal-excluir-usuario', 'nome', 'email')"></i>
             </div>
+                <div class="usuario-excluir">
+                    <div class="modal-info" id="foto-usuario">
+                    <img alt="" id="img-preview-excluir" class="img-visualizar">
+                    </div>
+                    <p>Você tem certeza que deseja excluir o usuário <span id="usuario-excluir-nome"></span>?</p>
+                    <p>Essa ação não pode ser desfeita.</p>
+                </div>
                 <div class="botoes-modal">
                     <button type="submit" class="btn-criar">Excluir</button>
-                    <button type="button" class="btn-cancelar" onclick="fecharModal('modal-excluir-usuario', 'nome', 'email')">Cancelar</button>
                 </div>
             </form>
         </div>

@@ -3,6 +3,7 @@ function abrirVisualizarModal(button) {
     document.getElementById('visualizar-nome').value = button.getAttribute('data-nome');
     document.getElementById('visualizar-email').value = button.getAttribute('data-email');
     document.getElementById('senhav').value = button.getAttribute('data-password');
+    document.getElementById('img-preview-visualizar').src = button.getAttribute('data-img');
     abrirModal('modal-visualizar-usuario');
 }
 
@@ -11,7 +12,15 @@ function abrirEditarModal(button) {
     document.getElementById('editar-nome').value = button.getAttribute('data-nome');
     document.getElementById('editar-email').value = button.getAttribute('data-email');
     document.getElementById('senhae').value = button.getAttribute('data-password');
+    document.getElementById('imagem-antiga').value = button.getAttribute('data-img');
+    document.getElementById('img-preview-editar').src = button.getAttribute('data-img');
     abrirModal('modal-editar-usuario');
+}
+
+function abrirExcluirModal(button) {
+    document.getElementById('usuario-excluir-nome').textContent = button.getAttribute('data-nome');
+    document.getElementById('img-preview-excluir').src = button.getAttribute('data-img');
+    abrirModal('modal-excluir-usuario');
 }
 
 function abrirModal(idModal) {
