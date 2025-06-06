@@ -163,7 +163,7 @@ thead tr{
 }
 
 .modal-container{
-    background-color: rgb(229, 255, 196);
+    background-color: white;
     width: 50%;
     border-radius: 10px;
     display: flex;
@@ -512,4 +512,8 @@ thead tr{
     .tabela-usuarios{
         scale: 0.7;
     }
+}
+
+.none{
+    display: none;
 }

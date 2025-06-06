@@ -71,12 +71,13 @@
             </thead>
         </table>
         <!-- paginacao -->
-        <div class="paginacao">
-            <a href="" class="btn-pagina" class="pagina-anterior"><i class="bi bi-arrow-left-short"></i></a>
-            <a href="" class="numero-pagina">1</a>
-            <a href="" class="numero-pagina">2</a>
-            <a href="" class="numero-pagina">3</a>
-            <a href="" class="btn-pagina" class="pagina-proxima"><i class="bi bi-arrow-right-short"></i></a>
+        <div class="paginacao <?= $total_pages <= 1 ? 'disable' : '' ?>">
+            <a href="" class="btn-pagina <?= $page <=1 ? 'disable' : '' ?>" onclick="location.href='?paginacaonumero=<?= $page-1 ?>'"><i class="bi bi-arrow-left-short"></i></a>
+            <?php
+            for ($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
+                <a href="?page=<?= $page_number ?>" class="numero-pagina <?= $page == $page_number ? 'active' : '' ?>"><?= $page_number ?></a>
+            <?php endfor ?>
+           <a href="" class="btn-pagina <?= $page >= $total_pages ? 'disable' : ''?>" onclick="location.href='?paginacaonumero=<?= $page+1 ?>'"><i class="bi bi-arrow-right-short"></i></a>
     </div>
 
     <!-- MODAL CRIAR -->

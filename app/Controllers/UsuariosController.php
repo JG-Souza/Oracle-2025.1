@@ -9,11 +9,37 @@ class UsuariosController
 {
 
     public function index()
-    {
+    {   
+        $page = 1;
+        
+        if(isset($_GET['paginacao']) && !empty($_GET['paginacao'])) {
+            $page = intval(value:$_GET['paginacao']);
+            if($page <= 0) {
+                return redirect('/crud-usuarios');
+            }
+        }
 
-        $usuarios = App::get('database') -> selectAll('users'); 
+        $itensPage = 5;
 
-        return view('admin/crud-usuarios', compact('usuarios'));
+        $inicio = $itensPage*$page - $itensPage;
+
+        $rowsCount = App::get('database')->count('users');
+
+        if($inicio > $rowsCount){
+            return redirect('/crud-usuarios');
+        }
+
+        $usuarios = App::get('database')->selectAll('users', $page, $itensPage, $inicio);
+
+        $total_pages = ceil($rowsCount / $itensPage);
+
+        if($page > $total_pages){
+            header('Location: /users?paginacaonumero=');
+            exit;
+        }
+
+
+        return view('admin/crud-usuarios', compact('usuarios', 'total_pages', 'page'));
     }
 
     public function store()

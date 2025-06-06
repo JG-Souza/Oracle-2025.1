@@ -14,7 +14,7 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table)
+    public function selectAll($table, $inicio = NULL, $rowsCount = NULL)
     {
         $sql = "select * from {$table}";
 
@@ -23,6 +23,23 @@ class QueryBuilder
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    // funcao de contar
+    // SELECT COUNT(*) as total FROM users
+    public function count($table)
+    {
+        $sql = "SELECT COUNT(*) as total FROM {$table}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
 
         } catch (Exception $e) {
             die($e->getMessage());
