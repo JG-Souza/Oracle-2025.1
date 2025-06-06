@@ -61,6 +61,7 @@
                         <!-- botao de excluir -->
                         <button class="btn-excluir"
                         onclick="abrirExcluirModal(this)"
+                        data-id="<?= $usuario->id ?>"
                         data-nome="<?= $usuario->name ?>"
                         data-img="<?= $usuario->img_path ?>">
                         <i class="bi bi-trash"></i></button>
@@ -195,7 +196,7 @@
         <div class="modal-container">
             <form action="/crud-usuarios/delete" method="POST" class="form-usuario">
             
-            <input type="hidden" name="id" value='<?= $usuario->id ?>'>
+            <input type="hidden" name="id" id="usuario-excluir-id">
 
             <div class="modal-header">
                 <h2>Deseja excluir o Usuário?</h2>

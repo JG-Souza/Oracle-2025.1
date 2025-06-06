@@ -19,6 +19,7 @@ function abrirEditarModal(button) {
 
 function abrirExcluirModal(button) {
     document.getElementById('usuario-excluir-nome').textContent = button.getAttribute('data-nome');
+    document.getElementById('usuario-excluir-id').value = button.getAttribute('data-id');
     document.getElementById('img-preview-excluir').src = button.getAttribute('data-img');
     abrirModal('modal-excluir-usuario');
 }
