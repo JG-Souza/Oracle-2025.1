@@ -163,8 +163,8 @@ thead tr{
 .modal-container{
     background-color: #152518;
     z-index: 3;
-    width: 45%;
-    height: 80%;
+    width: 50%;
+    height: 100%;
     border-radius: 10px;
     display: flex;
     justify-content: start;
@@ -176,7 +176,7 @@ thead tr{
 
 .modal-header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
@@ -351,7 +351,6 @@ thead tr{
     gap:1rem;
 }
 #modal-container-excluir-publicacao {
-    width: 25%;
     height: auto;
 }
 
