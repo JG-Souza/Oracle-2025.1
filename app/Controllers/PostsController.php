@@ -62,9 +62,9 @@ class PostsController
             'story' => $_POST['historia'],
             'curiosity' => $_POST['curiosidades'],
             'lesson' => $_POST['licoes'],
-            'reference' => $_POST['referencias'],
+            'refference' => $_POST['referencias'],
             'img_path' => $caminhoImagem,
-            'user_id' => 123,
+            'user_id' => 1,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -92,7 +92,7 @@ class PostsController
 
             move_uploaded_file($temporario, $caminhoImagem);
 
-            if($post && !empty($post->img_path) && file_exists($post->img_path)){
+            if(file_exists($post->img_path)){
                 unlink($post->img_path);
             }
         }
@@ -104,17 +104,15 @@ class PostsController
             'story'         => $_POST['historia'],
             'curiosity'     => $_POST['curiosidades'],
             'lesson'        => $_POST['licoes'],
-            'reference'     => $_POST['referencias'],
+            'refference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => 123, 
+            'user_id'       => 1,
         ];
-
-        $id = $_POST['post_id'];
         
         App::get('database')->update('posts', $id, $parameters);
 
         header('Location: /tabela-de-posts');
-        exit;
+        
     }
 
     public function delete()

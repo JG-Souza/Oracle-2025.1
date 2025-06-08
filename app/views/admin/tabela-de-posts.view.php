@@ -109,7 +109,7 @@
                     <div class="modal-header">
                         <h2>Editar Publicação</h2>
                     </div>
-                    <form action="/tabela-de-posts/update" method="POST" class="form-publicacao">
+                    <form action="/tabela-de-posts/update" method="POST" enctype="multipart/form-data" class="form-publicacao">
                         <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
                         <input type="hidden" name="post_id" value="<?=$post->post_id ?>">
                         <div class="modal-container-content">
@@ -135,7 +135,8 @@
                                     <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
                                     
                                     <div>
-                                        <img src="/<?=$post->img_path ?>" alt="imagem post" class="imagem-publicacao">
+                                        
+                                        <img src="/<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>
                                 </div>
                             </div>
