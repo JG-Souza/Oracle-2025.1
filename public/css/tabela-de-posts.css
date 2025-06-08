@@ -53,12 +53,10 @@ main{
 
 .tabela-posts{
     width: 55vw;
-    height: 55vh;
     border-collapse: collapse;
     opacity: 80%;
     align-content: start;
     text-align: center;
-    background-color: #234920;
     border-radius: 10px;
     border: 1px solid black;
 }
@@ -74,13 +72,17 @@ main{
 
 .tabela-posts th,
 .tabela-posts td {
+        white-space: nowrap;       /* Impede que o texto quebre linha */
+    overflow: hidden;          /* Esconde o conteúdo que ultrapassa o container */
+    text-overflow: ellipsis;   /* Adiciona reticências ao final */
+    max-width: 250px;  
     padding: 0.5rem;
 }
 
 .tabela-body{
     font-weight: 300;
     background-color: rgba(23, 27, 22, 0.8);
-    height: 100%;
+    height: min-content;
 }
 
 .tabela-body tr{
@@ -104,10 +106,45 @@ thead tr{
     padding: 0.2rem;
 } 
 
-.paginacao a{
-    padding: 0.2rem;
-    color: #D8DBD4;
+.paginas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
 }
+
+.paginas button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0px 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.paginas button:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* leve destaque ao passar o mouse */
+    border-color: #999;
+}
+
+.paginas button.active {
+    background-color: transparent;
+    color: #fff;
+    border-color: none;
+}
+
+.paginas button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Para esconder se total_pages <= 1 */
+.paginas.none {
+    display: none;
+}
+
 
 .modal{
     justify-content: center;
