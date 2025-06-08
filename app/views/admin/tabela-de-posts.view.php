@@ -165,19 +165,19 @@
                 <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
                     <div class="modal-container" id="modal-container-excluir-publicacao">
                         <div class="modal-header">
-                            <div class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Confirmação de Exclusão </div>
+                            <div class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Deseja excluir o post? </div><i class="bi bi-x" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"></i>
                         </div>
                         <div class="modal-body">
-                             Deletar a publicação <strong><?= $post->title ?></strong>?
+                            <p>Você tem certeza que deseja excluir a publicação <strong><?= $post->title ?></strong>?</p>
+                            <p>Essa ação não pode ser desfeita.</p>
                         </div>
                         <div class="modal-footer">
                             <div class= "botoes-modal" id="botoes-modal-excluir">   
                                 <form method="POST" action="/tabela-de-posts/delete">
                                     <input type="hidden" name="post_id" value="<?= $post->post_id ?>">
                                     
-                                    <button type="submit" class="btn-criar"> Deletar </button>
+                                    <button type="submit" class="btn-criar"> Excluir </button>
                                 </form>
-                                <button type="button" class="btn-cancelar" data-bs-dismiss="modal" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"> Cancelar </button>
                             </div>
                         </div>  
                     </div>

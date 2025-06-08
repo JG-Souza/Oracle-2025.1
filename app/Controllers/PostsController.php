@@ -106,7 +106,7 @@ class PostsController
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => 1, 
+            'user_id'       => 123, 
         ];
 
         $id = $_POST['post_id'];
