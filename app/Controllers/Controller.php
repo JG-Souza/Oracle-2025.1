@@ -26,7 +26,7 @@ class Controller
         $user = App::get('database')->verificaLogin($email, $senha);
 
         if($user != false){
-            $_SESSION['id'] = $user->id;
+            $_SESSION['id'] = $user->user_id;
             $_SESSION['role'] = $user->role;
             header('Location: /dashboard');
             exit;
