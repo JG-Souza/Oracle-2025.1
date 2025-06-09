@@ -27,6 +27,7 @@ class Controller
 
         if($user != false){
             $_SESSION['id'] = $user->id;
+            $_SESSION['role'] = $user->role;
             header('Location: /dashboard');
             exit;
         }
