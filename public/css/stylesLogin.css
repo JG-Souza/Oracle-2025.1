@@ -67,6 +67,7 @@ main{
 
 .email-input,
 .senha-input{
+    width: 15rem;
     position: relative;
     display: flex;
     flex-direction: row;
