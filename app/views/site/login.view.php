@@ -29,31 +29,33 @@
             <div class="login-card-conteudo">
                 <div>
                     <form action="/login" method="POST">
-                        <div id="" class="campo-text-input">
-                            <span>E-mail</span>
-                            <div class="email-input">
-                                <input placeholder="seuemail@gmail.com" class="input-texto" type="text" name="email" id="email" autocomplete="off">
+                        <div>
+                            <div id="" class="campo-text-input">
+                                <span>E-mail</span>
+                                <div class="email-input">
+                                    <input placeholder="seuemail@gmail.com" class="input-texto" type="text" name="email" id="email" autocomplete="off">
+                                </div>
                             </div>
-                        </div>
-                        <div id="" class="campo-text-input">
-                            <span>Senha</span>
-                            <div class="senha-input">
-                                <input placeholder="***********" class="input-texto" type="password" name="senha" id="senha" autocomplete="off">
-                                <i class="bi bi-eye" id="btn-senha" ></i>
+                            <div id="" class="campo-text-input">
+                                <span>Senha</span>
+                                <div class="senha-input">
+                                    <input placeholder="***********" class="input-texto" type="password" name="senha" id="senha" autocomplete="off">
+                                    <i class="bi bi-eye" id="btn-senha" ></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mensagem-erro">
-                            <p>
-                                <?php
+                            <div class="mensagem-erro">
+                                <p>
+                                    <?php
                                     session_start();
                                     if(isset($_SESSION['mensagem-erro']))
-                                        echo $_SESSION['mensagem-erro'];
-                                    unset($_SESSION['mensagem-erro']);
+                                    echo $_SESSION['mensagem-erro'];
+                                unset($_SESSION['mensagem-erro']);
                                 ?>
-                            </p>
-                        </div>
-                        <div class="campo-botao">
+                                </p>
+                            </div>
+                            <div class="campo-botao">
                             <button class="botao" type="submit">Login</button>
+                            </div>
                         </div>
                     </form>
                 </div>
