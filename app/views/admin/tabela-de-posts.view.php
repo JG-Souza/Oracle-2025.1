@@ -52,10 +52,63 @@
                         <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao<?=$post->post_id ?>')"><i class="bi bi-trash"></i></button>
                     </td>
                 </tr>
+                <div class="modal" id="modal-criar-publicacao">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h2>Criar Publicação</h2>
+                            <i class="bi bi-x" onclick="fecharModal('modal-criar-publicacao')"></i>
+                        </div>
+                        <form action="/tabela-de-posts/create" method="POST" enctype="multipart/form-data" class="form-publicacao">
+                            <div class="modal-container-content">
+                                <div class="modal-side" id="modal-side-left">
+                                    <div class="modal-info">
+                                        <label for="titulo">Título:</label>
+                                        <input type="text" id="titulo" name="titulo" required>
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="autor">Autor:</label>
+                                        <input type="text" id="autor" name="autor" required>
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="origem">Origem:</label>
+                                        <input type="text" id="origem" name="origem" required>
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="referencias">Referências:</label>
+                                        <input type="text" id="referencias" name="referencias" required>
+                                    </div>
+                                    <div class="modal-info-imagem">
+                                        <label for="imagem">Imagem:</label>
+                                        <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
+                                    </div>
+                                </div>
+                                <div class="modal-side" id="modal-side-right">
+                                    <div class="modal-info-2" id="modal-curiosidades">
+                                        <label for="curiosidades">Curiosidades:</label>
+                                        <textarea name="curiosidades" id="curiosidades"></textarea>
+                                    </div>
+                                    <div class="modal-info-2">
+                                        <label for="licoes">Lições:</label>
+                                        <textarea name="licoes" id="licoes"></textarea>
+                                    </div>
+                                    <div class="modal-info-2">
+                                        <label for="historia">História:</label>
+                                        <textarea name="historia" id="historia"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="botoes-modal">
+                                    <button type="submit" class="btn-criar">Criar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        
                 <div class="modal" id="modal-visualizar-publicacao<?=$post->post_id ?>">
                 <div class="modal-container">
                     <div class="modal-header">
                         <h2>Visualizar Publicação</h2>
+                        <i class="bi bi-x" onclick="fecharModal('modal-visualizar-publicacao<?=$post->post_id ?>')"></i>
                     </div>
                     <form class="form-publicacao">
                         <div class="modal-container-content">
@@ -97,9 +150,6 @@
                                 
                             </div>
                         </div>
-                        <div class="botoes-modal">
-                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-visualizar-publicacao<?=$post->post_id ?>')">Fechar</button>
-                        </div>
                     </form>
                 </div>
                 </div>
@@ -108,6 +158,7 @@
                 <div class="modal-container">
                     <div class="modal-header">
                         <h2>Editar Publicação</h2>
+                        <i class="bi bi-x" onclick="fecharModal('modal-editar-publicacao<?=$post->post_id ?>')"></i>
                     </div>
                     <form action="/tabela-de-posts/update" method="POST" enctype="multipart/form-data" class="form-publicacao">
                         <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
@@ -157,7 +208,6 @@
                         </div>
                         <div class="botoes-modal">
                             <button type="submit" class="btn-criar">Salvar</button>
-                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-editar-publicacao<?=$post->post_id ?>')">Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -166,7 +216,8 @@
                 <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
                     <div class="modal-container" id="modal-container-excluir-publicacao">
                         <div class="modal-header">
-                            <div class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Deseja excluir o post? </div><i class="bi bi-x" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"></i>
+                            <div class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Deseja excluir o post? </div>
+                            <i class="bi bi-x" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"></i>
                         </div>
                         <div class="modal-body">
                             <p>Você tem certeza que deseja excluir a publicação <strong><?= $post->title ?></strong>?</p>
@@ -200,58 +251,6 @@
             <button class="proximo<?= $page >= $total_pages ? " disabled" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?>'"><i class="bi bi-arrow-right-short"></i>
             </button>
         </div>
-        <div class="modal" id="modal-criar-publicacao">
-            <div class="modal-container">
-                <div class="modal-header">
-                    <h2>Criar Publicação</h2>
-                </div>
-                <form action="/tabela-de-posts/create" method="POST" enctype="multipart/form-data" class="form-publicacao">
-                    <div class="modal-container-content">
-                        <div class="modal-side" id="modal-side-left">
-                            <div class="modal-info">
-                                <label for="titulo">Título:</label>
-                                <input type="text" id="titulo" name="titulo" required>
-                            </div>
-                            <div class="modal-info">
-                                <label for="autor">Autor:</label>
-                                <input type="text" id="autor" name="autor" required>
-                            </div>
-                            <div class="modal-info">
-                                <label for="origem">Origem:</label>
-                                <input type="text" id="origem" name="origem" required>
-                            </div>
-                            <div class="modal-info">
-                                <label for="referencias">Referências:</label>
-                                <input type="text" id="referencias" name="referencias" required>
-                            </div>
-                            <div class="modal-info-imagem">
-                                <label for="imagem">Imagem:</label>
-                                <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
-                            </div>
-                        </div>
-                        <div class="modal-side" id="modal-side-right">
-                            <div class="modal-info-2" id="modal-curiosidades">
-                                <label for="curiosidades">Curiosidades:</label>
-                                <textarea name="curiosidades" id="curiosidades"></textarea>
-                            </div>
-                             <div class="modal-info-2">
-                                <label for="licoes">Lições:</label>
-                                <textarea name="licoes" id="licoes"></textarea>
-                            </div>
-                            <div class="modal-info-2">
-                                <label for="historia">História:</label>
-                                <textarea name="historia" id="historia"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="botoes-modal">
-                            <button type="button" class="btn-cancelar" onclick="fecharModal('modal-criar-publicacao' ,'titulo' ,'autor' ,'historia')">Cancelar</button>
-                            <button type="submit" class="btn-criar">Criar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
     </main>
     <script src="/public/js/tabela-de-posts.js"></script>
 </body>

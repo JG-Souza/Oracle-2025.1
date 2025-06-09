@@ -161,7 +161,7 @@ thead tr{
 }
 
 .modal-container{
-    background-color: #152518;
+    background-color: #D8DBD4;
     z-index: 3;
     width: 50%;
     height: 100%;
@@ -211,7 +211,7 @@ thead tr{
 .modal-info-2 label,
 .modal-info label{
     font-size: 0.9rem;
-    color: #D8DBD4;
+    color: #152518;
     width: 8rem;
 }
 
@@ -224,6 +224,7 @@ thead tr{
     padding: 1rem;
     font-size: 0.7rem;
     background-color: #e0e0e0;
+    border: 1px solid #152518;
 }
 
 .modal-info-2 label {
@@ -237,6 +238,7 @@ thead tr{
     padding: 1rem;
     border: none;
     background-color: #e0e0e0;
+    border: 1px solid #152518;
 }
 .modal-container-content{
     display: flex;
@@ -377,6 +379,7 @@ thead tr{
 }
 #modal-container-excluir-publicacao .modal-body{
     padding-top: 1rem; 
+    color:#152518;
 }
 
 
