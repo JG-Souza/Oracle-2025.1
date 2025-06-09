@@ -78,7 +78,7 @@
                                         <input type="text" id="referencias" name="referencias" required>
                                     </div>
                                     <div class="modal-info-imagem">
-                                        <label for="imagem">Imagem:</label>
+                                        <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
                                         <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                                     <input type="text" name="referencias" value="<?=$post->refference?>">
                                 </div>
                                 <div class="modal-imagem">
-                                    <label for="imagem">Imagem:</label>
+                                    <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
                                     <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
                                     
                                     <div>
