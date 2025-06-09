@@ -9,6 +9,14 @@ class LandingPageController
 {
     public function exibirLandingPage()
     {
-        return view('site/landing-page');
+        $db = App::get('database');
+
+        $destaques   = $db->getDestaques();
+        $ultimos     = $db->getUltimosPosts(); 
+
+        return view('site/landing-page', [
+            'destaques' => $destaques,
+            'ultimos'   => $ultimos
+        ]);
     }
 }

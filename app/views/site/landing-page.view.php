@@ -23,13 +23,14 @@
         <div class="destaques">
             <h3>DESTAQUES</h3>
             <!-- SLIDES / CARROSSEL -->
-            <div class="carrossel-de-destaques">
+            <div class="carrossel-de-destaques"
+            style="background-image:url('<?= $destaques[0]->img_path ?? '/public/assets/placeholder.jpg' ?>')">>
                 <!-- Botoes de Seta -->
                 <button class="back" onclick="backSlide()"> &#x276E; </button>
                 <div class="meio-do-carrossel">
-                    <h3 class="texto-carrossel">TÍTULO CABEÇALHO DO POST</h3>
+                    <h3 class="texto-carrossel"><?= htmlspecialchars($destaques[0]->title ?? '') ?></h3>
                     <!-- Label dos botoes -->
-                    <div class="radio-auto">
+                     <div class="radio-auto">
                         <label class="radio-label"></label>
                         <label class="radio-label"></label>
                         <label class="radio-label"></label>
@@ -75,6 +76,10 @@
     </main>
 
     <!-- SCRIPT -->
+     <script>
+        const imgArray   = <?= json_encode(array_column($destaques, 'img_path')); ?>;
+        const titleArray = <?= json_encode(array_column($destaques, 'title')); ?>;
+     </script>
     <script src="/public/js/landing-page.js"></script>
 </body>
 </html>
