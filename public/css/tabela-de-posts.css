@@ -252,6 +252,9 @@ thead tr{
     overflow-y: auto;
 }
 
+#btn-fechar{
+    cursor: pointer;
+}
 .modal-side{
     display: flex;
     justify-content: center;
