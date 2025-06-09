@@ -24,7 +24,7 @@
             <h3>DESTAQUES</h3>
             <!-- SLIDES / CARROSSEL -->
             <div class="carrossel-de-destaques"
-            style="background-image:url('<?= $destaques[0]->img_path ?? '/public/assets/placeholder.jpg' ?>')">>
+            style="background-image:url('<?= $destaques[0]->img_path ?? '/public/assets/placeholder.jpg' ?>')">
                 <!-- Botoes de Seta -->
                 <button class="back" onclick="backSlide()"> &#x276E; </button>
                 <div class="meio-do-carrossel">
@@ -49,27 +49,20 @@
         <section class="ultimosPosts">
             <h3 class="tituloUltimosPosts">ÚLTIMOS POSTS</h3>
             <section class="posts">
-                <div class="postGrande">
-                    <div id="pgImg"></div>
-                    <h4 id="pgTitulo">Título do post grande</h4>
-                </div>
+                <?php foreach ($ultimos as $i => $post): ?>
+                    <?php if ($i === 0): ?>
+                        <div class="postGrande">
+                            <img id="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <h4 id="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                        </div>
                 <div class="postsPequenos">
-                    <div class="pp1"> 
-                        <div id="ppImg1"></div>
-                        <h4 id="ppTitulo1">Lorem Ipsum Grecia Egito Japão Osíris Zeus Zagreu Lorem Ipsum Lorem Ipsum</h4>
-                    </div>
-                    <div class="pp2">
-                        <div id="ppImg2"></div>
-                        <h4 id="ppTitulo2">Título do post pequeno</h4>
-                    </div>
-                    <div class="pp3">
-                        <div id="ppImg3"></div>
-                        <h4 id="ppTitulo3">Título do post pequeno</h4>
-                    </div>
-                    <div class="pp4">
-                        <div id="ppImg4"></div>
-                        <h4 id="ppTitulo4">Título do post pequeno</h4>
-                    </div>
+                    <?php else: ?>
+                        <div class="pp">
+                            <img id="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <h4 id="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 </div>
             </section>
         </section>
