@@ -14,15 +14,11 @@ function fecharModal(idModal, idInputTitulo, idInputAutor, idInputDescricaco) {
     Descricaco.value = "";
 }
 
-// Preview da imagem de forma dinâmica para vários modais
-document.querySelectorAll('input[type="file"][name="imagem"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const container = event.target.closest('.modal-imagem') || event.target.closest('.modal-info-imagem');
-            const img = container.querySelector('img');
-            img.src = URL.createObjectURL(file);
-            img.style.display = 'block';
-        }
-    });
-});
+
+const image = document.getElementById('imagem-publicaco');
+const inputImage = document.getElementById('input-imagem');
+
+inputImage.onchange = function (){
+    image.src = URL.createObjectURL(inputImage.files[0]);
+    image.style.display = "block";
+}
