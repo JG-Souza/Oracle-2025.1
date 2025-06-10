@@ -128,14 +128,12 @@
                                 </div>
                                 <div class="modal-info">
                                     <label for="referencias">Referências:</label>
-                                    <input type="text" name="referencias" value="<?=$post->refference?>">
+                                    <input type="text" name="referencias" value="<?=$post->reference?>">
                                 </div>
                                 <div class="modal-imagem">
                                     <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
-                                    <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
-                                    
+                                    <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem" value="<?= $post->img_path?>">
                                     <div>
-                                        
                                         <img src="/<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>
                                 </div>
