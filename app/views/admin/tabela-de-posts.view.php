@@ -127,15 +127,16 @@
                                 </div>
                                 <div class="modal-info">
                                     <label for="origem">Origem:</label>
-                                    <input type="text" name="origem" value="<?=$post->origin ?>">
+                                    
                                 </div>
                                 <div class="modal-info">
                                     <label for="referencias">Referências:</label>
                                     <input type="text" name="referencias" value="<?=$post->reference?>">
                                 </div>
                                 <div class="modal-imagem">
-                                    <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
-                                    <input type="file" name="imagem" accept="image/*" class="input-imagem">
+                                    <label for="imagem-editar" class="btn-imagem">Selecionar Imagem </label>
+                                    <input id="imagem-editar" type="file" name="imagem" accept="image/*" class="input-imagem">
+                                    
                                     <div>
                                         <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>
@@ -155,9 +156,9 @@
                                     <textarea name="historia"><?=$post->story ?></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <div class="botoes-modal">
-                            <button type="submit" class="btn-criar">Salvar</button>
+                            <div class="botoes-modal">
+                                <button type="submit" class="btn-criar">Salvar</button>
+                            </div>
                         </div>
                     </form>
                 </div>

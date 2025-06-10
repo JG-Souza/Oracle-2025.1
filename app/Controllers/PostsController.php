@@ -82,10 +82,11 @@ class PostsController
 
         $caminhoImagem = $post->img_path;
 
+
         if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
 
             $temporario = $_FILES['imagem']['tmp_name'];
-
+            
             $nomeImagem = sha1(uniqid($_FILES['imagem']['name'], true)) . "." . pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
 
             $caminhoImagem = "public/assets/imgPosts/" . $nomeImagem;
@@ -96,7 +97,6 @@ class PostsController
                 unlink($post->img_path);
             }
         }
-
 
         $parameters = [
             'title'         => $_POST['titulo'],
