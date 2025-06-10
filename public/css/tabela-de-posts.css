@@ -25,7 +25,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 4vh;
-    background-image:url(/public/assets/fundo1.jpg);
+    background-image:url(/public/assets/fundo3.jpeg);
     color: #D8DBD4;
 }
 
@@ -120,7 +120,7 @@ thead tr{
     padding: 0px 7px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
@@ -136,6 +136,7 @@ thead tr{
 }
 
 .paginas button.disabled {
+    pointer-events: none;
     opacity: 0.5;
     cursor: not-allowed;
 }

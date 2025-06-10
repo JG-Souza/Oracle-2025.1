@@ -3,7 +3,7 @@ function abrirModal(idModal) {
     modal.style.display = "flex";
 }
 
-function fecharModal(idModal ,idInputTitulo ,idInputAutor ,idInputDescricaco ) {
+function fecharModal(idModal, idInputTitulo, idInputAutor, idInputDescricaco) {
     const modal = document.getElementById(idModal);
     modal.style.display = "none";
     const Titulo = document.getElementById(idInputTitulo);
@@ -14,10 +14,15 @@ function fecharModal(idModal ,idInputTitulo ,idInputAutor ,idInputDescricaco ) {
     Descricaco.value = "";
 }
 
-const image = document.getElementById('imagem-publicaco');
-const inputImage = document.getElementById('input-imagem');
-
-inputImage.onchange = function (){
-    image.src = URL.createObjectURL(inputImage.files[0]);
-    image.style.display = "block";
-}
+// Preview da imagem de forma dinâmica para vários modais
+document.querySelectorAll('input[type="file"][name="imagem"]').forEach(input => {
+    input.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const container = event.target.closest('.modal-imagem') || event.target.closest('.modal-info-imagem');
+            const img = container.querySelector('img');
+            img.src = URL.createObjectURL(file);
+            img.style.display = 'block';
+        }
+    });
+});
