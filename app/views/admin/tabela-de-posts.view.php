@@ -78,8 +78,11 @@
                                     <label for="data">Data:</label>
                                     <input type="text" value="<?=$post->created_at ?>" readonly>
                                 </div>
+                                <div class="modal-info">
+                                    <label for="referencias">Referências:</label>
+                                    <input type="text" value="<?=$post->reference?>" readonly>
+                                </div>
                                 <div class="modal-imagem">
-                                    <label for="imagem">Imagem:</label>
                                     <img src="/<?=$post->img_path ?>" alt="imagem post" class="imagem-publicacao">
                                 </div>
                             </div>
@@ -132,7 +135,7 @@
                                 </div>
                                 <div class="modal-imagem">
                                     <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
-                                    <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem" value="<?= $post->img_path?>">
+                                    <input type="file" name="imagem" accept="image/*" class="input-imagem">
                                     <div>
                                         <img src="/<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>

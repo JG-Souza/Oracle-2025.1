@@ -171,7 +171,6 @@ thead tr{
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 0.2rem;
     padding-bottom: 1rem;
 }
 
@@ -243,11 +242,11 @@ thead tr{
 .modal-container-content{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
     width: 100%;
     height: auto;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-left: 40px;
     padding-right: 40px;
     gap: 2rem;
@@ -319,7 +318,7 @@ thead tr{
     padding-right: 40px;
     gap: 2rem;
     width: 100%;
-    padding-top: 0.2rem;
+    padding-top: 30px;
 }
 
 .botoes-modal .btn-criar{
