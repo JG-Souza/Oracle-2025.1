@@ -81,14 +81,14 @@ class QueryBuilder
     // UPDATE users SET id='[value-1]',name='[value-2]',email='[value-3]',password='[value-4]',role='[value-5]',img_path='[value-6]' WHERE 1
     public function update($table, $id, $parameters) {
         $sql = sprintf(
-            'UPDATE %s SET %s WHERE id = :id',
+            'UPDATE %s SET %s WHERE user_id = :user_id',
             $table,
             implode(', ', array_map(function($param) {
                 return $param . ' = :' . $param;
             }, array_keys($parameters)))
         );
 
-        $parameters['id'] = $id;
+        $parameters['user_id'] = $id;
 
         try {
             $stmt = $this->pdo->prepare($sql);
@@ -104,14 +104,11 @@ class QueryBuilder
     // DELETE FROM users WHERE 0
     public function delete($table, $id)
     {
-        $sql = sprintf('DELETE FROM %s WHERE %s',
-        $table, 
-        'id = :id'
-    );
+        $sql = sprintf('DELETE FROM %s WHERE user_id = :user_id', $table);
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute(compact('id'));
+            $stmt->execute(['user_id' => $id]);
 
         } catch (Exception $e) {
             die($e->getMessage());

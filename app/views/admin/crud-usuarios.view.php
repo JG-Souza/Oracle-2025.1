@@ -161,7 +161,7 @@
             </div>
             <form action="/crud-usuarios/edit" method="POST" class="form-usuario" enctype="multipart/form-data">
                 
-                <input type="hidden" id="editar-id" name="id">
+                <input type="hidden" id="editar-id" name="user_id">
                 <input type="hidden" id="imagem-antiga" name="imagem-antiga">
 
                 <div class="modal-info">
@@ -197,7 +197,7 @@
         <div class="modal-container">
             <form action="/crud-usuarios/delete" method="POST" class="form-usuario">
             
-            <input type="hidden" name="id" id="usuario-excluir-id">
+            <input type="hidden" name="user_id" id="usuario-excluir-id">
 
             <div class="modal-header">
                 <h2>Deseja excluir o Usuário?</h2>
