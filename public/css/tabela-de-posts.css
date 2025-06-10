@@ -434,21 +434,16 @@ thead tr{
 }
 
 @media screen and (max-width: 630px) {
+
     main{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4vh;
-    background-image:url(/public/assets/fundo3.jpeg);
-    color: #D8DBD4; 
+    justify-content: space-around;
     padding-top: 20px;
     padding-bottom: 20px;
     }
+    
     .tabela-posts{
         overflow: auto;
+        scale: 0.6;
     }
     .parte-cima{
         width: 100vw;
@@ -459,5 +454,29 @@ thead tr{
 
     .modal-container{
         width: 80%;
+        max-width: 312px;
+        gap: 0;
+        padding-bottom: 0;
+    }
+
+    .modal-container-content{
+        flex-direction: column;
+        padding-inline: 15px;
+        padding-block: 5px;
+        align-items: center;
+        gap: 13px;
+
+    }
+
+    .modal-info label{
+        text-align: left;
+    }
+
+    .botoes-modal{
+        padding: 13px;
+    }
+    
+    .paginas button{
+        font-size: 14px;
     }
 }
