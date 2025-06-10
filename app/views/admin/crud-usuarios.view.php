@@ -41,7 +41,7 @@
                         <!-- botao de visualizar -->
                         <button class="btn-visualizar"
                             onclick="abrirVisualizarModal(this)"
-                            data-id="<?= $usuario->id ?>"
+                            data-id="<?= $usuario->user_id ?>"
                             data-nome="<?= $usuario->name ?>"
                             data-email="<?= $usuario->email ?>"
                             data-password="<?= $usuario->password ?>"
@@ -51,7 +51,7 @@
                         <!-- botao de editar -->
                         <button class="btn-editar" 
                             onclick="abrirEditarModal(this)"
-                            data-id="<?= $usuario->id ?>"
+                            data-id="<?= $usuario->user_id ?>"
                             data-nome="<?= $usuario->name ?>"
                             data-email="<?= $usuario->email ?>"
                             data-password="<?= $usuario->password ?>"
@@ -61,7 +61,7 @@
                         <!-- botao de excluir -->
                         <button class="btn-excluir"
                         onclick="abrirExcluirModal(this)"
-                        data-id="<?= $usuario->id ?>"
+                        data-id="<?= $usuario->user_id ?>"
                         data-nome="<?= $usuario->name ?>"
                         data-img="<?= $usuario->img_path ?>">
                         <i class="bi bi-trash"></i></button>
