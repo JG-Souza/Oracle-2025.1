@@ -394,23 +394,12 @@ thead tr{
     text-align: center;
 }
 
-
-
-@media screen and (max-width: 630px) {
-    .tabela-posts{
-        overflow: auto;
-    }
-    .parte-cima{
-        width: 100vw;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        justify-content: space-between;
-    }
-
-    .modal-container{
-        width: 80%;
+@media screen and (max-width:1300px){
+    #modal-curiosidades{
+        flex-direction: column;
     }
 }
+
 @media screen and (max-width: 1000px){
     .form-publicacao{
         padding: 1%;
@@ -444,8 +433,31 @@ thead tr{
     }
 }
 
-@media screen and (max-width:1300px){
-    #modal-curiosidades{
-        flex-direction: column;
+@media screen and (max-width: 630px) {
+    main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vh;
+    background-image:url(/public/assets/fundo3.jpeg);
+    color: #D8DBD4; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    .tabela-posts{
+        overflow: auto;
+    }
+    .parte-cima{
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-between;
+    }
+
+    .modal-container{
+        width: 80%;
     }
 }

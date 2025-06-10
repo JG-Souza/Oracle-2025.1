@@ -137,7 +137,7 @@
                                     <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
                                     <input type="file" name="imagem" accept="image/*" class="input-imagem">
                                     <div>
-                                        <img src="/<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
+                                        <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>
                                 </div>
                             </div>
