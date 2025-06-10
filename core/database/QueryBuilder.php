@@ -47,8 +47,10 @@ class QueryBuilder
     //função para pegar dados dos posts que vão aparecer em últimos posts, no banco de dados.
     public function getUltimosPosts(int $limit = 5)
     {
-        $sql = 'SELECT * FROM posts
-                ORDER BY created_at DESC
+        $sql = 'SELECT posts.*, users.name AS author_name
+                FROM posts
+                JOIN users ON posts.user_id = users.user_id
+                ORDER BY posts.created_at DESC
                 LIMIT :limit';
 
         $stmt = $this->pdo->prepare($sql);

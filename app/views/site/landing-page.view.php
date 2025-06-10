@@ -52,14 +52,26 @@
                 <?php foreach ($ultimos as $i => $post): ?>
                     <?php if ($i === 0): ?>
                         <div class="postGrande">
-                            <img id="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
-                            <h4 id="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                            <img class="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <div class="pgText">
+                                <h4 class="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                                <div class="pgInfo">
+                                    <p class="pgAutor">Por: <?= htmlspecialchars($post->author_name) ?></p>
+                                    <p class="pgData">Publicado em: <?= date('d/m/Y', strtotime($post->created_at)) ?></p>
+                                </div>
+                            </div>
                         </div>
                 <div class="postsPequenos">
                     <?php else: ?>
                         <div class="pp">
-                            <img id="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
-                            <h4 id="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                            <img class="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <div class="ppText">
+                                <h4 class="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                                <div class="ppInfo">
+                                    <p class="ppAutor">Por: <?= htmlspecialchars($post->author_name) ?></p>
+                                    <p class="ppData">Publicado em: <?= date('d/m/Y', strtotime($post->created_at)) ?></p>
+                                </div>
+                            </div>
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
