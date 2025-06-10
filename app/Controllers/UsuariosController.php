@@ -93,7 +93,7 @@ class UsuariosController
             'img_path' => $caminhodaImagem,
         ];
 
-        $id = $_POST['id'];
+        $id = $_POST['user_id'];
         
         
         if (empty($temporario)) {
@@ -107,7 +107,7 @@ class UsuariosController
 
     public function delete ()
     {
-        $id = $_POST['id'];
+        $id = $_POST['user_id'];
 
         App::get('database')->delete('users', $id);
 

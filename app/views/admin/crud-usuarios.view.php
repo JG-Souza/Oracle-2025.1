@@ -33,7 +33,7 @@
                 <!-- Tabela dinâmica de usuários -->
                 <?php foreach($usuarios as $usuario): ?>
                 <tr class="usuario">
-                    <td class="id-usuario"> <?= $usuario->id ?> </td>
+                    <td class="id-usuario"> <?= $usuario->user_id ?> </td>
                     <td class="foto-usuario"> <img src="<?= $usuario->img_path ?>" alt="Foto do Usuário"> </td>
                     <td class="nome-usuario"> <?= $usuario->name ?> </td>
                     <td class="email-usuario"> <?= $usuario->email ?> </td>
