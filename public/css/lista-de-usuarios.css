@@ -159,21 +159,20 @@ thead tr{
     top: 0;
     left: 0;
     z-index: 2;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     display: none;
 }
 
 .modal-container{
     background-color: #D8DBD4;
-    width: 50%;
     border-radius: 10px;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     padding-bottom: 2rem;
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .modal-header{
@@ -183,16 +182,16 @@ thead tr{
     position: relative;
     width: 100%;
     padding: 1rem;
-    background-color: var(--cor-quaternaria);
+    background-color: #D8DBD4;
+    color: #152518;
     border-radius: 10px 10px 0 0;
     top: 0;
-    padding-left: 9%;
-    padding-right: 9%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .modal-header i{
     font-size: 1.5rem;
-    color: #D8DBD4;
     cursor: pointer;
 }
 
