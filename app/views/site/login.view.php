@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oracle | Login</title>
     
-    <link rel="stylesheet" href="/public/css/styleslogin.css">
+    <link rel="stylesheet" href="/public/css/login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
                             <span>Senha</span>
                             <div class="senha-input">
                                 <input placeholder="***********" class="input-texto" type="password" name="senha" id="senha" autocomplete="off">
-                                <i class="bi bi-eye" id="btn-senha" ></i>
+                                <i class="bi bi-eye" id="btn-senha" onclick= "mostrarSenha('btn-senha', 'senha')"></i>
                             </div>
                             <div class="mensagem-erro">
                                 <p>
@@ -62,4 +62,5 @@
     </main>
     
 </body>
+<script src="/public/js/login.js"></script>
 </html>
