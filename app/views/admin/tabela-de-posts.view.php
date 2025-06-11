@@ -54,13 +54,13 @@
                 </tr>
         
                 <div class="modal" id="modal-visualizar-publicacao<?=$post->post_id ?>">
-                <div class="modal-container">
+                <div class="modal-container-vi">
                     <div class="modal-header">
                         <h2>Visualizar Publicação</h2>
                         <i id="btn-fechar" class="bi bi-x" onclick="fecharModal('modal-visualizar-publicacao<?=$post->post_id ?>')"></i>
                     </div>
                     <form class="form-publicacao">
-                        <div class="modal-container-content">
+                        <div class="modal-container-content-vi">
                             <div class="modal-side" id="modal-side-left">
                                 <div class="modal-info">
                                     <label for="titulo">Título:</label>
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="modal" id="modal-editar-publicacao<?=$post->post_id ?>">
-                <div class="modal-container">
+                <div class="modal-container-up">
                     <div class="modal-header">
                         <h2>Editar Publicação</h2>
                         <i id="btn-fechar" class="bi bi-x" onclick="fecharModal('modal-editar-publicacao<?=$post->post_id ?>')"></i>
@@ -115,46 +115,48 @@
                     <form action="/tabela-de-posts/update" method="POST" enctype="multipart/form-data" class="form-publicacao">
                         <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
                         <input type="hidden" name="post_id" value="<?=$post->post_id ?>">
-                        <div class="modal-container-content">
+                        <div class="modal-container-content-up">
                             <div class="modal-container-sem-botao">
-                                <div class="modal-side" id="modal-side-left">
-                                    <div class="modal-info">
-                                        <label for="titulo">Título:</label>
-                                        <input type="text" name="titulo" value="<?=$post->title ?>">
+                                <div class="modal-textos-up">
+                                    <div class="modal-side" id="modal-side-left">
+                                        <div class="modal-info">
+                                            <label for="titulo">Título:</label>
+                                            <input type="text" name="titulo" value="<?=$post->title ?>">
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="autor">Autor:</label>
+                                            <input type="text" name="autor" value="Autor">
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="origem">Origem:</label>
+                                            <input type="text" id="origem" name="origem" required>
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="referencias">Referências:</label>
+                                            <input type="text" name="referencias" value="<?=$post->reference?>">
+                                        </div>
                                     </div>
-                                    <div class="modal-info">
-                                        <label for="autor">Autor:</label>
-                                        <input type="text" name="autor" value="Autor">
-                                    </div>
-                                    <div class="modal-info">
-                                        <label for="origem">Origem:</label>
-                                        <input type="text" id="origem" name="origem" required>
-                                    </div>
-                                    <div class="modal-info">
-                                        <label for="referencias">Referências:</label>
-                                        <input type="text" name="referencias" value="<?=$post->reference?>">
-                                    </div>
-                                    <div class="modal-imagem">
-                                        <label for="imagem-editar" class="btn-imagem">Selecionar Imagem </label>
-                                        <input id="imagem-editar" type="file" name="imagem" accept="image/*" class="input-imagem">
-                                    
-                                        <div>
-                                            <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
+                                    <div class="modal-side" id="modal-side-right">
+                                        <div class="modal-info-2" id="modal-curiosidades">
+                                            <label for="curiosidades">Curiosidades:</label>
+                                            <textarea name="curiosidades"><?=$post->curiosity ?></textarea>
+                                        </div>
+                                        <div class="modal-info-2">
+                                            <label for="licoes">Lições:</label>
+                                            <textarea name="licoes"><?=$post->lesson ?></textarea>
+                                        </div>
+                                        <div class="modal-info-2">
+                                            <label for="historia">História:</label>
+                                            <textarea name="historia"><?=$post->story ?></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-side" id="modal-side-right">
-                                    <div class="modal-info-2" id="modal-curiosidades">
-                                        <label for="curiosidades">Curiosidades:</label>
-                                        <textarea name="curiosidades"><?=$post->curiosity ?></textarea>
-                                    </div>
-                                    <div class="modal-info-2">
-                                        <label for="licoes">Lições:</label>
-                                        <textarea name="licoes"><?=$post->lesson ?></textarea>
-                                    </div>
-                                    <div class="modal-info-2">
-                                        <label for="historia">História:</label>
-                                        <textarea name="historia"><?=$post->story ?></textarea>
+                                <div class="modal-imagem">
+                                    <label for="imagem-editar" class="btn-imagem">Selecionar Imagem </label>
+                                    <input id="imagem-editar" type="file" name="imagem" accept="image/*" class="input-imagem">
+                                
+                                    <div>
+                                        <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +169,7 @@
                 </div>
 
                 <div class="modal" id="modal-excluir-publicacao<?=$post->post_id ?>">
-                    <div class="modal-container" id="modal-container-excluir-publicacao">
+                    <div class="modal-container-ex" id="modal-container-excluir-publicacao">
                         <div class="modal-header">
                             <div class="modal-title" id="deletarModalLabel -<?= $post -> post_id ?>"> Deseja excluir o post? </div>
                             <i id="btn-fechar" class="bi bi-x" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"></i>
@@ -189,47 +191,49 @@
                 </div>
                 <?php endforeach ?>
                 <div class="modal" id="modal-criar-publicacao">
-                    <div class="modal-container">
+                    <div class="modal-container-create">
                         <div class="modal-header">
                             <h2>Criar Publicação</h2>
                             <i id="btn-fechar" class="bi bi-x" onclick="fecharModal('modal-criar-publicacao')"></i>
                         </div>
                         <form action="/tabela-de-posts/create" method="POST" enctype="multipart/form-data" class="form-publicacao">
-                            <div class="modal-container-content">
-                                <div class="modal-side" id="modal-side-left">
-                                    <div class="modal-info">
-                                        <label for="titulo">Título:</label>
-                                        <input type="text" id="titulo" name="titulo" required>
+                            <div class="modal-container-content-create">
+                                <div class="modal-textos-create">
+                                    <div class="modal-side" id="modal-side-left">
+                                        <div class="modal-info">
+                                            <label for="titulo">Título:</label>
+                                            <input type="text" id="titulo" name="titulo" required>
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="autor">Autor:</label>
+                                            <input type="text" id="autor" name="autor" required>
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="origem">Origem:</label>
+                                            <input type="text" id="origem" name="origem" required>
+                                        </div>
+                                        <div class="modal-info">
+                                            <label for="referencias">Referências:</label>
+                                            <input type="text" id="referencias" name="referencias" required>
+                                        </div>
+                                        <div class="modal-info-imagem">
+                                            <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
+                                            <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
+                                        </div>
                                     </div>
-                                    <div class="modal-info">
-                                        <label for="autor">Autor:</label>
-                                        <input type="text" id="autor" name="autor" required>
-                                    </div>
-                                    <div class="modal-info">
-                                        <label for="origem">Origem:</label>
-                                        <input type="text" id="origem" name="origem" required>
-                                    </div>
-                                    <div class="modal-info">
-                                        <label for="referencias">Referências:</label>
-                                        <input type="text" id="referencias" name="referencias" required>
-                                    </div>
-                                    <div class="modal-info-imagem">
-                                        <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
-                                        <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
-                                    </div>
-                                </div>
-                                <div class="modal-side" id="modal-side-right">
-                                    <div class="modal-info-2" id="modal-curiosidades">
-                                        <label for="curiosidades">Curiosidades:</label>
-                                        <textarea name="curiosidades" id="curiosidades"></textarea>
-                                    </div>
-                                    <div class="modal-info-2">
-                                        <label for="licoes">Lições:</label>
-                                        <textarea name="licoes" id="licoes"></textarea>
-                                    </div>
-                                    <div class="modal-info-2">
-                                        <label for="historia">História:</label>
-                                        <textarea name="historia" id="historia"></textarea>
+                                    <div class="modal-side" id="modal-side-right">
+                                        <div class="modal-info-2" id="modal-curiosidades">
+                                            <label for="curiosidades">Curiosidades:</label>
+                                            <textarea name="curiosidades" id="curiosidades"></textarea>
+                                        </div>
+                                        <div class="modal-info-2">
+                                            <label for="licoes">Lições:</label>
+                                            <textarea name="licoes" id="licoes"></textarea>
+                                        </div>
+                                        <div class="modal-info-2">
+                                            <label for="historia">História:</label>
+                                            <textarea name="historia" id="historia"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

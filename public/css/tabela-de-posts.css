@@ -161,7 +161,7 @@ thead tr{
     display: none;
 }
 
-.modal-container{
+.modal-container-up{
     background-color: #D8DBD4;
     z-index: 3;
     width: 50%;
@@ -174,6 +174,46 @@ thead tr{
     padding-bottom: 1rem;
 }
 
+.modal-container-vi{
+    background-color: #D8DBD4;
+    z-index: 3;
+    width: 50%;
+    height: 85%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.modal-container-create{
+    background-color: #D8DBD4;
+    z-index: 3;
+    width: 50%;
+    height: 85%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.modal-container-ex{
+    background-color: #D8DBD4;
+    z-index: 3;
+    width: 50%;
+    height: 85%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+
 .modal-header{
     display: flex;
     justify-content: space-between;
@@ -182,6 +222,7 @@ thead tr{
     width: 100%;
     font-size: 1rem;
     padding: 1rem;
+    padding-bottom: 0;
     background-color: #D8DBD4;
     color: #152518;
     border-radius: 10px 10px 0 0;
@@ -239,7 +280,7 @@ thead tr{
     background-color: #e0e0e0;
     border: 1px solid #152518;
 }
-.modal-container-content{
+.modal-container-content-up{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -249,11 +290,10 @@ thead tr{
     padding-top: 15px;
     padding-left: 40px;
     padding-right: 40px;
-    gap: 2rem;
     overflow-y: auto;
 }
 
-.modal-container-sem-botao{
+.modal-container-content-vi{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -263,8 +303,59 @@ thead tr{
     padding-top: 15px;
     padding-left: 40px;
     padding-right: 40px;
-    gap: 2rem;
+    gap: 6vh;
+}
+
+.modal-container-content-create{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
     overflow-y: auto;
+}
+
+
+.modal-textos-up{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2.5rem;
+}
+.modal-textos-create{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2.5rem;
+}
+
+.modal-container-sem-botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 13vh;
+    gap: 2.5rem;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 #btn-fechar{
@@ -290,6 +381,7 @@ thead tr{
 }
 .modal-imagem input{
     display: none;
+    align-items: center;
 }
 .modal-imagem{
     display: flex;
@@ -332,7 +424,7 @@ thead tr{
     padding-right: 40px;
     gap: 2rem;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .botoes-modal .btn-criar{
