@@ -116,44 +116,46 @@
                         <input type="hidden" name="user_id" value="<?=$post->user_id ?>">
                         <input type="hidden" name="post_id" value="<?=$post->post_id ?>">
                         <div class="modal-container-content">
-                            <div class="modal-side" id="modal-side-left">
-                                <div class="modal-info">
-                                    <label for="titulo">Título:</label>
-                                    <input type="text" name="titulo" value="<?=$post->title ?>">
-                                </div>
-                                <div class="modal-info">
-                                    <label for="autor">Autor:</label>
-                                    <input type="text" name="autor" value="Autor">
-                                </div>
-                                <div class="modal-info">
-                                    <label for="origem">Origem:</label>
+                            <div class="modal-container-sem-botao">
+                                <div class="modal-side" id="modal-side-left">
+                                    <div class="modal-info">
+                                        <label for="titulo">Título:</label>
+                                        <input type="text" name="titulo" value="<?=$post->title ?>">
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="autor">Autor:</label>
+                                        <input type="text" name="autor" value="Autor">
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="origem">Origem:</label>
+                                        <input type="text" id="origem" name="origem" required>
+                                    </div>
+                                    <div class="modal-info">
+                                        <label for="referencias">Referências:</label>
+                                        <input type="text" name="referencias" value="<?=$post->reference?>">
+                                    </div>
+                                    <div class="modal-imagem">
+                                        <label for="imagem-editar" class="btn-imagem">Selecionar Imagem </label>
+                                        <input id="imagem-editar" type="file" name="imagem" accept="image/*" class="input-imagem">
                                     
-                                </div>
-                                <div class="modal-info">
-                                    <label for="referencias">Referências:</label>
-                                    <input type="text" name="referencias" value="<?=$post->reference?>">
-                                </div>
-                                <div class="modal-imagem">
-                                    <label for="imagem-editar" class="btn-imagem">Selecionar Imagem </label>
-                                    <input id="imagem-editar" type="file" name="imagem" accept="image/*" class="input-imagem">
-                                    
-                                    <div>
-                                        <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
+                                        <div>
+                                            <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-side" id="modal-side-right">
-                                <div class="modal-info-2" id="modal-curiosidades">
-                                    <label for="curiosidades">Curiosidades:</label>
-                                    <textarea name="curiosidades"><?=$post->curiosity ?></textarea>
-                                </div>
-                                <div class="modal-info-2">
-                                    <label for="licoes">Lições:</label>
-                                    <textarea name="licoes"><?=$post->lesson ?></textarea>
-                                </div>
-                                <div class="modal-info-2">
-                                    <label for="historia">História:</label>
-                                    <textarea name="historia"><?=$post->story ?></textarea>
+                                <div class="modal-side" id="modal-side-right">
+                                    <div class="modal-info-2" id="modal-curiosidades">
+                                        <label for="curiosidades">Curiosidades:</label>
+                                        <textarea name="curiosidades"><?=$post->curiosity ?></textarea>
+                                    </div>
+                                    <div class="modal-info-2">
+                                        <label for="licoes">Lições:</label>
+                                        <textarea name="licoes"><?=$post->lesson ?></textarea>
+                                    </div>
+                                    <div class="modal-info-2">
+                                        <label for="historia">História:</label>
+                                        <textarea name="historia"><?=$post->story ?></textarea>
+                                    </div>
                                 </div>
                             </div>
                             <div class="botoes-modal">

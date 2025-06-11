@@ -25,7 +25,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 4vh;
-    background-image:url(/public/assets/fundo3.jpeg);
+    background-image:url(/public/assets/fundo5.jpeg);
     color: #D8DBD4;
 }
 
@@ -243,6 +243,20 @@ thead tr{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.modal-container-sem-botao{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: row;
     width: 100%;
     height: auto;
@@ -437,8 +451,6 @@ thead tr{
 
     main{
     justify-content: space-around;
-    padding-top: 20px;
-    padding-bottom: 20px;
     }
     
     .tabela-posts{
@@ -466,8 +478,21 @@ thead tr{
         padding-top: 60vh;
         align-items: center;
         gap: 13px;
-
     }
+
+    .modal-container-sem-botao{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2rem;
+    overflow-y: auto;
+}
 
     .modal-info label{
         text-align: left;
