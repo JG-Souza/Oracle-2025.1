@@ -219,7 +219,7 @@
                                             </div>
                                             <div class="modal-info-imagem">
                                                 <label for="imagem" class="btn-imagem">Selecionar Imagem</label>
-                                                <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem">
+                                                <input type="file" name="imagem" accept="image/*" class="input-imagem" id="imagem" required>
                                             </div>
                                         </div>
                                         <div class="modal-side" id="modal-side-right">
