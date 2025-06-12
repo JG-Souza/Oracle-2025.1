@@ -557,20 +557,103 @@ thead tr{
         justify-content: space-between;
     }
 
-    .modal-container{
+    .modal-container-vi{
         width: 80%;
         max-width: 312px;
         gap: 0;
         padding-bottom: 0;
     }
 
-    .modal-container-content{
+    .modal-container-content-vi{
         flex-direction: column;
         padding-inline: 15px;
-        padding-bottom: 15px;
-        padding-top: 60vh;
+        padding-bottom: 3vh;
+        padding-top: 48vh;
         align-items: center;
         gap: 13px;
+        overflow-y: auto;
+    }
+
+    .modal-container-up{
+        width: 80%;
+        max-width: 312px;
+        gap: 0;
+        padding-bottom: 0;
+    }
+
+    .modal-container-content-up{
+        flex-direction: column;
+        padding-inline: 15px;
+        padding-bottom: 3vh;
+        align-items: center;
+        gap: 13px;
+        overflow-y: auto;
+    }
+
+    .modal-container-sem-botao{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 18vh;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+    .modal-info label{
+        text-align: left;
+    }
+
+    .botoes-modal{
+        padding: 13px;
+    }
+    
+    .paginas button{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+
+    main{
+    justify-content: space-around;
+    }
+
+    .tabela-responsiva {
+        overflow-x: auto;
+        width: 95%;
+    }
+
+    .tabela-responsiva table {
+        min-width: 600px; 
+    }
+
+    .parte-cima{
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        justify-content: space-between;
+    }
+
+    .modal-container-vi{
+        width: 80%;
+        max-width: 312px;
+        gap: 0;
+        padding-bottom: 0;
+    }
+
+    .modal-container-content-vi{
+        flex-direction: column;
+        padding-inline: 15px;
+        padding-bottom: 3vh;
+        padding-top: 48vh;
+        align-items: center;
+        gap: 13px;
+        overflow-y: auto;
     }
 
     .modal-container-sem-botao{
