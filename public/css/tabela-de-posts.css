@@ -123,6 +123,10 @@ thead tr{
     display: none;
 }
 
+.none{
+    display: none;
+}
+
 .modal-container{
     background-color: #152518;
     z-index: 3;
