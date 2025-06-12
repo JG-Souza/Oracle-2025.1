@@ -540,11 +540,16 @@ thead tr{
     main{
     justify-content: space-around;
     }
-    
-    .tabela-posts{
-        overflow: auto;
-        scale: 0.6;
+
+    .tabela-responsiva {
+        overflow-x: auto;
+        width: 95%;
     }
+
+    .tabela-responsiva table {
+        min-width: 600px; 
+    }
+
     .parte-cima{
         width: 100vw;
         padding-left: 5vw;
