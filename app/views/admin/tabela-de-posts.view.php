@@ -136,7 +136,15 @@
                                                 <label for="referencias">Referências:</label>
                                                 <input type="text" name="referencias" value="<?=$post->reference?>">
                                             </div>
-                                        </div>
+                                            <div class="modal-imagem">
+                                                <label for="imagem-editar-<?=$post->post_id?>" class="btn-imagem">Selecionar Imagem </label>
+                                                <input id="imagem-editar-<?=$post->post_id?>" type="file" name="imagem" accept="image/*" class="input-imagem">
+                                           
+                                                <div>
+                                                    <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
+                                                </div>
+                                            </div>
+                                       </div>
                                         <div class="modal-side" id="modal-side-right">
                                             <div class="modal-info-2" id="modal-curiosidades">
                                                 <label for="curiosidades">Curiosidades:</label>
@@ -150,14 +158,6 @@
                                                 <label for="historia">História:</label>
                                                 <textarea name="historia"><?=$post->story ?></textarea>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-imagem">
-                                        <label for="imagem-editar-<?=$post->post_id?>" class="btn-imagem">Selecionar Imagem </label>
-                                        <input id="imagem-editar-<?=$post->post_id?>" type="file" name="imagem" accept="image/*" class="input-imagem">
-
-                                        <div>
-                                            <img src="<?=$post->img_path ?>" alt="imagem atual" class="imagem-publicacao">
                                         </div>
                                     </div>
                                 </div>
