@@ -673,7 +673,7 @@ thead tr{
     }
 
     .tabela-responsiva {
-        padding-left: 50vh;
+        padding-left: 14vh;
         overflow-x: auto;
         width: 95%;
     }
@@ -794,7 +794,7 @@ thead tr{
     }
 
     .tabela-responsiva {
-        padding-left: 45vh;
+        padding-left: 28vh;
         overflow-x: auto;
         width: 95%;
     }
@@ -1035,7 +1035,7 @@ thead tr{
     }
 
     .tabela-responsiva {
-        justify-content: center;
+        padding-left: 48vh;
         overflow-x: auto;
         width: 95%;
     }
