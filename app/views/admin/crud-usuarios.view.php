@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Oracle - Lista de Usuarios</title>
+    <title>Oracle | Lista de Usuarios</title>
 </head>
 
 
@@ -21,6 +21,7 @@
             <h1>Lista de Usuários</h1>
             <button id="adicionar-usuario"  onclick="abrirModal('modal-criar-usuario')"  onclick="abrirModal('modal-criar-usuario')">Adicionar Usuário</button>
         </div>
+        <div class="tabela-responsiva">
         <table class="tabela-usuarios">
             <thead>
                 <tr class="cabecalho-tabela">
@@ -70,6 +71,7 @@
                 <?php endforeach ?>
             </thead>
         </table>
+        </div>
         <!-- paginacao -->
         <div class="paginacao <?= $total_pages <= 1 ? 'disable' : '' ?>">
             <a class="btn-pagina <?= $page <=1 ? 'none' : '' ?>" onclick="location.href='?page=<?= $page-1 ?>'"><i class="bi bi-arrow-left-short"></i></a>

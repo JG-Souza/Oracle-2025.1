@@ -32,7 +32,8 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    background-image: url(/public/assets/fundo-crud-usuarios.jpg);
+    background-size: cover;
     color: #D8DBD4;
     gap: 5%;
     padding-top: 2rem;
@@ -120,6 +121,7 @@ thead tr{
 
 
 .paginacao a{
+    font-size: 1.1rem;
     padding: 0.2rem;
     color: #D8DBD4;
     cursor: pointer;
@@ -446,14 +448,13 @@ thead tr{
 
   @media screen and (max-width: 1200px) {
     .container{
-        overflow-x: auto;
         overflow-y: auto;
         gap: 1rem;
         padding-top: 7rem;
     }
     .cabecalho{
         position: relative;
-        padding: 0 2rem; ;
+        padding: 0 2rem;
     }
     
     .cabecalho button{
@@ -464,6 +465,13 @@ thead tr{
         padding-left: 10%;
         padding-right: 10%;
     }
+
+    .modal-container{
+        width: 65%;
+        max-width: 1200px;
+        
+    }
+    
     
   }
 
@@ -492,26 +500,57 @@ thead tr{
     }
 
     .modal-container{
-        width: 100%;
+        width: 80%;
         max-width: 830px;
         margin-right: 10px;
         margin-left: 10px;
     }
 }
 
-@media only screen and (max-width:568px) {
-    .tabela-usuarios{
-        scale: 0.8;
+@media screen and (max-width: 600px) {
+
+    main{
+    justify-content: space-around;
     }
+
+    .tabela-responsiva {
+        overflow-x: auto;
+        width: 95%;
+    }
+
+    .tabela-responsiva table {
+        min-width: 600px; 
+    }
+
+    .container{
+        padding: 0;
+        gap: 3rem;
+    }
+    
     .cabecalho{
         width: 100%;
     }
+    
+    .modal-info{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .modal-info input{
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .senha-olho{
+        margin-left: 0;
+        width: 100%;
+    }
+    
 }
 
+
 @media only screen and (max-width:370px) {
-    .tabela-usuarios{
-        scale: 0.7;
-    }
+    
 }
 
 .none{
