@@ -86,6 +86,31 @@ body {
     
 }
 
+.bottom-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.home {
+    width: 4vw;
+    height: 4vw;
+    color: #264a22;
+    background-color: transparent;
+    font-size: 1.5vw;
+    cursor: pointer;
+    padding: 0.2vw;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+    border: transparent;
+    #icone-home {
+        filter: brightness(150%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
 .logout {
     font-family: 'Roboto';
     font-weight: 400;
@@ -112,6 +137,10 @@ body {
     }
 }
 
+.home:hover {
+    transform: scale(1.5);
+}
+
 .pagina-de-posts:hover, .pagina-de-usuarios:hover, .logout:hover {
     transform: scale(1.1);
     background-color: #d7d7d7;
@@ -125,11 +154,11 @@ body {
 /* Porte para CELULAR*/
 @media (max-width: 768px) {
     .secao {
-        gap: 10vw;
+        gap: 5vh;
     }
     .conteudo {
         flex-direction: column;
-        gap: 5vw;
+        gap: 3vh;
     }
     .titulo {
         font-size: 8.5vw;
@@ -139,13 +168,20 @@ body {
         width: 45vw;
         height: 45vw;
     }
+    .bottom-buttons {
+        gap: 5vw;
+    }
     .logout {
         font-size: 3vw;
         width: 25vw;
-        height: 10vw;
+        height: 5vh;
+    }
+    .home {
+        width: 10vw;
+        height: 10vh;
     }
     .dashboard-card {
-        height: 85%;
+        height: 90vh;
         width: 70%;
     }
 }
