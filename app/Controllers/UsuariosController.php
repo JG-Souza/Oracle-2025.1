@@ -23,13 +23,13 @@ class UsuariosController
 
         $inicio = $itensPage*$page - $itensPage;
 
-        $rowsCount = App::get('database')->count('users');
+        $rowsCount = App::get('database')->countAll('users');
 
         if($inicio > $rowsCount){
             return redirect('/crud-usuarios');
         }
 
-        $usuarios = App::get('database')->selectAll('users', $inicio, $itensPage);
+        $usuarios = App::get('database')->selectAllUsers('users', $inicio, $itensPage);
 
         $total_pages = ceil($rowsCount / $itensPage);
 
@@ -100,7 +100,7 @@ class UsuariosController
             $parameters['img_path'] = $fotoAntiga;
         }
 
-        App::get('database')->update('users', $id, $parameters);
+        App::get('database')->updateUser('users', $id, $parameters);
 
         header('Location: /crud-usuarios');
     }
@@ -109,7 +109,7 @@ class UsuariosController
     {
         $id = $_POST['user_id'];
 
-        App::get('database')->delete('users', $id);
+        App::get('database')->deleteUser('users', $id);
 
         header('Location: /crud-usuarios');
     }

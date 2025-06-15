@@ -14,7 +14,7 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table, $inicio = NULL, $rowsCount = NULL)
+    public function selectAllUsers($table, $inicio = NULL, $rowsCount = NULL)
     {
         $sql = "select * from {$table}";
 
@@ -40,7 +40,7 @@ class QueryBuilder
 
     // funcao de contar
     // SELECT COUNT(*) as total FROM users
-    public function count($table)
+    public function countAll($table)
     {
         $sql = "SELECT COUNT(*) as total FROM {$table}";
 
@@ -79,7 +79,7 @@ class QueryBuilder
 
     // funcao de editar
     // UPDATE users SET id='[value-1]',name='[value-2]',email='[value-3]',password='[value-4]',role='[value-5]',img_path='[value-6]' WHERE 1
-    public function update($table, $id, $parameters) {
+    public function updateUser($table, $id, $parameters) {
         $sql = sprintf(
             'UPDATE %s SET %s WHERE user_id = :user_id',
             $table,
@@ -102,7 +102,7 @@ class QueryBuilder
     }
 
     // DELETE FROM users WHERE 0
-    public function delete($table, $id)
+    public function deleteUser($table, $id)
     {
         $sql = sprintf('DELETE FROM %s WHERE user_id = :user_id', $table);
 
