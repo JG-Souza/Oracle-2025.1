@@ -14,7 +14,7 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table, $inicio = null, $rows_count = null):mixed
+    public function selectAllPost($table, $inicio = null, $rows_count = null):mixed
     {
         $sql = "select * from {$table}";
 
@@ -82,7 +82,7 @@ class QueryBuilder
     }
     }
 
-    public function update($table, $post_id, $parameters){
+    public function updatePost($table, $post_id, $parameters){
 
         $sql = sprintf('UPDATE %s SET %s WHERE post_id = :post_id',
         $table,
@@ -105,7 +105,7 @@ class QueryBuilder
     }
     }
 
-    public function delete($table, $post_id) {
+    public function deletePost($table, $post_id) {
     $sql = sprintf('DELETE FROM %s WHERE post_id = :post_id', $table);
 
     try {

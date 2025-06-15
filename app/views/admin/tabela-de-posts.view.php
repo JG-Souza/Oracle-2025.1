@@ -248,7 +248,7 @@
             </table>
         </div>
         <div class="paginas<?= $total_pages <= 1 ? " none": "" ?>">
-            <button class="anterior<?= $page <= 1 ? " disabled": "" ?>" onclick="location.href='?paginacaoNumero=<?= $page -1?>'"><i class="bi bi-arrow-left-short"></i>
+            <button class="anterior<?= $page <= 1 ? " none": "" ?>" onclick="location.href='?paginacaoNumero=<?= $page -1?>'"><i class="bi bi-arrow-left-short"></i>
             </button>
             
             <?php for($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
@@ -257,7 +257,7 @@
                 </button>
             <?php endfor; ?>
 
-            <button class="proximo<?= $page >= $total_pages ? " disabled" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?>'"><i class="bi bi-arrow-right-short"></i>
+            <button class="proximo<?= $page >= $total_pages ? " none" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?>'"><i class="bi bi-arrow-right-short"></i>
             </button>
         </div>
     </main>

@@ -29,7 +29,7 @@ class PostsController
             return redirect(path: 'admin/tabela-de-posts');
         }
 
-        $posts = App::get('database') -> selectAll('posts', $inicio, $itensPage, $page);
+        $posts = App::get('database') -> selectAllPost('posts', $inicio, $itensPage, $page);
 
         if($rows_count < 1){
             $rows_count = 1;
@@ -64,7 +64,7 @@ class PostsController
             'lesson' => $_POST['licoes'],
             'reference' => $_POST['referencias'],
             'img_path' => $caminhoImagem,
-            'user_id' => 123,
+            'user_id' => 1,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -106,10 +106,10 @@ class PostsController
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => 123,
+            'user_id'       => 1,
         ];
         
-        App::get('database')->update('posts', $id, $parameters);
+        App::get('database')->updatePost('posts', $id, $parameters);
 
         header('Location: /tabela-de-posts');
         
@@ -128,7 +128,7 @@ class PostsController
         }
 
 
-        App::get('database')->delete('posts', $id);
+        App::get('database')->deletePost('posts', $id);
 
         header('Location: /tabela-de-posts');
 
