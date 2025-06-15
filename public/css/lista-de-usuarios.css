@@ -32,11 +32,9 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    background-image: url(/public/assets/fundo-crud-usuarios.jpg);
     background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    color: white;
+    color: #D8DBD4;
     gap: 5%;
     padding-top: 2rem;
 }
@@ -44,35 +42,59 @@ body{
 .cabecalho{
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 55vw;
+}
 
+.cabecalho h1{
+    font-size: 2rem;
+    font-weight: bold;
 }
  
 .tabela-usuarios{
-    padding: 0 2rem;
-    width: 70%;
+    width: 55vw;
+    max-height: 55vh;
+    border-collapse: collapse;
+    opacity: 80%;
+    align-content: start;
+    text-align: center;
+    background-color: #234920;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 .cabecalho-tabela{
-    background-color: var(--cor-primaria);
-    height: 3%;
+    background-color: #224220;
 }
 
-.usuario td{
+.tabela-usuarios th{
+    font-weight: 500;
+    border-right: 1px solid black;
+}
+
+.tabela-usuarios th{
+    padding: 0.5rem;
+}
+.tabela-usuarios td {
+    padding: 1.0rem;
+}
+
+
+.usuario{
+    font-weight: 300;
     background-color: rgba(23, 27, 22, 0.8);
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 1rem;
-    border-radius: 10px;
-    height: 3%;
+    height: 100%;
 }
 
-.usuario td{
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 5rem;
+
+
+.usuario tr{
+    height: 10%;
 }
+
+thead tr{
+    width: 10%;
+}
+
 
 
 .usuario:hover{
@@ -83,12 +105,13 @@ body{
 
 
 .cabecalho button{
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
+    background-color: #224220;
+    color: #D8DBD4;
+    text-align: center;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 30px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -97,40 +120,22 @@ body{
 }
 
 
-.btn-pagina{
-    padding: 0.3rem 0.3rem;
-    background: none;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+.paginacao a{
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    color: #D8DBD4;
     cursor: pointer;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-.numero-pagina{
-    padding: 0;
-    margin-bottom: 200px;
-    background: none;
-    color: var(--cor-secundaria);
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
 }
 
 .btn-visualizar,
 .btn-editar, .btn-excluir{
-    padding: 0;
-    color: white;
-    background: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
     font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #D8DBD4;
+    padding: 0.2rem;
 }
 
 .btn-visualizar,
@@ -156,34 +161,40 @@ body{
     top: 0;
     left: 0;
     z-index: 2;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     display: none;
 }
 
 .modal-container{
-    background-color: var(--cor-quaternaria);
-    width: 50%;
+    background-color: #D8DBD4;
     border-radius: 10px;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     padding-bottom: 2rem;
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .modal-header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
     padding: 1rem;
-    background-color: var(--cor-primaria);
+    background-color: #D8DBD4;
+    color: #152518;
     border-radius: 10px 10px 0 0;
     top: 0;
-    padding-left: 29px;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.modal-header i{
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 
@@ -193,12 +204,11 @@ body{
     align-items: center;
     text-align: justify;
     flex-direction: column;
-    gap: 3rem;
-    width: 100%;
+    gap: 2rem;
+    width: 90%;
     height: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 40px;
+    
+    
 }
 
 .modal-info{
@@ -210,25 +220,26 @@ body{
 }
 
 .modal-info label{
-    font-size: 1.5rem;
-    color: var(--cor-secundaria);
+    font-size: 1.2rem;
+    color: #152518;
     width: 70px;
 }
 
 .modal-info input{
     width: 80%;
-    height: 2rem;
+    height: 1.5rem;
     border-radius: 5px;
     border: none;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     background-color: var(--cor-quinta);
     margin-left: 1rem;
+    border: 1px solid #152518;
 }
 
 .botoes-modal{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     width: 100%;
@@ -240,9 +251,9 @@ body{
     color: var(--cor-secundaria);
     font-weight: 300;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.0rem;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     cursor: pointer;
 }
 
@@ -251,9 +262,9 @@ body{
     color: var(--cor-secundaria);
     font-weight: 300;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.0rem;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     cursor: pointer;
 }
 
@@ -265,13 +276,67 @@ body{
     background-color:#305c2d;
 }
 
+#foto-usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: fit-content;
+    height: auto;
+    padding: 1rem;
+}
+
+#foto-usuario input[type="file"]{
+    display: none;
+}
+
+.btn-imagem{
+    display: flex;
+    align-items: center;
+    background: radial-gradient(closest-side, #D6693A 0%, #A84B3A 100%);
+    color: #D8DBD4;
+    font-weight: 300;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1.0rem;
+    cursor: pointer;
+}
+#modal-imagem-criar{
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-preview{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    display: none;
+    margin-bottom: 1rem;
+    margin:0
+}
+
 #modal-visualizar-usuario .botoes-modal{
     align-items: center;
     justify-content: center;
 }
 
+.img-visualizar{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+    margin:0
+}
+
 #modal-excluir-usuario .modal-container{
     width: 30%;
+}
+
+#modal-excluir-usuario .form-usuario{
+    padding: 0;
+    
 }
 
 #modal-excluir-usuario .botoes-modal{
@@ -304,11 +369,12 @@ body{
     color: gray;
 }
 
+
 .senha-olho{
     width: 80%;
     height: 2rem;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #152518;
     padding: 0 1rem 0 0;
     font-size: 1.5rem;
     background-color: var(--cor-quinta);
@@ -318,15 +384,33 @@ body{
     margin-left: 1.2rem;
 }
 
+#img-preview-editar{
+    display: block;
+}
+
 .senha-olho input{
     background: none;
     outline: none;
+    border: none;
 }
  #senhac,
  #senhav,
  #senhae{
     margin: 0;
  }
+
+ .usuario-excluir{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #152518;
+}
+
+#usuario-excluir-nome{
+    font-weight: bold;
+}
 
   .modal-container {
     width: 100%;
@@ -339,6 +423,10 @@ body{
   }
 
   #modal-excluir-usuario .modal-container{
+    width: 100%;
+  }
+
+  #modal-excluir-usuario .form-usuario{
     width: 100%;
   }
   
@@ -354,21 +442,19 @@ body{
     align-items: center;
     margin: 0;
     background-color:  #152518;
-    width: 100%;
-    height: 100%;
     font-size: 1rem;
+    height: 100%;
   }
 
   @media screen and (max-width: 1200px) {
     .container{
-        overflow-x: auto;
         overflow-y: auto;
         gap: 1rem;
         padding-top: 7rem;
     }
     .cabecalho{
         position: relative;
-        padding: 0 2rem; ;
+        padding: 0 2rem;
     }
     
     .cabecalho button{
@@ -379,6 +465,13 @@ body{
         padding-left: 10%;
         padding-right: 10%;
     }
+
+    .modal-container{
+        width: 65%;
+        max-width: 1200px;
+        
+    }
+    
     
   }
 
@@ -407,24 +500,59 @@ body{
     }
 
     .modal-container{
-        width: 100%;
+        width: 80%;
         max-width: 830px;
         margin-right: 10px;
         margin-left: 10px;
     }
 }
 
-@media only screen and (max-width:568px) {
-    .tabela-usuarios{
-        scale: 0.8;
+@media screen and (max-width: 600px) {
+
+    main{
+    justify-content: space-around;
     }
+
+    .tabela-responsiva {
+        overflow-x: auto;
+        width: 95%;
+    }
+
+    .tabela-responsiva table {
+        min-width: 600px; 
+    }
+
+    .container{
+        padding: 0;
+        gap: 3rem;
+    }
+    
     .cabecalho{
         width: 100%;
     }
+    
+    .modal-info{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .modal-info input{
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .senha-olho{
+        margin-left: 0;
+        width: 100%;
+    }
+    
 }
 
+
 @media only screen and (max-width:370px) {
-    .tabela-usuarios{
-        scale: 0.7;
-    }
+    
+}
+
+.none{
+    display: none;
 }
