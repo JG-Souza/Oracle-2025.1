@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\App;
 use Exception;
 
-class Controller
+class LoginController
 {
     public function exibirLogin(){
         
