@@ -14,6 +14,25 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
+    public function selectAllPost($table, $inicio = null, $rows_count = null):mixed
+    {
+        $sql = "select * from {$table}";
+
+        if($inicio >= 0 && $rows_count > 0){
+            $sql .= " LIMIT {$inicio}, {$rows_count}";
+        }
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function selectAllUsers($table, $inicio = NULL, $rowsCount = NULL)
     {
         $sql = "select * from {$table}";
@@ -38,44 +57,78 @@ class QueryBuilder
         }
     }
 
-    // funcao de contar
-    // SELECT COUNT(*) as total FROM users
+
     public function countAll($table)
     {
-        $sql = "SELECT COUNT(*) as total FROM {$table}";
+        $sql = "SELECT COUNT(*) FROM {$table}";
 
-        try {
+        try{
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
 
-            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
-
-        } catch (Exception $e) {
+            return intval(value: $stmt->fetch(PDO::FETCH_NUM)[0]);
+        }
+        catch (Exception $e){
             die($e->getMessage());
         }
     }
 
-    //funcao de criar
-    // INSERT INTO users(id, name, email, password, role, img_path) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
-    public function insert($table, $parameters) {
-        $sql = sprintf(
-            'INSERT INTO %s (%s) VALUES (:%s)',
-            $table,
-            implode(', ', array_keys($parameters)),
-            implode(', :', array_keys($parameters)),
-        );
+    public function selectOne($table, $post_id)
+    {
+        $sql = sprintf('SELECT * FROM %s WHERE post_id=:id LIMIT 1', $table);
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute($parameters);
+            $stmt->execute([':id' => $post_id]);
 
-            return $stmt->fetchAll(PDO::FETCH_CLASS);
+            return $stmt->fetch(PDO::FETCH_OBJ);;
 
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
 
+    //INSERT INTO `posts`(`post_id`, `title`, `origin`, `story`, `curiosity`, `lesson`, `refference`, `is_in_carousel`, `img_path`, `user_id`, `created_at`, `updated_at`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]')
+    public function insert($table, $parameters){
+        $sql = sprintf('INSERT INTO %s (%s) VALUES (%s)',
+        $table,
+        implode(', ', array_keys($parameters)),
+        ':' . implode(', :', array_keys($parameters)),
+    );
+    
+    try {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($parameters);
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
+    }
+
+    public function updatePost($table, $post_id, $parameters){
+
+        $sql = sprintf('UPDATE %s SET %s WHERE post_id = :post_id',
+        $table,
+        implode(', ', array_map(function($param){
+            return $param . ' = :' . $param;
+        }, array_keys($parameters))),
+        $post_id
+    );
+    
+    $parameters['post_id'] = $post_id;
+
+    try{
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($parameters);
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
+    }
 
     // funcao de editar
     // UPDATE users SET id='[value-1]',name='[value-2]',email='[value-3]',password='[value-4]',role='[value-5]',img_path='[value-6]' WHERE 1
@@ -99,6 +152,18 @@ class QueryBuilder
         } catch (Exception $e) {
             die($e->getMessage());
         }
+    }
+
+
+    public function deletePost($table, $post_id) {
+    $sql = sprintf('DELETE FROM %s WHERE post_id = :post_id', $table);
+
+    try {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['post_id' => $post_id]);
+    } catch (Exception $e) {
+        die($e->getMessage());
+    }
     }
 
     // DELETE FROM users WHERE 0

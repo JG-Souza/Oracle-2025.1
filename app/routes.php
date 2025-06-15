@@ -12,3 +12,7 @@ $router->get('crud-usuarios', 'UsuariosController@index');
 $router->post('crud-usuarios/create', 'UsuariosController@store');
 $router->post('crud-usuarios/edit', 'UsuariosController@edit');
 $router->post('crud-usuarios/delete', 'UsuariosController@delete');
+$router->get('tabela-de-posts', 'PostsController@index');
+$router->post('tabela-de-posts/create', 'PostsController@store');
+$router->post('tabela-de-posts/update', 'PostsController@update');
+$router->post('tabela-de-posts/delete', 'PostsController@delete');

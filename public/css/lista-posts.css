@@ -5,7 +5,8 @@
 }
   
   body {
-    background: url('/public/assets/WhatsApp Image 2025-04-08 at 20.34.57.jpeg') repeat;
+    background: url('/public/assets/fundo-lista-posts\(1\).jpeg') repeat;
+    background-position: center;
     font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
