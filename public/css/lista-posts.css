@@ -6,6 +6,7 @@
   
   body {
     background: url('/public/assets/fundo-lista-posts\(1\).jpeg') repeat;
+    background-position: center;
     font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
