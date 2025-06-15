@@ -25,7 +25,8 @@ main{
     justify-content: center;
     align-items: center;
     gap: 4vh;
-    background-image:url(/public/assets/fundo5.jpeg);
+    background-image:url(/public/assets/fundo-tabela-posts.jpeg);
+    background-size: cover;
     color: #D8DBD4;
 }
 
@@ -72,9 +73,9 @@ main{
 
 .tabela-posts th,
 .tabela-posts td {
-    white-space: nowrap;       /* Impede que o texto quebre linha */
-    overflow: hidden;          /* Esconde o conteúdo que ultrapassa o container */
-    text-overflow: ellipsis;   /* Adiciona reticências ao final */
+    white-space: nowrap;
+    overflow: hidden;         
+    text-overflow: ellipsis;   
     max-width: 250px;  
     padding: 0.5rem;
 }
