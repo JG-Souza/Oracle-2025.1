@@ -230,4 +230,21 @@ class QueryBuilder
             die($e->getMessage());
         }
     }
+
+    public function selectAllListaPost($table, $intoClass = null)
+    {
+        $sql = "SELECT * FROM {$table} ORDER BY created_at DESC";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            if ($intoClass) {
+                return $stmt->fetchAll(PDO::FETCH_ASSOC); // ou PDO::FETCH_CLASS, se tiver classe Post
+            }
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            die("Erro ao buscar posts: " . $e->getMessage());
+        }
+    }
+
 }

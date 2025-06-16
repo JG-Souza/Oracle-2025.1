@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Controllers\ExampleController;
 use App\Core\Router;
 
+$router->get('lista-posts', 'ListaPostsController@index');
 $router->get('landing-page', 'LandingPageController@exibirLandingPage');
 $router->get('', 'ExampleController@index');
 $router->get('login', 'LoginController@exibirLogin');
