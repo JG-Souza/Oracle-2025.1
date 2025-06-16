@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nomeSpan = item.querySelector('.creature-name');
 
     item.dataset.nome = nomeSpan.textContent.trim();
+    item.dataset.id = item.getAttribute('data-id');
+
 
     function isTouchDevice() {
       return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.dataset.nome = nomeSpan.textContent.trim();
 
       function mouseOverHandler() {
-        const criatura = criaturas.find(c => c.nome === item.dataset.nome);
+        const criatura = criaturas.find(c => c.id == item.dataset.id);
         if (criatura) {
           item.dataset.originalImg = imgElement.src;
           item.dataset.originalNome = nomeSpan.textContent;

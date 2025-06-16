@@ -9,6 +9,7 @@
   <script>
     const criaturas = <?= json_encode(array_map(function ($post) {
       return [
+        'id' => $post['post_id'],
         'nome' => $post['title'],
         'imagem' => $post['img_path'],
         'descricao' => mb_substr($post['story'], 0, 150) . '...'
@@ -30,9 +31,6 @@
       <div class="search-container">
         <form method="GET" class="search-container">
           <input type="text" name="q" placeholder="Pesquisar" value="<?= $_GET['q'] ?? '' ?>">
-          <button type="submit">
-            <svg class="search-icon" ...>...</svg>
-          </button>
         </form>
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
        viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +45,7 @@
         <?php foreach ($posts as $index => $post): ?>
           <?php if($index === 0) continue; ?>
 
-          <li>
+          <li data-id="<?= $post['post_id'] ?>" data-nome="<?= htmlspecialchars($post['title']) ?>">
             <div class="top-card-sidebar">
               <img src="<?= $post['img_path'] ?>" alt="<?= htmlspecialchars($post['title']) ?>">
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>

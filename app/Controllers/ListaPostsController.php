@@ -24,7 +24,6 @@ class ListaPostsController
 
     $pdo = Connection::make($config);
 
-    // Recebe parâmetros
     $query = $_GET['q'] ?? '';
     $page = isset($_GET['paginacaoNumero']) ? intval($_GET['paginacaoNumero']) : 1;
     if ($page < 1) $page = 1;
@@ -32,14 +31,12 @@ class ListaPostsController
     $itensPage = 5;
     $inicio = ($page - 1) * $itensPage;
 
-    // Contar total de posts filtrados
     if ($query) {
         $countSql = "SELECT COUNT(*) FROM posts WHERE title LIKE :q OR story LIKE :q";
         $stmtCount = $pdo->prepare($countSql);
         $stmtCount->execute(['q' => "%{$query}%"]);
         $rows_count = (int) $stmtCount->fetchColumn();
 
-        // Buscar posts paginados e filtrados
         $sql = "SELECT * FROM posts 
                 WHERE title LIKE :q OR story LIKE :q 
                 ORDER BY created_at DESC
@@ -54,11 +51,9 @@ class ListaPostsController
         $posts = $stmt->fetchAll();
 
     } else {
-        // Contar total sem filtro
         $stmtCount = $pdo->query("SELECT COUNT(*) FROM posts");
         $rows_count = (int) $stmtCount->fetchColumn();
 
-        // Buscar posts paginados sem filtro
         $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT :limit OFFSET :offset";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':limit', $itensPage, PDO::PARAM_INT);
