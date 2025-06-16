@@ -3,41 +3,81 @@
 namespace App\Controllers;
 
 use App\Core\App;
+use App\Core\Database\Connection;
+use App\Core\Database\QueryBuilder;
+use PDO;
 
 class ListaPostsController
 {
     public function index()
-    {
-        $page = 1;
+{
+    $config = [
+        'connection' => 'mysql:host=localhost',
+        'name'       => 'oracle_db',
+        'username'   => 'root',
+        'password'   => '',
+        'options'    => [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]
+    ];
 
-        if (isset($_GET['paginacaoNumero']) && !empty($_GET['paginacaoNumero'])) {
-            $page = intval($_GET['paginacaoNumero']);
-            if ($page <= 0) {
-                return redirect(path: 'posts?paginacaoNumero=1');
-            }
-        }
-        
-        $itensPage = 5;
-        $inicio = $itensPage * $page - $itensPage;
-        $rows_count = App::get('database')->countAll('posts');
+    $pdo = Connection::make($config);
 
-        if ($rows_count < 1) {
-            $rows_count = 1;
-        }
+    // Recebe parâmetros
+    $query = $_GET['q'] ?? '';
+    $page = isset($_GET['paginacaoNumero']) ? intval($_GET['paginacaoNumero']) : 1;
+    if ($page < 1) $page = 1;
 
-        if ($inicio > $rows_count) {
-            return redirect(path: 'posts?paginacaoNumero=1');
-        }
+    $itensPage = 5;
+    $inicio = ($page - 1) * $itensPage;
 
-        $posts = App::get('database')->selectAllListaPost('posts', $inicio, $itensPage, $page);
-        $total_pages = ceil($rows_count / $itensPage);
+    // Contar total de posts filtrados
+    if ($query) {
+        $countSql = "SELECT COUNT(*) FROM posts WHERE title LIKE :q OR story LIKE :q";
+        $stmtCount = $pdo->prepare($countSql);
+        $stmtCount->execute(['q' => "%{$query}%"]);
+        $rows_count = (int) $stmtCount->fetchColumn();
 
-        if ($page > $total_pages) {
-            return redirect(path: 'posts?paginacaoNumero=1');
-        }
+        // Buscar posts paginados e filtrados
+        $sql = "SELECT * FROM posts 
+                WHERE title LIKE :q OR story LIKE :q 
+                ORDER BY created_at DESC
+                LIMIT :limit OFFSET :offset";
 
-        return view('site/lista-posts', compact('posts', 'total_pages', 'page'));
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':q', "%{$query}%", PDO::PARAM_STR);
+        $stmt->bindValue(':limit', $itensPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $inicio, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $posts = $stmt->fetchAll();
+
+    } else {
+        // Contar total sem filtro
+        $stmtCount = $pdo->query("SELECT COUNT(*) FROM posts");
+        $rows_count = (int) $stmtCount->fetchColumn();
+
+        // Buscar posts paginados sem filtro
+        $sql = "SELECT * FROM posts ORDER BY created_at DESC LIMIT :limit OFFSET :offset";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':limit', $itensPage, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $inicio, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $posts = $stmt->fetchAll();
     }
+
+    $total_pages = max(1, ceil($rows_count / $itensPage));
+
+    if ($page > $total_pages) {
+        header("Location: ?paginacaoNumero=1" . ($query ? "&q=" . urlencode($query) : ""));
+        exit;
+    }
+
+    return view('site/lista-posts', compact('posts', 'total_pages', 'page', 'query'));
+}
+
 }
 
 ?>

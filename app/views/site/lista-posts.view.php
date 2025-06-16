@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oracle - Criaturas Mitológicas</title>
   <link rel="stylesheet" href="/public/css/lista-posts.css">
+  <script>
+    const criaturas = <?= json_encode(array_map(function ($post) {
+      return [
+        'nome' => $post['title'],
+        'imagem' => $post['img_path'],
+        'descricao' => mb_substr($post['story'], 0, 150) . '...'
+      ];
+    }, $posts)) ?>;
+  </script>
   <script src="/public/js/lista-posts.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Jost&family=Junge&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
@@ -19,7 +28,12 @@
     <div class="top-container">
       <h2>Últimos Posts</h2>
       <div class="search-container">
-        <input type="text" placeholder="Pesquisar">
+        <form method="GET" class="search-container">
+          <input type="text" name="q" placeholder="Pesquisar" value="<?= $_GET['q'] ?? '' ?>">
+          <button type="submit">
+            <svg class="search-icon" ...>...</svg>
+          </button>
+        </form>
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
        viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -30,7 +44,9 @@
 
     <aside class="sidebar">
       <ul class="creature-list">
-        <?php foreach ($posts as $post): ?>
+        <?php foreach ($posts as $index => $post): ?>
+          <?php if($index === 0) continue; ?>
+
           <li>
             <div class="top-card-sidebar">
               <img src="<?= $post['img_path'] ?>" alt="<?= htmlspecialchars($post['title']) ?>">
@@ -38,7 +54,7 @@
             </div>
             <div class="text">
               <p><?= substr($post['story'], 0, 90) . '...' ?></p>
-              <button class="botao-ler-mais">Ler mais</button>
+              <a href="/post.php?id=<?= $post['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
             </div>
           </li>
         <?php endforeach; ?>
@@ -53,23 +69,25 @@
           </div>
           <div class="text">
             <p><?= substr($posts[0]['story'], 0, 150) ?>...</p>
-            <button class="botao-ler-mais">Ler mais</button>
+            <a href="/post.php?id=<?= $posts[0]['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
           </div>
         </article>
         <?php endif; ?>
 
         <div class="paginas<?= $total_pages <= 1 ? " none": "" ?>">
-            <button class="anterior<?= $page <= 1 ? " none": "" ?>" onclick="location.href='?paginacaoNumero=<?= $page -1?>'"><i class="bi bi-arrow-left-short"></i>
-            </button>
-            
-            <?php for($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
-                <button class="pag1<?= $page_number == $page ? " active" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page_number ?>'">
-                    <?= $page_number ?>
-                </button>
-            <?php endfor; ?>
+          <button class="anterior<?= $page <= 1 ? " none": "" ?>" onclick="location.href='?paginacaoNumero=<?= $page -1?><?= $query ? '&q='.urlencode($query) : '' ?>'">
+            <i class="bi bi-arrow-left-short"></i>
+          </button>
 
-            <button class="proximo<?= $page >= $total_pages ? " none" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?>'"><i class="bi bi-arrow-right-short"></i>
-            </button>
+          <?php for($page_number = 1; $page_number <= $total_pages; $page_number++): ?>
+              <button class="pag1<?= $page_number == $page ? " active" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page_number ?><?= $query ? '&q='.urlencode($query) : '' ?>'">
+                  <?= $page_number ?>
+              </button>
+          <?php endfor; ?>
+
+          <button class="proximo<?= $page >= $total_pages ? " none" : "" ?>" onclick="location.href='?paginacaoNumero=<?= $page +1?><?= $query ? '&q='.urlencode($query) : '' ?>'">
+            <i class="bi bi-arrow-right-short"></i>
+          </button>
         </div>
     </aside>
   </section>

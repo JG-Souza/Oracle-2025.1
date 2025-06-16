@@ -175,35 +175,41 @@
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
-  .paginacao {
-    padding-top: 20px;
-  }
-  
-  .btn-pagina {
-    padding: 0.3rem 0.3rem;
-    background: none;
-    color: #ffff;
+  .paginas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-  
-  .numero-pagina {
-    padding: 0%;
-    margin-bottom: 200px;
-    background: none;
-    color: #ffff;
+    padding: 3vh;
+}
+
+.paginas button {
+    background-color: transparent;
+    color: #fff;
     border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+    padding: 0px 7px;
+    border-radius: 4px;
     cursor: pointer;
-    text-decoration: none;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-  }
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.paginas button:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* leve destaque ao passar o mouse */
+    border-color: #999;
+}
+
+.paginas button.active {
+    background-color: transparent;
+    color: #fff;
+    border-color: none;
+}
+
+.paginas button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
   
   .botao-ler-mais {
     background: radial-gradient(closest-side, #D6693A 0%, #A84B3A 100%);
@@ -686,3 +692,8 @@
         color: #F1FDF1;
       }
     }
+
+    .none{
+    display: none;
+}
+
