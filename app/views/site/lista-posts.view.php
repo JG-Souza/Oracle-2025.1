@@ -53,7 +53,6 @@
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>
             </div>
             <div class="text">
-              <p><?= substr($post['story'], 0, 90) . '...' ?></p>
               <a href="/post.php?id=<?= $post['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
             </div>
           </li>
@@ -67,8 +66,12 @@
             <img src="<?= $posts[0]['img_path'] ?>" alt="<?= $posts[0]['title'] ?>">
             <button class="creature-button"><?= $posts[0]['title'] ?></button>
           </div>
+          
           <div class="text">
             <p><?= substr($posts[0]['story'], 0, 150) ?>...</p>
+          </div>
+
+          <div class="ler-mais">
             <a href="/post.php?id=<?= $posts[0]['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
           </div>
         </article>
