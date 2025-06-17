@@ -51,7 +51,7 @@
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>
             </div>
             <div class="text">
-              <a href="/post.php?id=<?= $post['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
+              <a href="#" class="botao-ler-mais">Ler mais</a>
             </div>
           </li>
         <?php endforeach; ?>

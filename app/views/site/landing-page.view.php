@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php include ('app/views/site/navbar.view.php'); ?>
     <section class="hero-section">
         <!-- TEXTO DA HEADLINE-->
         <div class="headline">
@@ -86,5 +87,7 @@
         const titleArray = <?= json_encode(array_column($destaques, 'title')); ?>;
      </script>
     <script src="/public/js/landing-page.js"></script>
+
+     <?php include ('app/views/site/footer.view.php'); ?>
 </body>
 </html>
