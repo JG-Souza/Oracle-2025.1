@@ -419,13 +419,14 @@ thead tr{
     position: relative;
     display: flex;
     height: auto;
-    justify-content: center;
+    justify-content: end;
     align-items: end;
     padding-left: 40px;
     padding-right: 40px;
     gap: 2rem;
     width: 100%;
     padding-top: 15px;
+    align-items: end;;
 }
 
 .botoes-modal .btn-criar{
