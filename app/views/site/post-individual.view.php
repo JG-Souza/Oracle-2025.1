@@ -20,14 +20,16 @@
 </head>
 <body>
 
+    
+    <?php include ('app/views/site/navbar.view.php'); ?>
     <div class="background">
         <div class="container">
             <div class="cabecalho">
                 <div class="usuario">
                     <img src="/public/assets/medusa.png" alt="Foto do usuario">
-                    <h3 class="nome-do-usuario">Autor</h3>
+                    <h3 class="nome-do-usuario"><?= $post->user_id ?></h3>
                 </div>
-                <div class="origem"><button id="botao">Mitologia Grega</button></div>
+                <div class="origem"><button id="botao"><?= $post->origin ?></button></div>
             </div>
             <div class="post">
                 
