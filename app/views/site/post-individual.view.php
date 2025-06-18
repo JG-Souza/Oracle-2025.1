@@ -27,7 +27,7 @@
             <div class="cabecalho">
                 <div class="usuario">
                     <img src="/public/assets/medusa.png" alt="Foto do usuario">
-                    <h3 class="nome-do-usuario"><?= $post->user_id ?></h3>
+                    <h3 class="nome-do-usuario"><?= $user->name ?></h3>
                 </div>
                 <div class="origem"><button id="botao"><?= $post->origin ?></button></div>
             </div>
