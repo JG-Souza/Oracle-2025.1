@@ -498,6 +498,11 @@ thead tr{
     color:#152518;
     text-align: center;
 }
+#modal-container-excluir-publicacao .modal-info-imagem{
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    justify-content: center;
+}
 #modal-container-excluir-publicacao .modal-footer{
     justify-content: end;
     width: 100%;

@@ -176,8 +176,13 @@
                                 <i id="btn-fechar" class="bi bi-x" onclick="fecharModal('modal-excluir-publicacao<?=$post->post_id ?>')"></i>
                             </div>
                             <div class="modal-body">
-                                <p>Você tem certeza que deseja excluir a publicação <strong><?= $post->title ?></strong>?</p>
-                                <p>Essa ação não pode ser desfeita.</p>
+                                <div class="modal-info-imagem">
+                                    <img src="/<?=$post->img_path ?>" alt="imagem post" class="imagem-publicacao">
+                                </div>
+                                <div>
+                                    <p>Você tem certeza que deseja excluir a publicação <strong><?= $post->title ?></strong>?</p>
+                                    <p>Essa ação não pode ser desfeita.</p>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <div class= "botoes-modal" id="botoes-modal-excluir">   
