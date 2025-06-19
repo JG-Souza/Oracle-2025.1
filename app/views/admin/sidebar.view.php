@@ -8,9 +8,10 @@
     <title>Sidebar</title>
 </head>
 <body>
-    <nav id="sidebar">
-        <div id="sidebar-content">
-            <div id="user">
+    <aside>
+        <nav id="sidebar">
+            <div id="sidebar-content">
+                <div id="user">
                 <img src="/public/assets/avatar-generico.avif" id="user_avatar" alt="Avatar do usuário">
                 <p id="user_infos">
                     <span class="item-description">Fulano</span>
@@ -39,19 +40,15 @@
             <button id="open-btn">
                 <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
-        </div>
-        <div id="logout">
-            <button id="logout-btn">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="item-description">Logout</span>
-            </button>
-        </div>
-    </nav>
-
-    <main>
-        <h1>Título</h1>
-    </main>
-
+            </div>
+            <div id="logout">
+                <button id="logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-description">Logout</span>
+                </button>
+            </div>
+        </nav>
+    </aside>
     <script src="/public/js/sidebar.js"></script>
 </body>
 </html>

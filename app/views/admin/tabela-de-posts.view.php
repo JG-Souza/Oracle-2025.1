@@ -20,6 +20,7 @@
 
 </head>
 <body>
+    <?php include 'sidebar.view.php' ; ?>
     <main>
         <div class="parte-cima">
             <div class="titulo">
