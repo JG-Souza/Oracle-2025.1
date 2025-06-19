@@ -207,8 +207,7 @@
                                                 <input type="text" id="titulo" name="titulo" required>
                                             </div>
                                             <div class="modal-info">
-                                                <label for="autor">Autor:</label>
-                                                <input type="text" id="autor" name="autor" required>
+                                                <input type="hidden" id="autor" name="usuario_id" value="<?= $_SESSION['id']?>">
                                             </div>
                                             <div class="modal-info">
                                                 <label for="origem">Origem:</label>

@@ -29,9 +29,9 @@
             </div>
         </div>
             <ul class="navbar-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Publicações</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="/landing-page">Home</a></li>
+                <li><a href="/lista-posts">Publicações</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
     </header>
     <script src="/public/js/navbar.js"></script>

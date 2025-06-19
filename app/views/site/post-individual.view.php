@@ -22,6 +22,7 @@
 
     
     <?php include ('app/views/site/navbar.view.php'); ?>
+    <main>
     <div class="background">
         <div class="container">
             <div class="cabecalho">
@@ -58,6 +59,7 @@
 
         </div>
     </div>
-    
+</main>
+<?php include ('app/views/site/footer.view.php'); ?>
 </body>
 </html>

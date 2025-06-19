@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php echo($_SESSION['id']) ?> 
     <div class="dashboard-card"></div>
     <section class="secao">
         <div class="titulo">Bem-vindo à dashboard do Oracle!</div>
