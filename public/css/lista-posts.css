@@ -277,6 +277,7 @@
     flex-direction: row;
     align-items: baseline;
     padding: 10px;
+    padding-top: 30px;
     width: 100%;
   }
   
@@ -313,6 +314,7 @@
     -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color: #000;
   }
 
   .highlight .text{
@@ -431,9 +433,10 @@
     }
   
     .top-container {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       padding: 10px;
+      padding-bottom: 30px;
       width: 100%;
     }
   
@@ -441,7 +444,7 @@
       max-width: 100%;
       justify-content: center;
       padding: 10px;
-      margin-top: 0px;
+      margin: 0;
     }
   
     .search-container input {
@@ -466,12 +469,12 @@
     .content h2 {
       font-size: 35px;
       text-align: center;
-      margin-bottom: 16px;
       background-color: rgba(34, 66, 32, 0.6); 
       color: #F1FDF1;
       padding: 10px 20px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      margin: 0;
     }
     
     .main-area {
@@ -591,6 +594,11 @@
     }
   }
 
+    @media (max-width: 520px) {
+      .top-container{
+        flex-direction: column;
+      }
+    }
     @media (max-width: 420px) {
       body {
         font-size: 16px;
