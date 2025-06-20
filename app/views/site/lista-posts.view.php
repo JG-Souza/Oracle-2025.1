@@ -94,5 +94,6 @@
         </div>
     </aside>
   </section>
+  <?php include'app\views\site\footer.view.php'?>
 </body>
 </html>
