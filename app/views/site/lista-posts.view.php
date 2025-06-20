@@ -25,6 +25,7 @@
 
 <body>
   <header></header>
+  <?php include 'app\views\site\navbar.view.php'; ?>
   <section class="content">
     <div class="top-container">
       <h2>Últimos Posts</h2>
