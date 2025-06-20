@@ -19,19 +19,19 @@
             </div>
             <ul id="side-items">
                 <li class="side-item active">
-                    <a href="#">
+                    <a href="/dashboard">
                         <i class="fa-solid fa-square-poll-horizontal"></i>
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="#">
+                    <a href="/crud-usuarios">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">Lista de Usuários</span>
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="#">
+                    <a href="/tabela-de-posts">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">Lista de Posts</span>
                     </a>

@@ -22,6 +22,7 @@
 <body>
     <?php include 'sidebar.view.php' ; ?>
     <main>
+        <!-- <?php echo(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME))?> -->
         <div class="parte-cima">
             <div class="titulo">
                 <span>Tabela de Posts</span>
