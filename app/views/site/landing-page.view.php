@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php include 'navbar.view.php' ?>
+
     <section class="hero-section">
         <!-- TEXTO DA HEADLINE-->
         <div class="headline">
@@ -28,7 +30,9 @@
                 <!-- Botoes de Seta -->
                 <button class="back" onclick="backSlide()"> &#x276E; </button>
                 <div class="meio-do-carrossel">
-                    <h3 class="texto-carrossel"><?= htmlspecialchars($destaques[0]->title ?? '') ?></h3>
+                    <a href="/post-individual" style="text-decoration:none; color:inherit;">
+                        <h3 class="texto-carrossel"><?= htmlspecialchars($destaques[0]->title ?? '') ?></h3>
+                    </a>
                     <!-- Label dos botoes -->
                      <div class="radio-auto">
                         <label class="radio-label"></label>
@@ -52,9 +56,13 @@
                 <?php foreach ($ultimos as $i => $post): ?>
                     <?php if ($i === 0): ?>
                         <div class="postGrande">
-                            <img class="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <a href="/post-individual" class="pgImgContainer" style="text-decoration:none; color:inherit;"> 
+                                <img class="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            </a>
                             <div class="pgText">
-                                <h4 class="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                                <a href="/post-individual" style="text-decoration:none; color:inherit;"> 
+                                    <h4 class="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>  
+                                </a>
                                 <div class="pgInfo">
                                     <p class="pgAutor">Por: <?= htmlspecialchars($post->author_name) ?></p>
                                     <p class="pgData">Publicado em: <?= date('d/m/Y', strtotime($post->created_at)) ?></p>
@@ -64,9 +72,13 @@
                 <div class="postsPequenos">
                     <?php else: ?>
                         <div class="pp">
-                            <img class="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
+                            <a href="/post-individual" class="ppImgContainer" style="text-decoration:none; color:inherit;"> 
+                                <img class="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>"> 
+                            </a>
                             <div class="ppText">
-                                <h4 class="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                                <a href="/post-individual" style="text-decoration:none; color:inherit;"> 
+                                    <h4 class="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
+                                </a>
                                 <div class="ppInfo">
                                     <p class="ppAutor">Por: <?= htmlspecialchars($post->author_name) ?></p>
                                     <p class="ppData">Publicado em: <?= date('d/m/Y', strtotime($post->created_at)) ?></p>
@@ -79,6 +91,8 @@
             </section>
         </section>
     </main>
+
+    <?php include 'footer.view.php' ?>
 
     <!-- SCRIPT -->
      <script>

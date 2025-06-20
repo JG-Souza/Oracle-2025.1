@@ -9,6 +9,7 @@ $router->get('landing-page', 'LandingPageController@exibirLandingPage');
 $router->get('', 'ExampleController@index');
 $router->get('login', 'LoginController@exibirLogin');
 $router->get('dashboard', 'LoginController@exibirDashboard');
+$router->get('post-individual', 'LandingPageController@exibirPostIndividual');
 
 $router->post('login', 'LoginController@efetuaLogin');
 $router->post('logout', 'LoginController@logout');    

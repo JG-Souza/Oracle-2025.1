@@ -2,6 +2,7 @@ html{
     font-size: calc(70% + 0.8vmin);
 }
 body{
+    padding-top: 12vh;
     font-family: 'Junge',sans-serif;
     background-image: url(/public/assets/fundo2.jpg);
 }
@@ -70,10 +71,10 @@ header{
         height: 25vh;
     }
     body{
-        margin-top: 12vh;
+        padding-top: 12vh;
     }
     body.active{
-        margin-top: 25vh;
+        padding-top: 25vh;
     }
     .navbar-cima{
         width: 100%;
@@ -128,8 +129,7 @@ header{
 }
 
 /*main de exemplo*/
-main{
-    margin-top: 12vh;/*permite Navbar ficar fixa no topo e evita overlay*/
+main{   
     display: flex;
     flex-direction: column;
     background-color: #A84B3A;
