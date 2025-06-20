@@ -9,6 +9,14 @@ class LoginController
 {
     public function exibirLogin(){
         
+        session_start();
+
+        if (isset($_SESSION['id'])) {
+            // Usuário já está logado, redireciona para a dashboard
+            header('Location: /dashboard');
+            exit;
+        }
+
         return view('site/login');
     }
 
