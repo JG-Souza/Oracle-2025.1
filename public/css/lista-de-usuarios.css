@@ -330,35 +330,16 @@ thead tr{
     margin:0
 }
 
-#modal-excluir-usuario .modal-container{
-    width: 30%;
-}
-
-#modal-excluir-usuario .form-usuario{
-    padding: 0;
-    
-}
-
-#modal-excluir-usuario .botoes-modal{
-    padding: 0 10%;
-}
 
 
 #modal-excluir-usuario .btn-criar{
-    background-color: rgb(252, 46, 46);
+    background-color: rgb(177, 30, 30);
 }
 
 #modal-excluir-usuario .btn-criar:hover{
-    background-color: rgb(253, 68, 68);
+    background-color: rgb(206, 36, 36);
 }
 
-#modal-excluir-usuario .btn-cancelar{
-    background-color: var(--cor-primaria);
-}
-
-#modal-excluir-usuario .btn-cancelar:hover{
-    background-color: #305c2d;
-}
 
 #modal-visualizar-usuario .botoes-modal{
     justify-content: center;
@@ -422,9 +403,7 @@ thead tr{
     padding-right: 2%;
   }
 
-  #modal-excluir-usuario .modal-container{
-    width: 100%;
-  }
+
 
   #modal-excluir-usuario .form-usuario{
     width: 100%;
@@ -446,6 +425,15 @@ thead tr{
     height: 100%;
   }
 
+  @media screen and (max-width: 1700px) {
+    .modal-container{
+        width: 80%;
+        max-width: 830px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    }
+    
   @media screen and (max-width: 1360px) {
     .btn-imagem{
         font-size: 0.8rem;
@@ -473,10 +461,12 @@ thead tr{
         padding-right: 10%;
     }
 
+
     .modal-container{
-        width: 65%;
-        max-width: 1200px;
-        
+        width: 80%;
+        max-width: 830px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
     
     
@@ -576,14 +566,28 @@ thead tr{
         justify-content: center;
         font-size: 0.8rem;
     }
+
+    #modal-excluir-usuario h2{
+        font-size: 1.2rem;
+    }
     
 }
+
+@media only screen and (max-width:408px) {
+    #modal-excluir-usuario h2{
+        font-size: 1.0rem;
+    }
+} 
 
 
 @media only screen and (max-width:334px) {
 
     .btn-imagem{
         font-size: 0.7rem;
+    }
+
+    #modal-excluir-usuario h2{
+        font-size: 0.9rem;
     }
     
 }
