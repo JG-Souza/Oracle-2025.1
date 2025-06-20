@@ -258,6 +258,27 @@
     }
 }
 
+.verMaisContainer {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4%;
+}
+.verMais {
+    font-family: 'Cinzel';
+    font-size: 2vw;
+    font-weight: bold;
+    border: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+}
+.verMais:hover {
+    font-size: 2.5vw;
+}
+
 
 /* VERSÃO PARA CELULAR */
 @media (max-width: 768px) {  
@@ -269,6 +290,7 @@
         align-items: center;
         flex-direction: column;
         padding: 20% 15%;
+        padding-top: 15vh;
         gap: 7vh;
     }
 
@@ -385,6 +407,18 @@
         .ppData {
             font-size: 3vw;
         }
+    }
+
+    .verMaisContainer {
+        width: 100%;
+        height: 3vh;
+        padding-top: 10%;
+    }
+    .verMais {
+        font-size: 4vw;
+    }
+    .verMais:hover {
+        font-size: 5vw;
     }
 
 }

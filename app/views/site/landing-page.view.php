@@ -89,6 +89,11 @@
                 <?php endforeach; ?>
                 </div>
             </section>
+            <div class="verMaisContainer">
+                <a href="/lista-posts" style="text-decoration:none; color:inherit;">
+                    <button class="verMais"> Ver Mais </button>
+                </a>
+            </div>
         </section>
     </main>
 

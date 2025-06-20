@@ -2,9 +2,8 @@ html{
     font-size: calc(70% + 0.8vmin);
 }
 body{
-    padding-top: 12vh;
     font-family: 'Junge',sans-serif;
-    background-image: url(/public/assets/fundo2.jpg);
+    background-color: transparent;
 }
 
 *{
@@ -69,12 +68,6 @@ header{
     }
     header.active{
         height: 25vh;
-    }
-    body{
-        padding-top: 12vh;
-    }
-    body.active{
-        padding-top: 25vh;
     }
     .navbar-cima{
         width: 100%;
