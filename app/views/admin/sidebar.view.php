@@ -1,3 +1,8 @@
+<?php
+$curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,19 +23,19 @@
                 </p>
             </div>
             <ul id="side-items">
-                <li class="side-item active">
+                <li class="side-item">
                     <a href="/dashboard">
                         <i class="fa-solid fa-square-poll-horizontal"></i>
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
-                <li class="side-item">
+                <li class="side-item  <?= $curentPage == 'crud-usuarios' ? 'active' : '' ?>">
                     <a href="/crud-usuarios">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">Lista de Usuários</span>
                     </a>
                 </li>
-                <li class="side-item">
+                <li class="side-item   <?= $curentPage == 'tabela-de-posts' ? 'active' : '' ?>">
                     <a href="/tabela-de-posts">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">Lista de Posts</span>
