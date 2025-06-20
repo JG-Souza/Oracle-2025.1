@@ -20,6 +20,7 @@
         <div class="cabecalho">
             <h1>Lista de Usuários</h1>
             <button id="adicionar-usuario"  onclick="abrirModal('modal-criar-usuario')"  onclick="abrirModal('modal-criar-usuario')">Adicionar Usuário</button>
+            <button id="adicionar-usuario-mais"  onclick="abrirModal('modal-criar-usuario')"  onclick="abrirModal('modal-criar-usuario')">+</button>
         </div>
         <div class="tabela-responsiva">
         <table class="tabela-usuarios">

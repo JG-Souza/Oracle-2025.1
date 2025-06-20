@@ -42,6 +42,7 @@ body{
 .cabecalho{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 55vw;
 }
 
@@ -148,7 +149,22 @@ thead tr{
     height: 2.5rem;
     border-radius: 100%;
     background-color: var(--cor-quinta);
-}   
+}
+
+#adicionar-usuario-mais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: #224220;
+    color: #D8DBD4;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: none;
+    font-weight: thin;
+}
 
 .modal{
     display: flex;
@@ -188,8 +204,8 @@ thead tr{
     color: #152518;
     border-radius: 10px 10px 0 0;
     top: 0;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .modal-header i{
@@ -472,15 +488,27 @@ thead tr{
     
   }
 
-  @media screen and (max-width: 1000px) {
-    .container{
-        overflow-y: auto;
-  }
+  @media screen and (max-width: 1100px) {
+    .cabecalho{
+        width: 100%;
+        padding-top: 0;
+    }
+    
+    .cabecalho h1{
+        font-size: 1.5rem;
+    }
 
-  .cabecalho{
-        padding-top: 15%;
-  }
-}
+    .tabela-usuarios{
+        width: 90vw;
+    }
+
+    .modal-container{
+        width: 90%;
+        max-width: 830px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }}
+
 
 @media screen and (max-width: 933px) {
     .btn-imagem{
@@ -514,6 +542,14 @@ thead tr{
         margin-right: 10px;
         margin-left: 10px;
     }
+}
+
+@media screen and (max-width: 672px) {
+
+    .usuario td{
+        font-size: 0.8rem;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -571,6 +607,18 @@ thead tr{
         font-size: 1.2rem;
     }
     
+}
+
+@media only screen and (max-width:425px) {
+
+    #adicionar-usuario-mais{
+        display: flex;
+    }
+
+    #adicionar-usuario{
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width:408px) {
