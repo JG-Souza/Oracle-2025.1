@@ -45,10 +45,12 @@
         font-size: 1.6vw;
     }
 }
-
 .headline:hover
 {
     transform: scale(1.1);
+}
+#ultimos-posts {
+    scroll-margin-top: 13vh;
 }
 
 /*Titulo de Destaques*/

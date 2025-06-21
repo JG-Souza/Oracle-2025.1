@@ -16,12 +16,12 @@
 
     <section class="hero-section">
         <!-- TEXTO DA HEADLINE-->
-        <div class="headline">
+        <a href="javascript:void(0);" onclick="scrollParaPosts()" class="headline" style="text-decoration:none; color:inherit;">
             <h2 id="headlineTitulo1">O ORACLE REVELA</h2>
             <h2 id="headlineTitulo2">TUDO SOBRE</h2>
             <h2 id="headlineTitulo3">MITOLOGIA</h2>
             <h3 id="headlineTitulo4">MITOS, DEUSES, RELÍQUIAS E HISTÓRIAS</h3>
-        </div>
+        </a>
         <div class="destaques">
             <h3>DESTAQUES</h3>
             <!-- SLIDES / CARROSSEL -->
@@ -30,7 +30,7 @@
                 <!-- Botoes de Seta -->
                 <button class="back" onclick="backSlide()"> &#x276E; </button>
                 <div class="meio-do-carrossel">
-                    <a href="/post-individual" style="text-decoration:none; color:inherit;">
+                    <a href="post/<?= $destaques[0]->post_id ?>" style="text-decoration:none; color:inherit;">
                         <h3 class="texto-carrossel"><?= htmlspecialchars($destaques[0]->title ?? '') ?></h3>
                     </a>
                     <!-- Label dos botoes -->
@@ -50,17 +50,17 @@
 
     <!--CONTEÚDO-->
     <main class="conteudo">
-        <section class="ultimosPosts">
+        <section id="ultimos-posts" class="ultimosPosts">
             <h3 class="tituloUltimosPosts">ÚLTIMOS POSTS</h3>
             <section class="posts">
                 <?php foreach ($ultimos as $i => $post): ?>
                     <?php if ($i === 0): ?>
                         <div class="postGrande">
-                            <a href="/post-individual" class="pgImgContainer" style="text-decoration:none; color:inherit;"> 
+                            <a href="post/<?= $post->post_id ?>" class="pgImgContainer" style="text-decoration:none; color:inherit;"> 
                                 <img class="pgImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>">
                             </a>
                             <div class="pgText">
-                                <a href="/post-individual" style="text-decoration:none; color:inherit;"> 
+                                <a href="post/<?= $post->post_id ?>" style="text-decoration:none; color:inherit;"> 
                                     <h4 class="pgTitulo"><?= htmlspecialchars($post->title) ?></h4>  
                                 </a>
                                 <div class="pgInfo">
@@ -72,11 +72,11 @@
                 <div class="postsPequenos">
                     <?php else: ?>
                         <div class="pp">
-                            <a href="/post-individual" class="ppImgContainer" style="text-decoration:none; color:inherit;"> 
+                            <a href="post/<?= $post->post_id ?>" class="ppImgContainer" style="text-decoration:none; color:inherit;"> 
                                 <img class="ppImg" src="<?= $post->img_path ?>" alt="<?= htmlspecialchars($post->title) ?>"> 
                             </a>
                             <div class="ppText">
-                                <a href="/post-individual" style="text-decoration:none; color:inherit;"> 
+                                <a href="post/<?= $post->post_id ?>" style="text-decoration:none; color:inherit;"> 
                                     <h4 class="ppTitulo"><?= htmlspecialchars($post->title) ?></h4>
                                 </a>
                                 <div class="ppInfo">
@@ -101,8 +101,9 @@
 
     <!-- SCRIPT -->
      <script>
-        const imgArray   = <?= json_encode(array_column($destaques, 'img_path')); ?>;
-        const titleArray = <?= json_encode(array_column($destaques, 'title')); ?>;
+        let imgArray = <?= json_encode(array_map(fn($d) => $d->img_path, $destaques)) ?>;
+        let titleArray = <?= json_encode(array_map(fn($d) => $d->title, $destaques)) ?>;
+        let linkArray = <?= json_encode(array_map(fn($d) => "/post/" . $d->post_id, $destaques)) ?>;
      </script>
     <script src="/public/js/landing-page.js"></script>
     
