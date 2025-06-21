@@ -4,9 +4,13 @@
     if(!isset($_SESSION['id'])){
         header('Location: /login');
     }
+    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+
+    if(isset($_SESSION['role']) && $_SESSION['role']  === 'user'){
+        header('Location: /dashboard');
+    }
 
     $usuarioLogado = $_SESSION['user'];
-    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 ?>
 
 <!DOCTYPE html>
