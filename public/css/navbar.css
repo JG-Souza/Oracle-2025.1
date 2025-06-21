@@ -118,10 +118,3 @@ header{
   'opsz' 24
 }
 
-/*main de exemplo*/
-main{   
-    display: flex;
-    flex-direction: column;
-    background-color: #A84B3A;
-}
-
