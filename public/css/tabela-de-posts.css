@@ -394,14 +394,11 @@ thead tr{
 .btn-imagem{
     display: flex;
     align-items: center;
-    padding: 5px;
-    width: fit-content;
-    height: 3rem;
-    text-align: center;
     background: radial-gradient(closest-side, #D6693A 0%, #A84B3A 100%);
     color: #D8DBD4;
     font-weight: 300;
     border: none;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
     font-size: 0.8rem;
     cursor: pointer;
@@ -419,13 +416,14 @@ thead tr{
     position: relative;
     display: flex;
     height: auto;
-    justify-content: center;
+    justify-content: end;
     align-items: end;
     padding-left: 40px;
     padding-right: 40px;
     gap: 2rem;
     width: 100%;
     padding-top: 15px;
+    align-items: end;;
 }
 
 .botoes-modal .btn-criar{
@@ -499,6 +497,17 @@ thead tr{
     padding-bottom: 1rem;
     color:#152518;
     text-align: center;
+}
+#modal-container-excluir-publicacao .modal-info-imagem{
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    justify-content: center;
+}
+#modal-container-excluir-publicacao .modal-footer{
+    justify-content: end;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 @media screen and (max-width:1300px){

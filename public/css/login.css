@@ -29,12 +29,13 @@ main{
     padding: 5%;
     background-color: #F1FDF1;
     opacity: 60%;
+    gap:10%;
     border-radius: 12px;
 }
 .login-card-logo{
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     object-fit: contain;
 }
 .login-card-conteudo{
@@ -53,7 +54,7 @@ main{
     flex-direction: column;
 }
 .input-texto{
-    font-size: 70%;
+    font-size: 60%;
     height: 100%;
     width: 100%;
     background-color: #D8DBD4;
@@ -97,6 +98,7 @@ i{
     display: inline-block;
     border: none;
     border-radius: 16px;
+    cursor:pointer;
 }
 
 .mensagem-erro{
@@ -115,12 +117,13 @@ i{
         height: 80%;
         width: 80%;
         padding: 5%;
+        gap:5%;
         flex-direction: column;
     }
     .login-card-logo{
         padding: 0;
         width: auto;
-        height: 50%;
+        height: 40%;
     }
     .login-card-conteudo{
         justify-content: flex-start;
@@ -148,7 +151,7 @@ i{
     @media screen and (max-width: 450px) {
         
         .login-card-logo{
-            height: 40%;
+            height: 30%;
         }
         .campo-text-input{
         height: 30%;

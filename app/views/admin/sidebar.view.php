@@ -1,3 +1,9 @@
+<?php
+    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+    $curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,29 +14,32 @@
     <title>Sidebar</title>
 </head>
 <body>
-    <nav id="sidebar">
-        <div id="sidebar-content">
-            <div id="user">
-                <img src="/public/assets/avatar-generico.avif" id="user_avatar" alt="Avatar do usuário">
+    <aside>
+        <nav id="sidebar">
+            <div id="sidebar-content">
+                <div id="user">
+                <img src="/<?=$usuarioLogado->img_path?>" id="user_avatar" alt="Avatar do usuário">
                 <p id="user_infos">
-                    <span class="item-description">Fulano</span>
+                    <span class="item-description"><?=$usuarioLogado->name?></span>
                 </p>
             </div>
             <ul id="side-items">
-                <li class="side-item active">
-                    <a href="#">
+                <li class="side-item">
+                    <a href="/dashboard">
                         <i class="fa-solid fa-square-poll-horizontal"></i>
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="#">
+                <?php if ($usuarioAdmin): ?>
+                <li class="side-item  <?= $curentPage == 'crud-usuarios' ? 'active' : '' ?>">
+                    <a href="/crud-usuarios">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">Lista de Usuários</span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="#">
+                <?php endif; ?>
+                <li class="side-item   <?= $curentPage == 'tabela-de-posts' ? 'active' : '' ?>">
+                    <a href="/tabela-de-posts">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">Lista de Posts</span>
                     </a>
@@ -39,19 +48,17 @@
             <button id="open-btn">
                 <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
-        </div>
-        <div id="logout">
-            <button id="logout-btn">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="item-description">Logout</span>
-            </button>
-        </div>
-    </nav>
-
-    <main>
-        <h1>Título</h1>
-    </main>
-
+            </div>
+            <form action="/logout" method="POST">
+                <div id="logout">
+                    <button type="submit" id="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="item-description">Logout</span>
+                    </button>
+                </div>
+            </form>
+        </nav>
+    </aside>
     <script src="/public/js/sidebar.js"></script>
 </body>
 </html>
