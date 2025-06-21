@@ -20,6 +20,7 @@ main{
     background-image:url(/public/assets/fundo1.jpg);
 }
 .login-card{
+    position: relative;
     height: 70%;
     width: 60%;
     display: flex;
@@ -32,6 +33,36 @@ main{
     gap:10%;
     border-radius: 12px;
 }
+
+.btn-home{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    color: #264a22;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    border: transparent;
+    #icone-home {
+        filter: brightness(150%);
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+.btn-home:hover {
+    transform: scale(1.2);
+}
+
 .login-card-logo{
     align-items: center;
     justify-content: center;
@@ -99,6 +130,11 @@ i{
     border: none;
     border-radius: 16px;
     cursor:pointer;
+    transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.botao:hover{
+    transform: scale(1.1);
 }
 
 .mensagem-erro{
@@ -149,6 +185,11 @@ i{
     }
 
     @media screen and (max-width: 450px) {
+
+        .btn-home{
+            height: 40px;
+            width: 40px;
+        }
         
         .login-card-logo{
             height: 30%;
