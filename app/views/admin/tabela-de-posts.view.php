@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="modal-info">
                                         <label for="autor">Autor:</label>
-                                        <input type="text" value="Autor" readonly>
+                                        <input type="text" value="<?=$post->user_id?>" readonly>
                                     </div>
                                     <div class="modal-info">
                                         <label for="origem">Origem:</label>
@@ -139,7 +139,7 @@
                                             </div>
                                             <div class="modal-info">
                                                 <label for="autor">Autor:</label>
-                                                <input type="text" name="autor" value="Autor">
+                                                <input type="text" name="autor" value="<?=$post->user_id?>" readonly>
                                             </div>
                                             <div class="modal-info">
                                                 <label for="origem">Origem:</label>
@@ -150,7 +150,7 @@
                                                 <input type="text" name="referencias" value="<?=$post->reference?>">
                                             </div>
                                             <div class="modal-imagem">
-                                                <label for="imagem-editar-<?=$post->post_id?>" class="btn-imagem">Selecionar Imagem </label>
+                                                <label for="imagem-editar-<?=$post->post_id?>" class="btn-imagem">Selecionar Imagem</label>
                                                 <input id="imagem-editar-<?=$post->post_id?>" type="file" name="imagem" accept="image/*" class="input-imagem">
                                            
                                                 <div>
@@ -224,8 +224,9 @@
                                                 <input type="text" id="titulo" name="titulo" required>
                                             </div>
                                             <div class="modal-info">
-                                                <input type="hidden" id="autor" name="usuario_id" value="<?= $_SESSION['id']?>">
+                                                <input type="hidden" id="autor" name="autor" value="<?= $usuarioLogado->user_id?>">
                                             </div>
+
                                             <div class="modal-info">
                                                 <label for="origem">Origem:</label>
                                                 <input type="text" id="origem" name="origem" required>
