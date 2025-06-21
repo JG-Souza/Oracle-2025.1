@@ -46,14 +46,13 @@
         <?php foreach ($posts as $index => $post): ?>
           <?php if($index === 0) continue; ?>
 
-          <li data-id="<?= $post['post_id'] ?>" data-nome="<?= htmlspecialchars($post['title']) ?>">
+          <li data-id="<?= $post['post_id'] ?>" data-nome="<?= htmlspecialchars($post['title']) ?>" onclick="irParaPostOriginal(this)"  >
             <div class="top-card-sidebar">
               <img src="<?= $post['img_path'] ?>" alt="<?= htmlspecialchars($post['title']) ?>">
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>
             </div>
             <div class="text">
               <p><?= substr($post['story'], 0, 550) ?> ... </p>
-              <a href="/post.php?id=<?= $post['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
             </div>
           </li>
         <?php endforeach; ?>
@@ -72,7 +71,7 @@
           </div>
 
           <div class="ler-mais">
-            <a href="/post.php?id=<?= $posts[0]['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
+            <a href="post/<?= $posts[0]['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
           </div>
         </article>
         <?php endif; ?>
