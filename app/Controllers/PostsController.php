@@ -64,7 +64,7 @@ class PostsController
             'lesson' => $_POST['licoes'],
             'reference' => $_POST['referencias'],
             'img_path' => $caminhoImagem,
-            'user_id' => 123,
+            'user_id' => $_POST['autor'],
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -106,7 +106,6 @@ class PostsController
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
-            'user_id'       => $_POST['usuario_id'],
         ];
         
         App::get('database')->updatePost('posts', $id, $parameters);
