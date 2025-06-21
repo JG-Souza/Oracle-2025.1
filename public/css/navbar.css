@@ -3,6 +3,7 @@ html{
 }
 body{
     font-family: 'Junge',sans-serif;
+    background-color: transparent;
 }
 
 *{
@@ -69,12 +70,6 @@ header{
     header.active{
         height: 25vh;
     }
-    body{
-        margin-top: 12vh;
-    }
-    body.active{
-        margin-top: 25vh;
-    }
     .navbar-cima{
         width: 100%;
         padding-left: 5%;
@@ -124,5 +119,9 @@ header{
 }
 
 /*main de exemplo*/
-
+main{   
+    display: flex;
+    flex-direction: column;
+    background-color: #A84B3A;
+}
 

@@ -20,6 +20,10 @@ html{
     font-size: calc(70% + 0.8vmin);
 }
 
+main{
+    position: 0;
+}
+
 body{
     font-family: 'Junge',sans-serif;
 }
@@ -37,6 +41,7 @@ body{
     color: #D8DBD4;
     gap: 5%;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .cabecalho{

@@ -124,7 +124,6 @@
     border: 0.10vw solid white;
     padding: 0.4vw;
     border-radius: 10vw;
-    cursor: pointer;
     transition: 0.7s;
 }
 
@@ -161,7 +160,6 @@
     gap: 1.5vw;
     flex-wrap: nowrap;
 }
-
 .postGrande 
 {
     font-family: "Jost", sans-serif;
@@ -169,16 +167,20 @@
     display: flex;
     flex-direction: column;
     gap: 1vh;
+}
 
-    .pgImg {
-        box-shadow: 0px 0px 20px rgba(0,0,20,1);
-        background-image: url(/public/assets/placeholder.png);
-        background-position: center;
-        background-size: cover;
-        width: 50vw;
-        height: 55vh;
-        cursor: pointer;
-    }
+.pgImgContainer {
+    width: 50vw;
+}
+.pgImg {
+    display: block;
+    max-width: 100%;
+    box-shadow: 0px 0px 20px rgba(0,0,20,1);
+    background-image: url(/public/assets/placeholder.png);
+    background-position: center;
+    background-size: cover;
+    height: 55vh;
+    cursor: pointer;
 }
 
 .pgText {
@@ -188,10 +190,9 @@
     font-size: 2vw;
     width: 100%;
     height: 20%;
-
-    .pgTitulo {
+}
+.pgTitulo {
         cursor: pointer;
-    }
 }
 
 .pgInfo {
@@ -220,28 +221,30 @@
     display: flex;
     flex-direction: row;
     gap: 0.5vw;
-
-    .ppImg {
-        box-shadow: 0px 0px 10px rgba(0,0,20,1);
-        background-image: url(/public/assets/placeholder.png);
-        background-position: center;
-        background-size: cover;
-        width: 35%;
-        height: 16vh;
-        cursor: pointer;
-    }
+}
+.ppImgContainer {
+    width: 35%;
+}
+.ppImg {
+    display: block;
+    box-shadow: 0px 0px 10px rgba(0,0,20,1);
+    background-image: url(/public/assets/placeholder.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 16vh;
+    cursor: pointer;
 }
 
 .ppText {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 60%
+    max-width: 60%;
 }
 
 .ppTitulo {
     cursor: pointer;
-    
 }
 
 .ppInfo {
@@ -255,6 +258,27 @@
     }
 }
 
+.verMaisContainer {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4%;
+}
+.verMais {
+    font-family: 'Cinzel';
+    font-size: 2vw;
+    font-weight: bold;
+    border: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: transparent;
+}
+.verMais:hover {
+    font-size: 2.5vw;
+}
+
 
 /* VERSÃO PARA CELULAR */
 @media (max-width: 768px) {  
@@ -266,6 +290,7 @@
         align-items: center;
         flex-direction: column;
         padding: 20% 15%;
+        padding-top: 15vh;
         gap: 7vh;
     }
 
@@ -324,7 +349,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-
         .tituloUltimosPosts {
             font-size: 4.5vw;
         }
@@ -337,8 +361,10 @@
 
     .postGrande {
         text-align: left;
-        .pgImg {
+        .pgImgContainer {
             width: 85vw;
+        }
+        .pgImg {
             height: 25vh;
         }
         
@@ -363,8 +389,11 @@
             gap: 2vw;
         }
     
-        .ppImg {
+        .ppImgContainer
+        {
             width: 50%;
+        }
+        .ppImg {
             height: 15vh;
         }
     
@@ -378,6 +407,18 @@
         .ppData {
             font-size: 3vw;
         }
+    }
+
+    .verMaisContainer {
+        width: 100%;
+        height: 3vh;
+        padding-top: 10%;
+    }
+    .verMais {
+        font-size: 4vw;
+    }
+    .verMais:hover {
+        font-size: 5vw;
     }
 
 }

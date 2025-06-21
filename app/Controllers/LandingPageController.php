@@ -19,4 +19,9 @@ class LandingPageController
             'ultimos'   => $ultimos
         ]);
     }
+
+    public function exibirPostIndividual(){
+        
+        return view('site/post-individual');
+    }
 }

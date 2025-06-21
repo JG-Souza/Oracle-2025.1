@@ -9,6 +9,14 @@ class LoginController
 {
     public function exibirLogin(){
         
+        session_start();
+
+        if (isset($_SESSION['id'])) {
+            // Usuário já está logado, redireciona para a dashboard
+            header('Location: /dashboard');
+            exit;
+        }
+
         return view('site/login');
     }
 
@@ -26,6 +34,7 @@ class LoginController
         $user = App::get('database')->verificaLogin($email, $senha);
 
         if($user != false){
+            $_SESSION['user'] = $user;
             $_SESSION['id'] = $user->user_id;
             $_SESSION['role'] = $user->role;
             header('Location: /dashboard');

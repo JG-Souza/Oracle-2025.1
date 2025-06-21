@@ -106,8 +106,8 @@ body {
     border: transparent;
     #icone-home {
         filter: brightness(150%);
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 90%;
+        max-height: 90%;
     }
 }
 
@@ -138,7 +138,7 @@ body {
 }
 
 .home:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 .pagina-de-posts:hover, .pagina-de-usuarios:hover, .logout:hover {

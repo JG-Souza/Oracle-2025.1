@@ -28,7 +28,7 @@
     <main>
         <div class="login-card">
             <div class="login-card-logo">
-                <img width="100%" height="100%" src="/public/assets/medusa.png" alt="Logo">
+                <img width="100%" height="100%" src="/public/assets/medusa(1).png" alt="Logo">
             </div>
             <div>
                 <form class="login-form" action="/login" method="POST">
@@ -48,16 +48,15 @@
                             <div class="mensagem-erro">
                                 <p>
                                 <?php
-                                        session_start();
-                                        if(isset($_SESSION['mensagem-erro']))
-                                        echo $_SESSION['mensagem-erro'];
+                                    if(isset($_SESSION['mensagem-erro']))
+                                    echo $_SESSION['mensagem-erro'];
                                     unset($_SESSION['mensagem-erro']);
                                     ?>
                                 </p>
                             </div>
                         </div>
                         <div class="campo-botao">
-                            <button class="botao" type="submit">Login</button>
+                            <button class="botao" type="submit">Log-in</button>
                         </div>
                     </div>
                 </form>
