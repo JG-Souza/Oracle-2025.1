@@ -60,7 +60,6 @@
                         <td>Autor</td>
                         <td><?= (new DateTime($post->created_at))->format('d/m/Y') ?></td>
                         <td>
-                            <a href="post/<?= $post->post_id ?>">Post Individual</a>
                             <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao<?=$post->post_id ?>')" ><i class="bi bi-eye-fill"></i></button>
                             <button type="button" class="botao-editar" onclick="abrirModal('modal-editar-publicacao<?=$post->post_id ?>')"><i class="bi bi-pencil-square"></i></button>
                             <button type="button" class="botao-excluir" onclick="abrirModal('modal-excluir-publicacao<?=$post->post_id ?>')"><i class="bi bi-trash"></i></button>

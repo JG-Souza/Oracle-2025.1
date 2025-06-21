@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     destaqueTexto.textContent = criatura.descricao;
   }
 
+  window.irParaPostOriginal = function(element, event) {
+    if (event && event.target.tagName.toLowerCase() === 'a') return;
+    const idOriginal = element.dataset.id;
+    window.location.href = `post/${idOriginal}`;
+  };
+
   creatureItems.forEach(item => {
     const imgElement = item.querySelector('img');
     const nomeSpan = item.querySelector('.creature-name');
