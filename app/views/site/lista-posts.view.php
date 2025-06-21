@@ -25,6 +25,7 @@
 
 <body>
   <header></header>
+  <?php include 'app\views\site\navbar.view.php'; ?>
   <section class="content">
     <div class="top-container">
       <h2>Últimos Posts</h2>
@@ -51,6 +52,7 @@
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>
             </div>
             <div class="text">
+              <p><?= substr($post['story'], 0, 550) ?> ... </p>
               <a href="/post.php?id=<?= $post['post_id'] ?>" class="botao-ler-mais">Ler mais</a>
             </div>
           </li>
@@ -66,7 +68,7 @@
           </div>
           
           <div class="text">
-            <p><?= substr($posts[0]['story'], 0, 150) ?>...</p>
+            <p><?= substr($posts[0]['story'], 0, 600) ?>...</p>
           </div>
 
           <div class="ler-mais">
@@ -92,5 +94,6 @@
         </div>
     </aside>
   </section>
+  <?php include'app\views\site\footer.view.php'?>
 </body>
 </html>
