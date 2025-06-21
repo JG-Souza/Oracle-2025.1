@@ -45,10 +45,12 @@
         font-size: 1.6vw;
     }
 }
-
 .headline:hover
 {
     transform: scale(1.1);
+}
+#ultimos-posts {
+    scroll-margin-top: 13vh;
 }
 
 /*Titulo de Destaques*/
@@ -138,7 +140,7 @@
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 5%;
-    padding-right: 2%;
+    padding-right: 5%;
 }
 
 .ultimosPosts {
@@ -179,7 +181,7 @@
     background-image: url(/public/assets/placeholder.png);
     background-position: center;
     background-size: cover;
-    height: 55vh;
+    height: 50vh;
     cursor: pointer;
 }
 
@@ -187,12 +189,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: justify;
     font-size: 2vw;
-    width: 100%;
-    height: 20%;
+    width: 50vw;
+    max-width: 50vw;
+    height: 40%;
 }
 .pgTitulo {
-        cursor: pointer;
+    cursor: pointer;
 }
 
 .pgInfo {
@@ -223,7 +227,8 @@
     gap: 0.5vw;
 }
 .ppImgContainer {
-    width: 35%;
+    width: 45%;
+    max-width: 45%;
 }
 .ppImg {
     display: block;
@@ -240,7 +245,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 60%;
+    text-align: justify;
+    width: 55%;
+    max-width: 55%;
 }
 
 .ppTitulo {
@@ -279,6 +286,42 @@
     font-size: 2.5vw;
 }
 
+/* VERSÃO PARA DESKTOP MAIOR */
+@media (min-width: 1500px) {
+    .pgImgContainer {
+        width: 50vw;
+    }
+    .pgImg {
+        height: 55vh;
+    }
+    .pgText {
+        width: 50vw;
+        max-width: 50vw;
+        height: 40%;
+    }
+    .ppImgContainer {
+        width: 45%;
+        max-width: 45%;
+    }
+    .ppImg {
+        display: block;
+        box-shadow: 0px 0px 10px rgba(0,0,20,1);
+        background-image: url(/public/assets/placeholder.png);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 18vh;
+        cursor: pointer;
+    }
+    .ppText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: justify;
+        width: 55%;
+        max-width: 55%;
+    }
+}
 
 /* VERSÃO PARA CELULAR */
 @media (max-width: 768px) {  
@@ -369,6 +412,8 @@
         }
         
         .pgText {
+            width: 85vw;
+            max-width: 85vw;
             font-size: 5vw;
             gap: 5vw;
         }
