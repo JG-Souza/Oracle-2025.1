@@ -105,5 +105,6 @@
         const titleArray = <?= json_encode(array_column($destaques, 'title')); ?>;
      </script>
     <script src="/public/js/landing-page.js"></script>
+    
 </body>
 </html>

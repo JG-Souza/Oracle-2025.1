@@ -5,23 +5,30 @@
 }
 
 body{
-    background-color: #152518;
+    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+
+.background {
     font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: normal;
     font-size: 1.2rem;
     line-height: 1.5rem;
-}
-
-.background {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(/public/assets/Baclground\ Oracle.jpeg);
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+    padding: 2rem 0;
 }
 
 
@@ -34,13 +41,11 @@ body{
     color: black;
     position: relative;
     width: 80%;
-    height: 90%;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-    height: 90%;
-    margin-bottom: 10px;
-    overflow-y: auto;
+    margin-top: 5%;
+    margin-bottom: 4%;
 }
 
 

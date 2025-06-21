@@ -20,46 +20,46 @@
 </head>
 <body>
 
+    
+    <?php include ('app/views/site/navbar.view.php'); ?>
+    <main>
     <div class="background">
         <div class="container">
             <div class="cabecalho">
                 <div class="usuario">
                     <img src="/public/assets/medusa.png" alt="Foto do usuario">
-                    <h3 class="nome-do-usuario">Autor</h3>
+                    <h3 class="nome-do-usuario"><?= $user->name ?></h3>
                 </div>
-                <div class="origem"><button id="botao">Mitologia Grega</button></div>
+                <div class="origem"><button id="botao"><?= $post->origin ?></button></div>
             </div>
             <div class="post">
+                
                 <div class="coracao">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Gowy-icaro-prado.jpg" alt="Queda.png" class="icaro">
-                    <h1 class="titulo">A queda de Ícaro.</h1>
+                    <img src= "/<?= $post->img_path ?>" alt="Queda.png" class="icaro">
+                    <h1 class="titulo"><?= $post->title ?></h1>
                 </div>
                 <div class="conteudo-do-post">
                     <div class="topicos">
                         <h5>Historia:</h5>
-                        <span>Ícaro era filho do inventor Dédalo, que construiu asas feitas de penas e cera para escapar do Labirinto de Creta, onde estavam presos. Antes de partirem, Dédalo advertiu Ícaro para não voar muito alto, pois o calor do sol derreteria a cera. Tomado pelo entusiasmo do voo, Ícaro ignorou o aviso e subiu alto demais. O calor do sol derreteu suas asas, e ele caiu no mar, morrendo afogado.</span>
+                        <span><?= $post->story ?></span>
                     </div>
                     <div class="topicos">
                         <h5>Curiosidades:</h5>
-                        <span>O mar onde Ícaro caiu foi nomeado Mar Icário, em sua homenagem.
-                            O mito simboliza a arrogância da juventude e os perigos da ambição desmedida.
-                            A expressão “Síndrome de Ícaro” é usada para descrever pessoas que ignoram limites e acabam fracassando.
-                            O mito influenciou várias obras de arte, como o quadro Paisagem com a Queda de Ícaro, de Pieter Bruegel.</span>
+                        <span><?= $post->curiosity ?></span>
                     </div>
                     <div class="topicos">
                         <h5>Lições e ensinamentos:</h5>
-                        <span>Equilíbrio é essencial: Ambição é importante, mas ignorar limites pode ser fatal.
-                            Ouça conselhos: Ícaro ignorou as palavras do pai e pagou um preço alto.
-                            A natureza tem leis inquebráveis: Desafiar forças superiores sem preparo pode levar à ruína.</span>
+                        <span><?= $post->lesson ?></span>
                     </div>
                     <div class="topicos">
-                        <span id="fonte">Fonte: Metamorfoses, de Ovídio, Biblioteca, de Apolodoro</span>
+                        <span id="fonte">Fonte: <?= $post->reference ?></span>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    
+</main>
+<?php include ('app/views/site/footer.view.php'); ?>
 </body>
 </html>

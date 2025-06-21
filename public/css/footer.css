@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root{
   --cor-primaria: #224220;
   --cor-secundaria: #fff;
@@ -6,23 +11,21 @@
   --cor-quinta: #e0e0e0;
 }
 
-*{
+
+.footer{
+  background-color: #152518;
+  color: white;
+  text-align: center;
+  padding: 0; 
+  margin: 0;
+  width: 100%;
+  bottom: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: white;
   font-family: 'Jost', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: normal;
-}
-
-.footer{
-  background-color: #152518;
-  color: white;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  bottom: 0;
 
 }
 
@@ -33,6 +36,7 @@
   display:  flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .footer .container .missao-visao-e-valores{
@@ -179,7 +183,7 @@
   justify-content: start;
   height: 100%;
   text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
   transition: ease-out;
   transition-duration: 1s;
 }

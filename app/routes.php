@@ -26,4 +26,6 @@ $router->post('tabela-de-posts/create', 'PostsController@store');
 $router->post('tabela-de-posts/update', 'PostsController@update');
 $router->post('tabela-de-posts/delete', 'PostsController@delete');
 
+$router->get('post/{id}', 'IndividualController@index');
+
 ?>

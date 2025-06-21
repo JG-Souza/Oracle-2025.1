@@ -37,7 +37,8 @@
             <div class="cabecalho">
                 <h1>Lista de Usuários</h1>
                 <button id="adicionar-usuario"  onclick="abrirModal('modal-criar-usuario')"  onclick="abrirModal('modal-criar-usuario')">Adicionar Usuário</button>
-            </div>
+                <button id="adicionar-usuario-mais"  onclick="abrirModal('modal-criar-usuario')"  onclick="abrirModal('modal-criar-usuario')">+</button>
+        </div>
             <div class="tabela-responsiva">
             <table class="tabela-usuarios">
                 <thead>
@@ -124,7 +125,7 @@
                     </div>
                     <div class="modal-info" id="foto-usuario">
                         <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem" name="foto">
-                        <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagem</button>
+                        <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagemㅤ|ㅤ<i class="bi bi-upload" class="icone-upload"></i></button>
                         <img src="" class="img-preview" id="img-preview">
                     </div>
                     <div class="botoes-modal">
@@ -201,7 +202,7 @@
                     <div class="modal-info" id="foto-usuario">
                         <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem-editar" name="foto">
         
-                        <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem-editar').click()">Selecionar Imagem</button>
+                        <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem-editar').click()">Selecionar Imagemㅤ|ㅤ<i class="bi bi-upload" class="icone-upload"></i></button>
                         <img src="" class="img-preview" id="img-preview-editar">
                     </div>
                     <div class="botoes-modal">
