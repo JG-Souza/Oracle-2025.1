@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    
+    if(!isset($_SESSION['id'])){
+        header('Location: /login');
+    }
+
+    $usuarioLogado = $_SESSION['user'];
+    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -22,7 +33,6 @@
 <body>
     <?php include 'sidebar.view.php' ; ?>
     <main>
-        <!-- <?php echo($_SESSION['id'])?> -->
         <div class="parte-cima">
             <div class="titulo">
                 <span>Tabela de Posts</span>

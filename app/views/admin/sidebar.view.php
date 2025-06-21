@@ -1,5 +1,6 @@
 <?php
-$curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
+    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+    $curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 ?>
 
 
@@ -17,9 +18,9 @@ $curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
         <nav id="sidebar">
             <div id="sidebar-content">
                 <div id="user">
-                <img src="/public/assets/avatar-generico.avif" id="user_avatar" alt="Avatar do usuário">
+                <img src="/<?=$usuarioLogado->img_path?>" id="user_avatar" alt="Avatar do usuário">
                 <p id="user_infos">
-                    <span class="item-description">Fulano</span>
+                    <span class="item-description"><?=$usuarioLogado->name?></span>
                 </p>
             </div>
             <ul id="side-items">
@@ -29,12 +30,14 @@ $curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                         <span class="item-description">Dashboard</span>
                     </a>
                 </li>
+                <?php if ($usuarioAdmin): ?>
                 <li class="side-item  <?= $curentPage == 'crud-usuarios' ? 'active' : '' ?>">
                     <a href="/crud-usuarios">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">Lista de Usuários</span>
                     </a>
                 </li>
+                <?php endif; ?>
                 <li class="side-item   <?= $curentPage == 'tabela-de-posts' ? 'active' : '' ?>">
                     <a href="/tabela-de-posts">
                         <i class="fa-solid fa-box"></i>
@@ -46,12 +49,14 @@ $curentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                 <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
             </div>
-            <div id="logout">
-                <button id="logout-btn">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="item-description">Logout</span>
-                </button>
-            </div>
+            <form action="/logout" method="POST">
+                <div id="logout">
+                    <button type="submit" id="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="item-description">Logout</span>
+                    </button>
+                </div>
+            </form>
         </nav>
     </aside>
     <script src="/public/js/sidebar.js"></script>

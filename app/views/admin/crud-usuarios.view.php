@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['id'])){
+        header('Location: /login');
+    }
+
+    $usuarioLogado = $_SESSION['user'];
+    $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
