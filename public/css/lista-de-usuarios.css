@@ -611,6 +611,21 @@ thead tr{
     #modal-excluir-usuario h2{
         font-size: 1.2rem;
     }
+
+    .modal-container{
+        height: 80%;
+        gap: 0;
+    }
+
+    #modal-excluir-usuario .modal-container{
+        height: auto;
+    }
+
+    .form-usuario{
+        overflow-y: auto;
+    }
+
+    
     
 }
 
