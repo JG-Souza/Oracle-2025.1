@@ -80,6 +80,11 @@
                                         <label for="titulo">Título:</label>
                                         <input type="text" value="<?=$post->title ?>" readonly>
                                     </div>
+                                    <div class="modal-info" id="modal-carrossel">
+                                         <label for="carrossel">Carrossel:</label>
+                                        <input type="checkbox" name="carrossel" id="carrossel" value="1" <?= $post->is_in_carousel ? 'checked' : '' ?> onclick="return false;" style="pointer-events: none;">
+                                        <span class="checkmark"></span>
+                                    </div>
                                     <div class="modal-info">
                                         <label for="autor">Autor:</label>
                                         <input type="text" value="<?=$post->author_name?>" readonly>
@@ -137,6 +142,13 @@
                                                 <label for="titulo">Título:</label>
                                                 <input type="text" name="titulo" value="<?=$post->title ?>">
                                             </div>
+                                            <?php if ($usuarioAdmin): ?>
+                                            <div class="modal-info" id="modal-carrossel">
+                                                <label for="carrossel">Carrossel:</label>
+                                                <input type="checkbox" name="carrossel" id="carrossel" value="1" <?= $post->is_in_carousel ? 'checked' : '' ?>>
+                                                <span class="checkmark"></span>
+                                            </div>
+                                            <?php endif; ?>
                                             <div class="modal-info">
                                                 <label for="autor">Autor:</label>
                                                 <input type="text" name="autor" value="<?=$post->author_name?>" readonly>
@@ -226,7 +238,13 @@
                                             <div class="modal-info">
                                                 <input type="hidden" id="autor" name="autor" value="<?= $usuarioLogado->user_id?>">
                                             </div>
-
+                                            <?php if ($usuarioAdmin): ?>
+                                            <div class="modal-info" id="modal-carrossel">
+                                                <label for="carrossel">Carrossel:</label>
+                                                <input type="checkbox" name="carrossel" id="carrossel" value="1">
+                                                <span class="checkmark"></span>
+                                            </div>
+                                            <?php endif; ?>
                                             <div class="modal-info">
                                                 <label for="origem">Origem:</label>
                                                 <input type="text" id="origem" name="origem" required>

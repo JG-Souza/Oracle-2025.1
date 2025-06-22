@@ -56,6 +56,7 @@ class PostsController
 
         move_uploaded_file($temporario, $caminhoImagem);
 
+        $carrossel = isset($_POST['carrossel']);
 
         $parameters = [
             'title'=> $_POST['titulo'],
@@ -66,6 +67,7 @@ class PostsController
             'reference' => $_POST['referencias'],
             'img_path' => $caminhoImagem,
             'user_id' => $_POST['autor'],
+            'is_in_carousel' => $carrossel,
         ];
 
         App::get('database')->insert('posts',$parameters);
@@ -99,6 +101,8 @@ class PostsController
             }
         }
 
+        $carrossel = isset($_POST['carrossel']);
+
         $parameters = [
             'title'         => $_POST['titulo'],
             'origin'        => $_POST['origem'],
@@ -107,6 +111,7 @@ class PostsController
             'lesson'        => $_POST['licoes'],
             'reference'     => $_POST['referencias'],
             'img_path'      => $caminhoImagem,
+            'is_in_carousel' => $carrossel,
         ];
         
         App::get('database')->updatePost('posts', $id, $parameters);

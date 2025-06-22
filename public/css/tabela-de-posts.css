@@ -297,6 +297,20 @@ thead tr{
     background-color: #e0e0e0;
     border: 1px solid #152518;
 }
+
+#modal-carrossel{
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+}
+#modal-carrossel label{
+    width: auto;
+}
+#carrossel{
+    width: auto;
+    height: auto;
+    align-items: end;
+}
 .modal-container-content-up{
     display: flex;
     justify-content: center;
