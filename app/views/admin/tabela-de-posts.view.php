@@ -58,7 +58,7 @@
                     <tr>
                         <td><?=$post->post_id ?></td>
                         <td><?=$post->title ?></td>
-                        <td>Autor</td>
+                        <td><?=$post->author_name?></td>
                         <td><?= (new DateTime($post->created_at))->format('d/m/Y') ?></td>
                         <td>
                             <button type="button" class="botao-visualizar" onclick="abrirModal('modal-visualizar-publicacao<?=$post->post_id ?>')" ><i class="bi bi-eye-fill"></i></button>
