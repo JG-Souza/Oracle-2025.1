@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function mouseOutHandler() {
+        atualizarDestaque(destaqueOriginal);
         item.classList.remove('blur-hover');
       }
 
