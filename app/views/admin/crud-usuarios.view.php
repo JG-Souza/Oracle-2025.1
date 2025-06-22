@@ -125,7 +125,7 @@
                     </div>
                     <div class="modal-info" id="checkbox-admin">
                             <label class="custom-checkbox">
-                                Admin
+                                Admin:
                                 <input type="checkbox" name="is_admin" value="1">
                                 <span class="checkmark"></span>
                             </label>
@@ -208,7 +208,7 @@
                     </div>
                         <div class="modal-info" id="checkbox-admin">
                             <label>
-                                Admin
+                                Admin:
                                 <input type="checkbox" name="is_admin" value="1">
                             </label>
                         </div>

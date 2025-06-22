@@ -545,7 +545,7 @@ thead tr{
 @media screen and (max-width: 850px){
     
     main{
-    justify-content: space-around;
+    justify-content: center;
     }
 
     .modal-header h2{
@@ -675,7 +675,7 @@ thead tr{
 @media screen and (max-width: 630px) {
 
     main{
-    justify-content: space-around;
+    justify-content: center;
     }
 
     .modal-header h2{
@@ -800,7 +800,7 @@ thead tr{
 @media screen and (max-width: 540px) {
 
     main{
-    justify-content: space-around;
+    justify-content: center;
     }
 
     .tabela-responsiva {
@@ -920,7 +920,7 @@ thead tr{
 @media screen and (max-width: 450px) {
 
     main{
-    justify-content: space-around;
+    justify-content: center;
     }
 
     .tabela-responsiva {
@@ -1041,7 +1041,7 @@ thead tr{
 @media screen and (max-width: 370px) {
 
     main{
-    justify-content: space-around;
+    justify-content: center;
     }
 
     .tabela-responsiva {

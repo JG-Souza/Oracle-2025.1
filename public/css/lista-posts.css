@@ -182,6 +182,10 @@
     text-align: left;
     font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
+    display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
   }
   
   .paginas {
@@ -493,6 +497,7 @@
       margin-bottom: 24px;
       gap: 5px;
       align-items: center;
+      height: auto;
     }
     
     .creature-list li {
@@ -535,6 +540,7 @@
       -webkit-line-clamp: 2; 
       -webkit-box-orient: vertical;
       overflow: hidden;
+      height: auto;
     }
 
     .highlight p {
