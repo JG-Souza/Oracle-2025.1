@@ -123,6 +123,13 @@
                             <i class="bi bi-eye" id="olhoc" onclick="mostrarSenha('senhac', 'olhoc')"></i>
                         </div>
                     </div>
+                    <div class="modal-info" id="checkbox-admin">
+                            <label class="custom-checkbox">
+                                Admin
+                                <input type="checkbox" name="is_admin" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     <div class="modal-info" id="foto-usuario">
                         <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem" name="foto">
                         <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem').click()">Selecionar Imagemㅤ|ㅤ<i class="bi bi-upload" class="icone-upload"></i></button>
@@ -199,14 +206,21 @@
                             <i class="bi bi-eye" id="olhoe" onclick="mostrarSenha('senhae', 'olhoe')"></i>
                         </div>
                     </div>
+                        <div class="modal-info" id="checkbox-admin">
+                            <label>
+                                Admin
+                                <input type="checkbox" name="is_admin" value="1">
+                            </label>
+                        </div>
                     <div class="modal-info" id="foto-usuario">
                         <input type="file" accept="image/jpeg, image/jpg, image/png" id="input-imagem-editar" name="foto">
         
                         <button type="button" class="btn-imagem" id="btn-input-imagem-criar" onclick="document.getElementById('input-imagem-editar').click()">Selecionar Imagemㅤ|ㅤ<i class="bi bi-upload" class="icone-upload"></i></button>
                         <img src="" class="img-preview" id="img-preview-editar">
                     </div>
+                    
                     <div class="botoes-modal">
-                        <button type="submit" class="btn-criar">Salvar</button>
+                            <button type="submit" class="btn-criar">Salvar</button>
                     </div>
                 </form>
             </div>

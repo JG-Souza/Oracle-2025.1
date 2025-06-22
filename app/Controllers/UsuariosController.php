@@ -45,6 +45,10 @@ class UsuariosController
     public function store()
     {
 
+        session_start();
+
+        $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+
         $temporario = $_FILES['foto']['tmp_name'];
 
         $nomeImagem = sha1(uniqid($_FILES['foto']['name'], true)) . '.' . pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
@@ -53,6 +57,7 @@ class UsuariosController
 
         move_uploaded_file($temporario, $caminhodaImagem);
 
+         $role = ($usuarioAdmin && isset($_POST['is_admin'])) ? 'admin' : 'user';
 
 
 
@@ -61,6 +66,7 @@ class UsuariosController
             'email' => $_POST['email'],
             'password' => $_POST['senha'],
             'img_path' => $caminhodaImagem,
+            'role' => $role
         ];
 
         if (empty($temporario)) {
@@ -74,6 +80,12 @@ class UsuariosController
 
     public function edit()
     {
+
+
+        session_start();
+
+        $usuarioAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+
         $fotoAntiga = $_POST['imagem-antiga'];
 
 
@@ -99,6 +111,10 @@ class UsuariosController
         if (empty($temporario)) {
             $parameters['img_path'] = $fotoAntiga;
         }
+
+        if ($usuarioAdmin) {
+        $parameters['role'] = isset($_POST['is_admin']) ? 'admin' : 'user';
+     }   
 
         App::get('database')->updateUser('users', $id, $parameters);
 

@@ -42,6 +42,7 @@ class PostsController
             exit;
         }
 
+
         return view('admin/tabela-de-posts', compact('posts', 'total_pages', 'page'));
     }
 
