@@ -50,31 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       function mouseOverHandler() {
         const criatura = criaturas.find(c => c.id == item.dataset.id);
         if (criatura) {
-          item.dataset.originalImg = imgElement.src;
-          item.dataset.originalNome = nomeSpan.textContent;
-
-          imgElement.src = destaqueImg.src;
-          nomeSpan.textContent = destaqueNome.textContent;
-
           atualizarDestaque(criatura);
           item.classList.add('blur-hover');
         }
       }
 
       function mouseOutHandler() {
-        const originalNome = item.dataset.originalNome;
-        const originalImg = item.dataset.originalImg;
-
-        if (originalNome && originalImg) {
-          imgElement.src = originalImg;
-          nomeSpan.textContent = originalNome;
-
-          atualizarDestaque(destaqueOriginal);
-
-          delete item.dataset.originalImg;
-          delete item.dataset.originalNome;
-        }
-
+        atualizarDestaque(destaqueOriginal);
         item.classList.remove('blur-hover');
       }
 

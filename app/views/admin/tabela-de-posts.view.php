@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="modal-info">
                                         <label for="autor">Autor:</label>
-                                        <input type="text" value="<?=$post->user_id?>" readonly>
+                                        <input type="text" value="<?=$post->author_name?>" readonly>
                                     </div>
                                     <div class="modal-info">
                                         <label for="origem">Origem:</label>
@@ -138,7 +138,7 @@
                                             </div>
                                             <div class="modal-info">
                                                 <label for="autor">Autor:</label>
-                                                <input type="text" name="autor" value="<?=$post->user_id?>" readonly>
+                                                <input type="text" name="autor" value="<?=$post->author_name?>" readonly>
                                             </div>
                                             <div class="modal-info">
                                                 <label for="origem">Origem:</label>

@@ -67,9 +67,12 @@ class QueryBuilder
 
     public function selectAllPost($table, $inicio = null, $rows_count = null):mixed
     {
-        $sql = "select * from {$table}";
+        $sql = "SELECT posts.*, users.name AS author_name
+        FROM {$table}
+        JOIN users ON posts.user_id = users.user_id";
 
-        if($inicio >= 0 && $rows_count > 0){
+
+        if($inicio !== null && $rows_count !== null && $inicio >= 0 && $rows_count > 0){
             $sql .= " LIMIT {$inicio}, {$rows_count}";
         }
 
