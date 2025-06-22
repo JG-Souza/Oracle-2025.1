@@ -14,6 +14,7 @@
     <title>Sidebar</title>
 </head>
 <body>
+    <div id="overlay"></div>
     <aside>
         <nav id="sidebar">
             <div id="sidebar-content">

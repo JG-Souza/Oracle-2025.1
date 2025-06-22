@@ -33,7 +33,7 @@
                     <a href=""><i class="fa-brands fa-facebook"></i></a>
                     <a href=""><i class="fa-brands fa-x-twitter"></i></a>
                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/jve_valerio/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div class="direitos">
                     <img src="/public/assets/code-logo.png" alt="">
