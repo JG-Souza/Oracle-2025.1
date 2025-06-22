@@ -39,6 +39,7 @@
             </div>
             <div>
                 <button type="button" class="botao-criar" onclick="abrirModal('modal-criar-publicacao')">Criar Publicação</button>
+                <button id="criar-post-mais"  onclick="abrirModal('modal-criar-publicacao')"  onclick="abrirModal('modal-criar-publicacao')">+</button>
             </div>
         </div>
         <div class="tabela-responsiva">

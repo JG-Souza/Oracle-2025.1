@@ -147,6 +147,22 @@ thead tr{
     display: none;
 }
 
+#criar-post-mais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: #224220;
+    color: #D8DBD4;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: none;
+    border: none;
+    scale: 0.8;
+}
+
 
 .modal{
     justify-content: center;
@@ -938,6 +954,7 @@ thead tr{
         padding-left: 5vw;
         padding-right: 5vw;
         justify-content: space-between;
+        align-items: center;
     }
 
     .modal-container-vi{
@@ -1037,6 +1054,19 @@ thead tr{
         font-size: 14px;
     }
 }
+
+@media only screen and (max-width:425px) {
+
+    #criar-post-mais{
+        display: flex;
+    }
+
+    .botao-criar{
+        display: none;
+    }
+
+}
+
 
 @media screen and (max-width: 370px) {
 
