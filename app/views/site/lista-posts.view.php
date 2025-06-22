@@ -34,7 +34,7 @@
           <input type="text" name="q" placeholder="Pesquisar" value="<?= $_GET['q'] ?? '' ?>">
         </form>
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-       viewBox="0 0 24 24" stroke="currentColor">
+       viewBox="0 0 24 24" stroke="currentColor" class= "lupa">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
         </svg>
@@ -48,7 +48,7 @@
 
           <li data-id="<?= $post['post_id'] ?>" data-nome="<?= htmlspecialchars($post['title']) ?>" onclick="irParaPostOriginal(this)"  >
             <div class="top-card-sidebar">
-              <img src="<?= $post['img_path'] ?>" alt="<?= htmlspecialchars($post['title']) ?>">
+              <img src="<?= $post['img_path'] ?>" alt="<?= htmlspecialchars($post['title']) ?>" class="creature-image">
               <span class="creature-name"><?= htmlspecialchars($post['title']) ?></span>
             </div>
             <div class="text">
