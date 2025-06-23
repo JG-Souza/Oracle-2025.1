@@ -111,6 +111,7 @@ class QueryBuilder
         }
     }
 
+    
 
     public function countAll($table)
     {
@@ -264,5 +265,41 @@ class QueryBuilder
             die("Erro ao buscar posts: " . $e->getMessage());
         }
     }
+
+    public function countPostsByUser($userId)
+    {
+        $sql = 'SELECT COUNT(*) FROM posts WHERE user_id = :user_id';
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(['user_id' => $userId]);
+            return intval($stmt->fetchColumn());
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function selectPostsByUser($table, $userId, $inicio, $itensPage)
+    {
+        $sql = "SELECT posts.*, users.name AS author_name
+                FROM {$table}
+                JOIN users ON posts.user_id = users.user_id
+                WHERE posts.user_id = :user_id
+                ORDER BY posts.post_id ASC
+                LIMIT :inicio, :itensPage";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->bindValue(':inicio', (int) $inicio, PDO::PARAM_INT);
+            $stmt->bindValue(':itensPage', (int) $itensPage, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
 
 }

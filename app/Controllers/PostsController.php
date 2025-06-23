@@ -9,39 +9,46 @@ class PostsController
 {
     public function index(): mixed
     {
+        session_start();
+
         $page = 1;
 
         if(isset($_GET['paginacaoNumero']) && !empty($_GET['paginacaoNumero'])){
-            $page = intval(value: $_GET['paginacaoNumero']);
+            $page = intval($_GET['paginacaoNumero']);
 
             if($page <= 0){
-                return redirect(path:'admin/tabela-de-posts');
+                return redirect('admin/tabela-de-posts');
             }
         }
-        
-        $itensPage = 5;
 
+        $itensPage = 5;
         $inicio = $itensPage * $page - $itensPage;
 
-        $rows_count = App ::get(key:'database') -> countAll('posts');
+        $userId = $_SESSION['id'];
+        $role = $_SESSION['role'];
 
-        if($inicio > $rows_count){
-            return redirect(path: 'admin/tabela-de-posts');
+        if($role === 'admin'){
+            $rows_count = App::get('database')->countAll('posts');
+            $posts = App::get('database')->selectAllPost('posts', $inicio, $itensPage);
+        } else {
+            $rows_count = App::get('database')->countPostsByUser($userId);
+            $posts = App::get('database')->selectPostsByUser('posts', $userId, $inicio, $itensPage);
         }
-
-        $posts = App::get('database') -> selectAllPost('posts', $inicio, $itensPage, $page);
 
         if($rows_count < 1){
             $rows_count = 1;
         }
-        
-        $total_pages = ceil(num: $rows_count/$itensPage);
-        
-        if($page > $total_pages){
-            header(header:'Location: /posts?paginacaoNumero=1');
-            exit;
+
+        $total_pages = ceil($rows_count / $itensPage);
+
+        if($inicio > $rows_count){
+            return redirect('admin/tabela-de-posts');
         }
 
+        if($page > $total_pages){
+            header('Location: /tabela-de-posts?paginacaoNumero=1');
+            exit;
+        }
 
         return view('admin/tabela-de-posts', compact('posts', 'total_pages', 'page'));
     }
