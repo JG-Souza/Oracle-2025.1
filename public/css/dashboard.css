@@ -160,16 +160,39 @@ body {
         flex-direction: column;
         gap: 3vh;
     }
+    
+    .bottom-buttons {
+        gap: 5vw;
+    }
+    .logout {
+        font-size: 2vw;
+        width: 25vw;
+        height: 5vh;
+    }
+    .home {
+        width: 7vw;
+        height: fit-content;
+    }
+    .dashboard-card {
+        height: 70vh;
+        width: 70%;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    .dashboard-card {
+        height: 90vh;
+        width: 70%;
+    }
     .titulo {
         font-size: 8.5vw;
     }
+    
     .pagina-de-posts, .pagina-de-usuarios {
         font-size: 6vw;
         width: 45vw;
         height: 45vw;
-    }
-    .bottom-buttons {
-        gap: 5vw;
     }
     .logout {
         font-size: 3vw;
@@ -180,11 +203,29 @@ body {
         width: 10vw;
         height: fit-content;
     }
+}
+
+@media (max-width: 320px) {
+    .titulo {
+        font-size: 8.5vw;
+    }
+    
+    .pagina-de-posts, .pagina-de-usuarios {
+        font-size: 6vw;
+        width: 45vw;
+        height: 45vw;
+    }
     .dashboard-card {
         height: 90vh;
         width: 70%;
     }
-}
-@media (max-width: 768px) {
-    
+    .logout {
+        font-size: 3vw;
+        width: 25vw;
+        height: 5vh;
+    }
+    .home {
+        width: 10vw;
+        height: fit-content;
+    }
 }
