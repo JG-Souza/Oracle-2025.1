@@ -125,6 +125,16 @@ class UsuariosController
     {
         $id = $_POST['user_id'];
 
+        $posts = App::get('database')->selectPostsByUser2('posts', $id);
+
+         foreach($posts as $post){
+            $caminhoImagem = $post->img_path;
+            $post_id = $post->post_id;
+            if(file_exists($caminhoImagem)){
+                unlink($caminhoImagem);
+            }
+            App::get('database')->deletePost('posts', $post_id);
+         }
         App::get('database')->deleteUser('users', $id);
 
         header('Location: /crud-usuarios');

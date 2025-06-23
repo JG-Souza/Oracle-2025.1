@@ -178,10 +178,13 @@ body {
     }
     .home {
         width: 10vw;
-        height: 10vh;
+        height: fit-content;
     }
     .dashboard-card {
         height: 90vh;
         width: 70%;
     }
+}
+@media (max-width: 768px) {
+    
 }

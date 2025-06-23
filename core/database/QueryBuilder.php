@@ -301,5 +301,24 @@ class QueryBuilder
         }
     }
 
+    public function selectPostsByUser2($table, $userId)
+    {
+        $sql = "SELECT posts.*, users.name AS author_name
+                FROM {$table}
+                JOIN users ON posts.user_id = users.user_id
+                WHERE posts.user_id = :user_id
+                ORDER BY posts.post_id ASC";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
 
 }

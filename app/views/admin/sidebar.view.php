@@ -54,7 +54,7 @@
                 <div id="logout">
                     <button type="submit" id="logout-btn">
                         <i class="fa-solid fa-right-from-bracket"></i>
-                        <span class="item-description">Logout</span>
+                        <span class="item-description">Log-out</span>
                     </button>
                 </div>
             </form>
