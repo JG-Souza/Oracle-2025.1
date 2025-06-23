@@ -25,7 +25,7 @@
 
 <body>
   <header></header>
-  <?php include 'app\views\site\navbar.view.php'; ?>
+  <?php include 'navbar.view.php'; ?>
   <section class="content">
     <div class="top-container">
       <h2>Últimos Posts</h2>
@@ -93,6 +93,6 @@
         </div>
     </aside>
   </section>
-  <?php include'app\views\site\footer.view.php'?>
+  <?php include 'footer.view.php'?>
 </body>
 </html>

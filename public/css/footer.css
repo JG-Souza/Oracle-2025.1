@@ -188,6 +188,7 @@
   transition-duration: 1s;
 }
 
+
 @media only screen and (max-width: 1000px){
   .direitos img{
     scale: 0.8;
