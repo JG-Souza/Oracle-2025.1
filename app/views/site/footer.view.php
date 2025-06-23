@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/753487264b.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/public/assets/medusa (1).png" type="image/x-icon">
     <link rel="icon" href="/public/assets/medusa (1).png" sizes="32x32" type="image/png">  
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
     
 
 </head>

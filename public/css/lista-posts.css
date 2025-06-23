@@ -181,7 +181,7 @@
   
   .highlight p {
     text-align: left;
-    font-family: 'Jost',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Cinzel',  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
     display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -233,7 +233,7 @@
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
-    font-family: "Junge",  'cursive';
+    font-family: "Cinzel",  'cursive';
     font-weight: 100; 
     letter-spacing: 0.05rem;
     margin-right: 10px;
